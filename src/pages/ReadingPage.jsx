@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   BookOpen,
@@ -10,6 +10,7 @@ import {
   Star,
   ArrowLeft,
   Clock,
+  Filter,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -24,6 +25,7 @@ const ReadingPage = () => {
 
   const [screen, setScreen] = useState('band-select');
   const [selectedBand, setSelectedBand] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('all'); // 'all' | '選詞填空' | '閱讀理解'
   const [numQuestions, setNumQuestions] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -87,8 +89,23 @@ const ReadingPage = () => {
     return q.explanation;
   };
 
-  const startQuiz = (band, count) => {
-    const bandData = band === 'A' ? readingQuestions.bandA : readingQuestions.bandB;
+  // Computed counts for Band B categories
+  const bandBCounts = useMemo(() => {
+    const cloze = readingQuestions.bandB.filter(q => q.category === '選詞填空');
+    const reading = readingQuestions.bandB.filter(q => q.category === '閱讀理解');
+    return {
+      cloze: cloze.length,
+      reading: reading.length,
+      all: readingQuestions.bandB.length,
+    };
+  }, []);
+
+  const startQuiz = (band, count, category = 'all') => {
+    let bandData = band === 'A' ? readingQuestions.bandA : readingQuestions.bandB;
+    // Apply category filter for Band B
+    if (band === 'B' && category !== 'all') {
+      bandData = bandData.filter(q => q.category === category);
+    }
     let shuffled = shuffleArray(bandData);
     let selected = count === 'all' ? shuffled : shuffled.slice(0, parseInt(count));
     selected = flattenQuestions(selected);
@@ -146,6 +163,7 @@ const ReadingPage = () => {
   const handleRestart = () => {
     setScreen('band-select');
     setSelectedBand(null);
+    setSelectedCategory('all');
     setNumQuestions(null);
     setCurrentQuestionIndex(0);
     setAnswers([]);
@@ -170,54 +188,95 @@ const ReadingPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            {[
-              {
-                band: 'A',
-                title: t('quiz.bandA'),
-                subtitle: t('quiz.levelA'),
-                color: 'from-green-400 to-teal-500',
-                count: readingQuestions.bandA.length,
-              },
-              {
-                band: 'B',
-                title: t('quiz.bandB'),
-                subtitle: t('quiz.levelB'),
-                color: 'from-orange-400 to-red-500',
-                count: readingQuestions.bandB.length,
-              },
-            ].map((item) => (
-              <motion.div
-                key={item.band}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="cursor-pointer"
-              >
-                <div className={`bg-gradient-to-br ${item.color} rounded-lg p-8 text-white shadow-lg`}>
-                  <div className="mb-4">
-                    <h2 className="text-3xl font-bold">{item.title}</h2>
-                    <p className="text-white/80">{item.subtitle}</p>
+            {/* Band A Card */}
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="cursor-pointer">
+              <div className="bg-gradient-to-br from-green-400 to-teal-500 rounded-lg p-8 text-white shadow-lg">
+                <div className="mb-4">
+                  <h2 className="text-3xl font-bold">{t('quiz.bandA')}</h2>
+                  <p className="text-white/80">{t('quiz.levelA')}</p>
+                </div>
+                <p className="mb-6 text-white/90">
+                  {t('quiz.totalQuestions').replace('{count}', readingQuestions.bandA.length)}
+                </p>
+                <div className="space-y-3">
+                  {[5, 10, 20, 'all'].map((count) => (
+                    <motion.button
+                      key={count}
+                      whileHover={{ x: 4 }}
+                      onClick={() => startQuiz('A', count)}
+                      className="w-full bg-white/20 hover:bg-white/30 rounded-lg py-3 font-semibold transition-all backdrop-blur-sm border border-white/30 hover:border-white/50"
+                    >
+                      {count === 'all'
+                        ? t('quiz.allQuestions').replace('{count}', readingQuestions.bandA.length)
+                        : t('quiz.questionsN').replace('{n}', count)}
+                      <ChevronRight className="w-4 h-4 inline-block ml-2" />
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Band B Card with Category Filter */}
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="cursor-pointer">
+              <div className="bg-gradient-to-br from-orange-400 to-red-500 rounded-lg p-8 text-white shadow-lg">
+                <div className="mb-4">
+                  <h2 className="text-3xl font-bold">{t('quiz.bandB')}</h2>
+                  <p className="text-white/80">{t('quiz.levelB')}</p>
+                </div>
+
+                {/* Category Filter Tabs */}
+                <div className="mb-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Filter className="w-4 h-4 text-white/80" />
+                    <span className="text-sm text-white/80 font-medium">
+                      {lang === 'id' ? 'Kategori:' : '題型篩選：'}
+                    </span>
                   </div>
-                  <p className="mb-6 text-white/90">
-                    {t('quiz.totalQuestions').replace('{count}', item.count)}
-                  </p>
-                  <div className="space-y-3">
-                    {[5, 10, 20, 'all'].map((count) => (
-                      <motion.button
-                        key={count}
-                        whileHover={{ x: 4 }}
-                        onClick={() => startQuiz(item.band, count)}
-                        className="w-full bg-white/20 hover:bg-white/30 rounded-lg py-3 font-semibold transition-all backdrop-blur-sm border border-white/30 hover:border-white/50"
+                  <div className="flex gap-2">
+                    {[
+                      { key: 'all', label: lang === 'id' ? 'Semua' : '全部', count: bandBCounts.all },
+                      { key: '選詞填空', label: lang === 'id' ? 'Isi Kata' : '選詞填空', count: bandBCounts.cloze },
+                      { key: '閱讀理解', label: lang === 'id' ? 'Bacaan' : '閱讀理解', count: bandBCounts.reading },
+                    ].map((cat) => (
+                      <button
+                        key={cat.key}
+                        onClick={(e) => { e.stopPropagation(); setSelectedCategory(cat.key); }}
+                        className={`flex-1 py-2 px-2 rounded-lg text-sm font-semibold transition-all border ${
+                          selectedCategory === cat.key
+                            ? 'bg-white text-orange-600 border-white shadow-md'
+                            : 'bg-white/15 text-white border-white/30 hover:bg-white/25'
+                        }`}
                       >
-                        {count === 'all'
-                          ? t('quiz.allQuestions').replace('{count}', item.count)
-                          : t('quiz.questionsN').replace('{n}', count)}
-                        <ChevronRight className="w-4 h-4 inline-block ml-2" />
-                      </motion.button>
+                        {cat.label}
+                        <span className={`block text-xs mt-0.5 ${selectedCategory === cat.key ? 'text-orange-400' : 'text-white/70'}`}>
+                          {cat.count} {lang === 'id' ? 'soal' : '題'}
+                        </span>
+                      </button>
                     ))}
                   </div>
                 </div>
-              </motion.div>
-            ))}
+
+                <div className="space-y-3">
+                  {(() => {
+                    const currentCount = selectedCategory === 'all' ? bandBCounts.all
+                      : selectedCategory === '選詞填空' ? bandBCounts.cloze : bandBCounts.reading;
+                    return [5, 10, 20, 'all'].filter(n => n === 'all' || n <= currentCount).map((count) => (
+                      <motion.button
+                        key={count}
+                        whileHover={{ x: 4 }}
+                        onClick={() => startQuiz('B', count, selectedCategory)}
+                        className="w-full bg-white/20 hover:bg-white/30 rounded-lg py-3 font-semibold transition-all backdrop-blur-sm border border-white/30 hover:border-white/50"
+                      >
+                        {count === 'all'
+                          ? t('quiz.allQuestions').replace('{count}', currentCount)
+                          : t('quiz.questionsN').replace('{n}', count)}
+                        <ChevronRight className="w-4 h-4 inline-block ml-2" />
+                      </motion.button>
+                    ));
+                  })()}
+                </div>
+              </div>
+            </motion.div>
           </div>
 
           <Link to="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-800 font-medium">
@@ -269,9 +328,29 @@ const ReadingPage = () => {
               className="bg-white rounded-lg shadow-lg p-8 mb-8"
             >
               {(currentQuestion.type === 'reading' || currentQuestion.type === 'cloze') && currentQuestion.passage && (
-                <div className="mb-6 p-6 bg-gray-50 rounded-lg border-l-4 border-blue-500">
+                <div className={`mb-6 p-6 rounded-lg border-l-4 ${currentQuestion.type === 'cloze' ? 'bg-amber-50 border-amber-400' : 'bg-gray-50 border-blue-500'}`}>
                   <p className="text-gray-700 whitespace-pre-wrap leading-relaxed">
-                    {currentQuestion.passage}
+                    {currentQuestion.type === 'cloze'
+                      ? currentQuestion.passage.split(/(\(\s*\d+\s*\))/).map((part, i) => {
+                          const blankMatch = part.match(/^\(\s*(\d+)\s*\)$/);
+                          if (blankMatch) {
+                            const isCurrentBlank = blankMatch[1] === currentQuestion.question?.toString();
+                            return (
+                              <span
+                                key={i}
+                                className={`inline-block mx-1 px-2 py-0.5 rounded font-bold ${
+                                  isCurrentBlank
+                                    ? 'bg-orange-500 text-white ring-2 ring-orange-300 animate-pulse'
+                                    : 'bg-gray-300 text-gray-700'
+                                }`}
+                              >
+                                ({blankMatch[1]})
+                              </span>
+                            );
+                          }
+                          return <span key={i}>{part}</span>;
+                        })
+                      : currentQuestion.passage}
                   </p>
                 </div>
               )}
