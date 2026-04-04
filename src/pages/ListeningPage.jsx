@@ -21,11 +21,35 @@ import { useGame } from '../contexts/GameContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { listeningQuestions } from '../data/listeningQuestions';
 
-const useSpeechSynthesis = () => {
+const useAudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
   const utteranceRef = useRef(null);
 
+  // Play MP3 file
+  const playAudio = useCallback((url) => {
+    // Stop any current playback
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+    window.speechSynthesis.cancel();
+    setIsPlaying(false);
+
+    const audio = new Audio(url);
+    audioRef.current = audio;
+    audio.onplay = () => setIsPlaying(true);
+    audio.onended = () => setIsPlaying(false);
+    audio.onerror = () => setIsPlaying(false);
+    audio.onpause = () => setIsPlaying(false);
+    audio.play().catch(() => setIsPlaying(false));
+  }, []);
+
+  // Fallback TTS
   const speak = useCallback((text, rate = 1) => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
     window.speechSynthesis.cancel();
     setIsPlaying(false);
     const utterance = new SpeechSynthesisUtterance(text);
@@ -42,11 +66,15 @@ const useSpeechSynthesis = () => {
   }, []);
 
   const stop = useCallback(() => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
     window.speechSynthesis.cancel();
     setIsPlaying(false);
   }, []);
 
-  return { isPlaying, speak, stop };
+  return { isPlaying, playAudio, speak, stop };
 };
 
 const AudioWaveform = ({ isPlaying }) => {
@@ -82,7 +110,7 @@ const ListeningPage = () => {
   const [elapsed, setElapsed] = useState(0);
   const [showTranscript, setShowTranscript] = useState(false);
 
-  const { isPlaying, speak, stop } = useSpeechSynthesis();
+  const { isPlaying, playAudio, speak, stop } = useAudioPlayer();
 
   useEffect(() => {
     if (screen !== 'quiz' || !startTime) return;
@@ -112,6 +140,7 @@ const ListeningPage = () => {
             category: item.category,
             difficulty: item.difficulty,
             audioText: item.audioText,
+            audioUrl: item.audioUrl || null,
             question: subQ.question,
             options: subQ.options,
             answer: subQ.answer,
@@ -167,6 +196,7 @@ const ListeningPage = () => {
   };
 
   const handleNextQuestion = () => {
+    stop(); // Stop any playing audio when moving to next question
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedAnswer(null);
@@ -330,12 +360,25 @@ const ListeningPage = () => {
 
               <div className="mb-8 p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg border-2 border-purple-200">
                 <div className="text-center">
+                  {currentQuestion.audioUrl && (
+                    <p className="text-xs text-purple-500 mb-2 font-medium">
+                      {lang === 'id' ? '🎧 Audio resmi TOCFL' : '🎧 TOCFL 官方音檔'}
+                    </p>
+                  )}
                   <AudioWaveform isPlaying={isPlaying} />
                   <div className="flex items-center justify-center gap-4 mt-6">
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => isPlaying ? stop() : speak(currentQuestion.audioText, 1)}
+                      onClick={() => {
+                        if (isPlaying) {
+                          stop();
+                        } else if (currentQuestion.audioUrl) {
+                          playAudio(currentQuestion.audioUrl);
+                        } else {
+                          speak(currentQuestion.audioText, 1);
+                        }
+                      }}
                       className={`flex items-center justify-center w-16 h-16 rounded-full font-bold transition-all ${
                         isPlaying
                           ? 'bg-red-500 hover:bg-red-600 text-white'
@@ -348,22 +391,30 @@ const ListeningPage = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      onClick={() => speak(currentQuestion.audioText, 1)}
+                      onClick={() => {
+                        if (currentQuestion.audioUrl) {
+                          playAudio(currentQuestion.audioUrl);
+                        } else {
+                          speak(currentQuestion.audioText, 1);
+                        }
+                      }}
                       className="flex items-center gap-2 px-4 py-3 bg-white hover:bg-purple-50 border-2 border-purple-300 rounded-lg font-medium text-purple-700 transition-all"
                     >
-                      <Volume2 className="w-4 h-4" />
+                      <RotateCcw className="w-4 h-4" />
                       {t('quiz.playAudio')}
                     </motion.button>
 
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={() => speak(currentQuestion.audioText, 0.7)}
-                      className="flex items-center gap-2 px-4 py-3 bg-white hover:bg-purple-50 border-2 border-purple-300 rounded-lg font-medium text-purple-700 transition-all"
-                    >
-                      <Volume2 className="w-4 h-4" />
-                      {t('quiz.slowAudio')}
-                    </motion.button>
+                    {!currentQuestion.audioUrl && (
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => speak(currentQuestion.audioText, 0.7)}
+                        className="flex items-center gap-2 px-4 py-3 bg-white hover:bg-purple-50 border-2 border-purple-300 rounded-lg font-medium text-purple-700 transition-all"
+                      >
+                        <Volume2 className="w-4 h-4" />
+                        {t('quiz.slowAudio')}
+                      </motion.button>
+                    )}
                   </div>
                 </div>
               </div>
