@@ -11,6 +11,8 @@ import {
   ArrowLeft,
   Clock,
   Filter,
+  AlertCircle,
+  Trash2,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -89,6 +91,37 @@ const ReadingPage = () => {
     return q.explanation;
   };
 
+  // Wrong answer bank (localStorage)
+  const WRONG_BANK_KEY = 'tocfl_reading_wrong_bank';
+  const getWrongBank = useCallback(() => {
+    try {
+      return JSON.parse(localStorage.getItem(WRONG_BANK_KEY) || '[]');
+    } catch { return []; }
+  }, []);
+
+  const saveToWrongBank = useCallback((wrongItems) => {
+    const existing = getWrongBank();
+    const existingIds = new Set(existing.map(q => q.id));
+    const newItems = wrongItems.filter(q => !existingIds.has(q.id));
+    const merged = [...existing, ...newItems];
+    localStorage.setItem(WRONG_BANK_KEY, JSON.stringify(merged));
+  }, [getWrongBank]);
+
+  const removeFromWrongBank = useCallback((questionId) => {
+    const existing = getWrongBank();
+    const updated = existing.filter(q => q.id !== questionId);
+    localStorage.setItem(WRONG_BANK_KEY, JSON.stringify(updated));
+  }, [getWrongBank]);
+
+  const clearWrongBank = useCallback(() => {
+    localStorage.removeItem(WRONG_BANK_KEY);
+  }, []);
+
+  const [wrongBankCount, setWrongBankCount] = useState(0);
+  useEffect(() => {
+    setWrongBankCount(getWrongBank().length);
+  }, [screen, getWrongBank]);
+
   // Computed counts for Band B categories
   const bandBCounts = useMemo(() => {
     const cloze = readingQuestions.bandB.filter(q => q.category === '選詞填空');
@@ -113,6 +146,23 @@ const ReadingPage = () => {
     setSelectedBand(band);
     setNumQuestions(count);
     setQuestions(selected);
+    setCurrentQuestionIndex(0);
+    setAnswers([]);
+    setSelectedAnswer(null);
+    setAnswered(false);
+    setStartTime(Date.now());
+    setElapsed(0);
+    setShowPinyin(false);
+    setScreen('quiz');
+  };
+
+  const startWrongBankQuiz = () => {
+    const wrongBank = getWrongBank();
+    if (wrongBank.length === 0) return;
+    const shuffled = shuffleArray(wrongBank);
+    setSelectedBand('wrong');
+    setNumQuestions(shuffled.length);
+    setQuestions(shuffled);
     setCurrentQuestionIndex(0);
     setAnswers([]);
     setSelectedAnswer(null);
@@ -148,6 +198,18 @@ const ReadingPage = () => {
 
   const finishQuiz = async () => {
     const correctCount = answers.filter((a) => a.isCorrect).length;
+    // Save wrong answers to wrong bank
+    const wrongItems = answers
+      .map((a, idx) => ({ ...a, question: questions[idx] }))
+      .filter((a) => !a.isCorrect)
+      .map((a) => a.question);
+    if (wrongItems.length > 0) {
+      saveToWrongBank(wrongItems);
+    }
+    // Remove correctly answered questions from wrong bank
+    answers.forEach((a, idx) => {
+      if (a.isCorrect) removeFromWrongBank(questions[idx].id);
+    });
     if (user) {
       await submitQuizResult({
         correct: correctCount,
@@ -278,6 +340,44 @@ const ReadingPage = () => {
               </div>
             </motion.div>
           </div>
+
+          {/* Wrong Answer Bank */}
+          {wrongBankCount > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-8 bg-white rounded-lg shadow-lg border-2 border-red-200 overflow-hidden"
+            >
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                      <AlertCircle className="w-5 h-5 text-red-500" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-800">{t('results.wrongBank')}</h3>
+                      <p className="text-sm text-gray-500">{t('results.wrongBankDesc')}</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => { clearWrongBank(); setWrongBankCount(0); }}
+                    className="text-sm text-gray-400 hover:text-red-500 flex items-center gap-1 transition-colors"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                    {t('results.clearWrongBank')}
+                  </button>
+                </div>
+                <motion.button
+                  whileHover={{ x: 4 }}
+                  onClick={startWrongBankQuiz}
+                  className="w-full bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white rounded-lg py-3 font-semibold transition-all flex items-center justify-center gap-2"
+                >
+                  {t('results.retryWrongCount').replace('{count}', wrongBankCount)}
+                  <ChevronRight className="w-4 h-4" />
+                </motion.button>
+              </div>
+            </motion.div>
+          )}
 
           <Link to="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-800 font-medium">
             <ArrowLeft className="w-4 h-4" />
@@ -513,6 +613,15 @@ const ReadingPage = () => {
       .map((a, idx) => ({ ...a, question: questions[idx] }))
       .filter((a) => !a.isCorrect);
 
+    // Category breakdown
+    const categoryStats = {};
+    answers.forEach((a, idx) => {
+      const cat = questions[idx].category || '其他';
+      if (!categoryStats[cat]) categoryStats[cat] = { correct: 0, total: 0 };
+      categoryStats[cat].total++;
+      if (a.isCorrect) categoryStats[cat].correct++;
+    });
+
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-100 p-6">
         <div className="max-w-3xl mx-auto">
@@ -580,6 +689,45 @@ const ReadingPage = () => {
             </p>
           </motion.div>
 
+          {/* Category Breakdown */}
+          {Object.keys(categoryStats).length > 1 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="bg-white rounded-lg shadow-lg p-6 mb-8"
+            >
+              <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
+                <Filter className="w-5 h-5 text-indigo-500" />
+                {lang === 'id' ? 'Analisis per Kategori' : '各題型分析'}
+              </h2>
+              <div className="space-y-3">
+                {Object.entries(categoryStats).map(([cat, stat]) => {
+                  const pct = Math.round((stat.correct / stat.total) * 100);
+                  const catLabel = lang === 'id'
+                    ? (cat === '選詞填空' ? 'Isi Kata' : cat === '閱讀理解' ? 'Bacaan' : cat)
+                    : cat;
+                  return (
+                    <div key={cat}>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm font-medium text-gray-700">{catLabel}</span>
+                        <span className="text-sm text-gray-500">{stat.correct}/{stat.total} ({pct}%)</span>
+                      </div>
+                      <div className="h-2.5 bg-gray-200 rounded-full overflow-hidden">
+                        <motion.div
+                          className={`h-full rounded-full ${pct >= 80 ? 'bg-green-500' : pct >= 60 ? 'bg-yellow-500' : 'bg-red-500'}`}
+                          initial={{ width: '0%' }}
+                          animate={{ width: `${pct}%` }}
+                          transition={{ duration: 0.8, delay: 0.4 }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+
           {wrongAnswers.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -619,22 +767,33 @@ const ReadingPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="grid grid-cols-2 gap-4 mb-8"
+            className="space-y-3 mb-8"
           >
-            <button
-              onClick={handleRestart}
-              className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-3 rounded-lg transition-all flex items-center justify-center gap-2"
-            >
-              <RotateCcw className="w-4 h-4" />
-              {t('results.tryAgain')}
-            </button>
-            <Link
-              to="/"
-              className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition-all flex items-center justify-center gap-2"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              {t('quiz.backHome')}
-            </Link>
+            {wrongAnswers.length > 0 && (
+              <button
+                onClick={startWrongBankQuiz}
+                className="w-full bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white font-bold py-3 rounded-lg transition-all flex items-center justify-center gap-2"
+              >
+                <AlertCircle className="w-4 h-4" />
+                {t('results.retryWrong')} ({wrongAnswers.length})
+              </button>
+            )}
+            <div className="grid grid-cols-2 gap-4">
+              <button
+                onClick={handleRestart}
+                className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-3 rounded-lg transition-all flex items-center justify-center gap-2"
+              >
+                <RotateCcw className="w-4 h-4" />
+                {t('results.tryAgain')}
+              </button>
+              <Link
+                to="/"
+                className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 rounded-lg transition-all flex items-center justify-center gap-2"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                {t('quiz.backHome')}
+              </Link>
+            </div>
           </motion.div>
         </div>
       </div>
