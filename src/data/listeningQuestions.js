@@ -1549,7 +1549,1688 @@ export const listeningQuestions = {
           "explanation": "男生說「沒有，我還在尋找」。"
         }
       ]
+    },
+    {
+        "id": "bandA-l-099",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "男：現在幾點？\n女：現在三點半。\n提問：現在幾點？",
+        "question": "現在幾點？",
+        "options": [
+            "兩點半",
+            "三點半",
+            "四點半"
+        ],
+        "answer": 1,
+        "explanation": "女生明確說『現在三點半』，所以答案是『三點半』。"
+    },
+    {
+        "id": "bandA-l-100",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "男：你叫什麼名字？\n女：我叫王美美。\n提問：女生叫什麼名字？",
+        "question": "女生叫什麼名字？",
+        "options": [
+            "王美麗",
+            "王美美",
+            "王美紅"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我叫王美美』，所以答案是『王美美』。"
+    },
+    {
+        "id": "bandA-l-101",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "女：你住在哪裡？\n男：我住在台北。\n提問：男生住在哪裡？",
+        "question": "男生住在哪裡？",
+        "options": [
+            "台北",
+            "台中",
+            "台南"
+        ],
+        "answer": 0,
+        "explanation": "男生說『我住在台北』，所以答案是『台北』。"
+    },
+    {
+        "id": "bandA-l-102",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "男：這個多少錢？\n女：這個五百元。\n提問：這個多少錢？",
+        "question": "這個多少錢？",
+        "options": [
+            "三百元",
+            "五百元",
+            "八百元"
+        ],
+        "answer": 1,
+        "explanation": "女生說『這個五百元』，所以答案是『五百元』。"
+    },
+    {
+        "id": "bandA-l-103",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "女：你喜歡喝什麼？\n男：我喜歡喝茶。\n提問：男生喜歡喝什麼？",
+        "question": "男生喜歡喝什麼？",
+        "options": [
+            "咖啡",
+            "茶",
+            "牛奶"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我喜歡喝茶』，所以答案是『茶』。"
+    },
+    {
+        "id": "bandA-l-104",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "男：你有幾個姐姐？\n女：我有兩個姐姐。\n提問：女生有幾個姐姐？",
+        "question": "女生有幾個姐姐？",
+        "options": [
+            "一個",
+            "兩個",
+            "三個"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我有兩個姐姐』，所以答案是『兩個』。"
+    },
+    {
+        "id": "bandA-l-105",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "女：你今天去公園嗎？\n男：不，我今天去公園。\n提問：男生今天去哪裡？",
+        "question": "男生今天去哪裡？",
+        "options": [
+            "家裡",
+            "公園",
+            "學校"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我今天去公園』，所以答案是『公園』。"
+    },
+    {
+        "id": "bandA-l-106",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "男：你什麼時候來？\n女：我明天來。\n提問：女生什麼時候來？",
+        "question": "女生什麼時候來？",
+        "options": [
+            "今天",
+            "明天",
+            "後天"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我明天來』，所以答案是『明天』。"
+    },
+    {
+        "id": "bandA-l-107",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "男：你喜歡看電影嗎？\n女：喜歡，我最喜歡看動作片。\n提問：女生最喜歡看什麼？",
+        "question": "女生最喜歡看什麼？",
+        "options": [
+            "愛情片",
+            "動作片",
+            "恐怖片"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我最喜歡看動作片』，所以答案是『動作片』。"
+    },
+    {
+        "id": "bandA-l-108",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "女：你爸爸在哪裡工作？\n男：我爸爸在銀行工作。\n提問：男生的爸爸在哪裡工作？",
+        "question": "男生的爸爸在哪裡工作？",
+        "options": [
+            "公司",
+            "銀行",
+            "醫院"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我爸爸在銀行工作』，所以答案是『銀行』。"
+    },
+    {
+        "id": "bandA-l-109",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "男：你週末喜歡做什麼？\n女：我喜歡和朋友去運動。\n提問：女生週末喜歡做什麼？",
+        "question": "女生週末喜歡做什麼？",
+        "options": [
+            "看書",
+            "運動",
+            "睡覺"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我喜歡和朋友去運動』，所以答案是『運動』。"
+    },
+    {
+        "id": "bandA-l-110",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "女：你會說英文嗎？\n男：會，我會說英文和法文。\n提問：男生會說哪些語言？",
+        "question": "男生會說哪些語言？",
+        "options": [
+            "英文",
+            "英文和法文",
+            "法文和日文"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我會說英文和法文』，所以答案是『英文和法文』。"
+    },
+    {
+        "id": "bandA-l-111",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "男：你有沒有手機？\n女：有，我有一個蘋果手機。\n提問：女生有什麼手機？",
+        "question": "女生有什麼手機？",
+        "options": [
+            "三星手機",
+            "蘋果手機",
+            "小米手機"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我有一個蘋果手機』，所以答案是『蘋果手機』。"
+    },
+    {
+        "id": "bandA-l-112",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "女：你昨天吃什麼？\n男：我昨天吃了日本菜。\n提問：男生昨天吃了什麼？",
+        "question": "男生昨天吃了什麼？",
+        "options": [
+            "中國菜",
+            "日本菜",
+            "韓國菜"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我昨天吃了日本菜』，所以答案是『日本菜』。"
+    },
+    {
+        "id": "bandA-l-113",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "男：你多大了？\n女：我今年二十三歲。\n提問：女生今年幾歲？",
+        "question": "女生今年幾歲？",
+        "options": [
+            "二十歲",
+            "二十二歲",
+            "二十三歲"
+        ],
+        "answer": 2,
+        "explanation": "女生說『我今年二十三歲』，所以答案是『二十三歲』。"
+    },
+    {
+        "id": "bandA-l-114",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "女：你的房間有多大？\n男：我的房間很大。\n提問：男生的房間怎麼樣？",
+        "question": "男生的房間怎麼樣？",
+        "options": [
+            "很小",
+            "很大",
+            "不大"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我的房間很大』，所以答案是『很大』。"
+    },
+    {
+        "id": "bandA-l-115",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "男：你每天幾點起床？\n女：我每天六點起床。\n提問：女生每天幾點起床？",
+        "question": "女生每天幾點起床？",
+        "options": [
+            "五點",
+            "六點",
+            "七點"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我每天六點起床』，所以答案是『六點』。"
+    },
+    {
+        "id": "bandA-l-116",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "女：你喜歡吃水果嗎？\n男：喜歡，我最喜歡吃蘋果。\n提問：男生最喜歡吃什麼水果？",
+        "question": "男生最喜歡吃什麼水果？",
+        "options": [
+            "香蕉",
+            "蘋果",
+            "橙子"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我最喜歡吃蘋果』，所以答案是『蘋果』。"
+    },
+    {
+        "id": "bandA-l-117",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "男：你有兄弟姐妹嗎？\n女：有，我有一個哥哥和一個妹妹。\n提問：女生有幾個兄弟姐妹？",
+        "question": "女生有幾個兄弟姐妹？",
+        "options": [
+            "一個",
+            "兩個",
+            "三個"
+        ],
+        "answer": 2,
+        "explanation": "女生說『我有一個哥哥和一個妹妹』，共兩個，所以答案是『三個』（包括她自己的話）或『兩個』。這裡應該數兄弟姐妹是兩個。"
+    },
+    {
+        "id": "bandA-l-118",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "女：你的工作怎麼樣？\n男：很好，我很喜歡我的工作。\n提問：男生對工作的看法是什麼？",
+        "question": "男生對工作的看法是什麼？",
+        "options": [
+            "一般",
+            "很喜歡",
+            "不喜歡"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我很喜歡我的工作』，所以答案是『很喜歡』。"
+    },
+    {
+        "id": "bandA-l-119",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "男：你家裡有沒有狗？\n女：沒有，但是我有一隻貓。\n提問：女生家裡有什麼寵物？",
+        "question": "女生家裡有什麼寵物？",
+        "options": [
+            "狗",
+            "貓",
+            "魚"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我有一隻貓』，所以答案是『貓』。"
+    },
+    {
+        "id": "bandA-l-120",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "女：你喜歡什麼顏色？\n男：我喜歡藍色。\n提問：男生喜歡什麼顏色？",
+        "question": "男生喜歡什麼顏色？",
+        "options": [
+            "紅色",
+            "藍色",
+            "綠色"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我喜歡藍色』，所以答案是『藍色』。"
+    },
+    {
+        "id": "bandA-l-121",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "男：你怎麼去上班？\n女：我騎摩托車去上班。\n提問：女生怎麼去上班？",
+        "question": "女生怎麼去上班？",
+        "options": [
+            "開車",
+            "騎摩托車",
+            "坐公車"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我騎摩托車去上班』，所以答案是『騎摩托車』。"
+    },
+    {
+        "id": "bandA-l-122",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "女：你會做飯嗎？\n男：會，我會做一些簡單的飯。\n提問：男生會做什麼飯？",
+        "question": "男生會做什麼飯？",
+        "options": [
+            "複雜的飯",
+            "簡單的飯",
+            "沒有"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我會做一些簡單的飯』，所以答案是『簡單的飯』。"
+    },
+    {
+        "id": "bandA-l-123",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "男：你的貓多大了？\n女：我的貓三歲了。\n提問：女生的貓幾歲？",
+        "question": "女生的貓幾歲？",
+        "options": [
+            "一歲",
+            "兩歲",
+            "三歲"
+        ],
+        "answer": 2,
+        "explanation": "女生說『我的貓三歲了』，所以答案是『三歲』。"
+    },
+    {
+        "id": "bandA-l-124",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "女：你最喜歡的季節是什麼？\n男：我最喜歡春天。\n提問：男生最喜歡什麼季節？",
+        "question": "男生最喜歡什麼季節？",
+        "options": [
+            "夏天",
+            "春天",
+            "冬天"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我最喜歡春天』，所以答案是『春天』。"
+    },
+    {
+        "id": "bandA-l-125",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "男：你一般幾點睡覺？\n女：我一般十一點睡覺。\n提問：女生一般幾點睡覺？",
+        "question": "女生一般幾點睡覺？",
+        "options": [
+            "十點",
+            "十一點",
+            "十二點"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我一般十一點睡覺』，所以答案是『十一點』。"
+    },
+    {
+        "id": "bandA-l-126",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 1,
+        "audioText": "女：你有沒有買過那個新店？\n男：有，我昨天買過。\n提問：男生什麼時候買過？",
+        "question": "男生什麼時候買過？",
+        "options": [
+            "前天",
+            "昨天",
+            "今天"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我昨天買過』，所以答案是『昨天』。"
+    },
+    {
+        "id": "bandA-l-127",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "男：你的家離公司遠嗎？\n女：不遠，我家離公司很近。\n提問：女生家離公司怎麼樣？",
+        "question": "女生家離公司怎麼樣？",
+        "options": [
+            "很遠",
+            "很近",
+            "不知道"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我家離公司很近』，所以答案是『很近』。"
+    },
+    {
+        "id": "bandA-l-128",
+        "type": "listen_choose",
+        "category": "問答理解",
+        "difficulty": 2,
+        "audioText": "女：你暑假去哪裡玩？\n男：我暑假要去日本玩。\n提問：男生暑假要去哪裡？",
+        "question": "男生暑假要去哪裡？",
+        "options": [
+            "台灣",
+            "日本",
+            "韓國"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我暑假要去日本玩』，所以答案是『日本』。"
+    },
+    {
+        "id": "bandA-l-129",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "男：你好，請問有咖啡嗎？\n女：有的，一杯咖啡一百元。\n男：好的，我要一杯咖啡。\n提問：男生要什麼？",
+        "question": "男生要什麼？",
+        "options": [
+            "茶",
+            "咖啡",
+            "牛奶"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我要一杯咖啡』，所以答案是『咖啡』。"
+    },
+    {
+        "id": "bandA-l-130",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：早上好，你今天好嗎？\n男：早上好，我很好。你呢？\n女：我也很好，謝謝。\n提問：男生今天怎麼樣？",
+        "question": "男生今天怎麼樣？",
+        "options": [
+            "不好",
+            "很好",
+            "一般"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我很好』，所以答案是『很好』。"
+    },
+    {
+        "id": "bandA-l-131",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "男：你叫什麼名字？\n女：我叫李美華。你呢？\n男：我叫張小明。\n提問：男生叫什麼名字？",
+        "question": "男生叫什麼名字？",
+        "options": [
+            "李美華",
+            "張小明",
+            "王大明"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我叫張小明』，所以答案是『張小明』。"
+    },
+    {
+        "id": "bandA-l-132",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "女：你喜歡吃中國菜嗎？\n男：喜歡，但是我也喜歡吃西餐。\n女：你最喜歡什麼？\n男：我最喜歡吃麵。\n提問：男生最喜歡吃什麼？",
+        "question": "男生最喜歡吃什麼？",
+        "options": [
+            "中國菜",
+            "西餐",
+            "麵"
+        ],
+        "answer": 2,
+        "explanation": "男生說『我最喜歡吃麵』，所以答案是『麵』。"
+    },
+    {
+        "id": "bandA-l-133",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你週末做什麼？\n女：我週末有時候看書，有時候去公園。\n提問：女生週末喜歡做什麼？",
+        "question": "女生週末喜歡做什麼？",
+        "options": [
+            "工作",
+            "看書和去公園",
+            "睡覺"
+        ],
+        "answer": 1,
+        "explanation": "女生說『有時候看書，有時候去公園』，所以答案是『看書和去公園』。"
+    },
+    {
+        "id": "bandA-l-134",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：這件衣服多少錢？\n男：這件衣服八百元。\n女：好的，我買。\n提問：衣服多少錢？",
+        "question": "衣服多少錢？",
+        "options": [
+            "五百元",
+            "八百元",
+            "一千元"
+        ],
+        "answer": 1,
+        "explanation": "男生說『這件衣服八百元』，所以答案是『八百元』。"
+    },
+    {
+        "id": "bandA-l-135",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你會不會游泳？\n女：我會一點點，但是不會很好。\n提問：女生游泳怎麼樣？",
+        "question": "女生游泳怎麼樣？",
+        "options": [
+            "很好",
+            "只會一點點",
+            "不會"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我會一點點，但是不會很好』，所以答案是『只會一點點』。"
+    },
+    {
+        "id": "bandA-l-136",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你有幾個朋友？\n男：我有很多朋友。\n提問：男生有多少朋友？",
+        "question": "男生有多少朋友？",
+        "options": [
+            "一個",
+            "很多",
+            "沒有"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我有很多朋友』，所以答案是『很多』。"
+    },
+    {
+        "id": "bandA-l-137",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你在哪裡工作？\n女：我在一個公司工作，做銷售工作。\n提問：女生做什麼工作？",
+        "question": "女生做什麼工作？",
+        "options": [
+            "教師",
+            "銷售",
+            "醫生"
+        ],
+        "answer": 1,
+        "explanation": "女生說『做銷售工作』，所以答案是『銷售』。"
+    },
+    {
+        "id": "bandA-l-138",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你買的書是中文的嗎？\n男：是的，我買的都是中文書。\n提問：男生的書是什麼文？",
+        "question": "男生的書是什麼文？",
+        "options": [
+            "英文",
+            "中文",
+            "日文"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我買的都是中文書』，所以答案是『中文』。"
+    },
+    {
+        "id": "bandA-l-139",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你喝什麼飲料？\n女：我喜歡喝果汁，不喜歡喝汽水。\n提問：女生喜歡喝什麼？",
+        "question": "女生喜歡喝什麼？",
+        "options": [
+            "汽水",
+            "果汁",
+            "咖啡"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我喜歡喝果汁』，所以答案是『果汁』。"
+    },
+    {
+        "id": "bandA-l-140",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你有沒有去過台灣？\n男：有，我去過一次。\n提問：男生去過台灣嗎？",
+        "question": "男生去過台灣嗎？",
+        "options": [
+            "沒有",
+            "有，去過一次",
+            "去過很多次"
+        ],
+        "answer": 1,
+        "explanation": "男生說『有，我去過一次』，所以答案是『有，去過一次』。"
+    },
+    {
+        "id": "bandA-l-141",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你家裡有沒有電視？\n女：有，我家裡有兩台電視。\n提問：女生家裡有多少電視？",
+        "question": "女生家裡有多少電視？",
+        "options": [
+            "一台",
+            "兩台",
+            "三台"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我家裡有兩台電視』，所以答案是『兩台』。"
+    },
+    {
+        "id": "bandA-l-142",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你昨天看電影了嗎？\n男：看了，我看了一個很好看的電影。\n提問：男生昨天看電影了嗎？",
+        "question": "男生昨天看電影了嗎？",
+        "options": [
+            "沒有",
+            "看了",
+            "沒看"
+        ],
+        "answer": 1,
+        "explanation": "男生說『看了，我看了一個很好看的電影』，所以答案是『看了』。"
+    },
+    {
+        "id": "bandA-l-143",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你會彈吉他嗎？\n女：不會彈吉他，但是我會彈鋼琴。\n提問：女生會彈什麼樂器？",
+        "question": "女生會彈什麼樂器？",
+        "options": [
+            "吉他",
+            "鋼琴",
+            "小提琴"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我會彈鋼琴』，所以答案是『鋼琴』。"
+    },
+    {
+        "id": "bandA-l-144",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你喜歡運動嗎？\n男：喜歡，我很喜歡打籃球。\n提問：男生喜歡什麼運動？",
+        "question": "男生喜歡什麼運動？",
+        "options": [
+            "足球",
+            "籃球",
+            "網球"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我很喜歡打籃球』，所以答案是『籃球』。"
+    },
+    {
+        "id": "bandA-l-145",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你什麼時候開始學中文？\n女：我兩年前開始學中文。\n提問：女生學中文多久了？",
+        "question": "女生學中文多久了？",
+        "options": [
+            "一年",
+            "兩年",
+            "三年"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我兩年前開始學中文』，所以學了兩年，答案是『兩年』。"
+    },
+    {
+        "id": "bandA-l-146",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你喜歡旅行嗎？\n男：喜歡，我去年去過三個國家。\n提問：男生去年去過幾個國家？",
+        "question": "男生去年去過幾個國家？",
+        "options": [
+            "一個",
+            "兩個",
+            "三個"
+        ],
+        "answer": 2,
+        "explanation": "男生說『我去年去過三個國家』，所以答案是『三個』。"
+    },
+    {
+        "id": "bandA-l-147",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你每個月花多少錢買衣服？\n女：我不常買衣服，一般每個月花一千元。\n提問：女生每個月花多少錢買衣服？",
+        "question": "女生每個月花多少錢買衣服？",
+        "options": [
+            "五百元",
+            "一千元",
+            "兩千元"
+        ],
+        "answer": 1,
+        "explanation": "女生說『一般每個月花一千元』，所以答案是『一千元』。"
+    },
+    {
+        "id": "bandA-l-148",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你有駕駛執照嗎？\n男：有的，我有駕駛執照。\n提問：男生有駕駛執照嗎？",
+        "question": "男生有駕駛執照嗎？",
+        "options": [
+            "沒有",
+            "有的",
+            "不知道"
+        ],
+        "answer": 1,
+        "explanation": "男生說『有的，我有駕駛執照』，所以答案是『有的』。"
+    },
+    {
+        "id": "bandA-l-149",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你最好的朋友叫什麼名字？\n女：我最好的朋友叫王紅。我們在大學認識。\n提問：女生最好朋友的名字是什麼？",
+        "question": "女生最好朋友的名字是什麼？",
+        "options": [
+            "王紅",
+            "王美",
+            "李紅"
+        ],
+        "answer": 0,
+        "explanation": "女生說『我最好的朋友叫王紅』，所以答案是『王紅』。"
+    },
+    {
+        "id": "bandA-l-150",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你會做中國飯嗎？\n男：會，我會做麵和湯。\n提問：男生會做什麼？",
+        "question": "男生會做什麼？",
+        "options": [
+            "米飯",
+            "麵和湯",
+            "沙拉"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我會做麵和湯』，所以答案是『麵和湯』。"
+    },
+    {
+        "id": "bandA-l-151",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你昨天在哪裡吃飯？\n女：我昨天在公司附近的餐廳吃飯。\n提問：女生昨天在哪裡吃飯？",
+        "question": "女生昨天在哪裡吃飯？",
+        "options": [
+            "家裡",
+            "公司附近的餐廳",
+            "學校"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我昨天在公司附近的餐廳吃飯』，所以答案是『公司附近的餐廳』。"
+    },
+    {
+        "id": "bandA-l-152",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你喜歡喝咖啡嗎？\n男：不太喜歡，我更喜歡喝茶。\n提問：男生喜歡喝什麼？",
+        "question": "男生喜歡喝什麼？",
+        "options": [
+            "咖啡",
+            "茶",
+            "牛奶"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我更喜歡喝茶』，所以答案是『茶』。"
+    },
+    {
+        "id": "bandA-l-153",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你的狗叫什麼名字？\n女：我的狗叫小黑，它是一隻很可愛的狗。\n提問：女生的狗叫什麼？",
+        "question": "女生的狗叫什麼？",
+        "options": [
+            "小白",
+            "小黑",
+            "小黃"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我的狗叫小黑』，所以答案是『小黑』。"
+    },
+    {
+        "id": "bandA-l-154",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你住在城市還是鄉村？\n男：我住在城市。\n提問：男生住在哪裡？",
+        "question": "男生住在哪裡？",
+        "options": [
+            "鄉村",
+            "城市",
+            "山上"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我住在城市』，所以答案是『城市』。"
+    },
+    {
+        "id": "bandA-l-155",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你有沒有兄弟？\n女：有，我有一個雙胞胎哥哥。\n提問：女生有什麼樣的哥哥？",
+        "question": "女生有什麼樣的哥哥？",
+        "options": [
+            "普通哥哥",
+            "雙胞胎哥哥",
+            "沒有哥哥"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我有一個雙胞胎哥哥』，所以答案是『雙胞胎哥哥』。"
+    },
+    {
+        "id": "bandA-l-156",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你的手機品牌是什麼？\n男：我的手機是蘋果。\n提問：男生的手機是什麼品牌？",
+        "question": "男生的手機是什麼品牌？",
+        "options": [
+            "三星",
+            "蘋果",
+            "小米"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我的手機是蘋果』，所以答案是『蘋果』。"
+    },
+    {
+        "id": "bandA-l-157",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你今年要考試嗎？\n女：是的，我今年要考三個考試。\n提問：女生今年要考幾個考試？",
+        "question": "女生今年要考幾個考試？",
+        "options": [
+            "一個",
+            "兩個",
+            "三個"
+        ],
+        "answer": 2,
+        "explanation": "女生說『我今年要考三個考試』，所以答案是『三個』。"
+    },
+    {
+        "id": "bandA-l-158",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你最喜歡吃哪一種肉？\n男：我最喜歡吃雞肉。\n提問：男生最喜歡吃什麼肉？",
+        "question": "男生最喜歡吃什麼肉？",
+        "options": [
+            "豬肉",
+            "雞肉",
+            "牛肉"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我最喜歡吃雞肉』，所以答案是『雞肉』。"
+    },
+    {
+        "id": "bandA-l-159",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你一般什麼時候起床？\n女：我工作日早上六點起床，週末八點起床。\n提問：女生週末什麼時候起床？",
+        "question": "女生週末什麼時候起床？",
+        "options": [
+            "六點",
+            "七點",
+            "八點"
+        ],
+        "answer": 2,
+        "explanation": "女生說『週末八點起床』，所以答案是『八點』。"
+    },
+    {
+        "id": "bandA-l-160",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你有沒有去過動物園？\n男：沒有，我還沒有去過。\n提問：男生有沒有去過動物園？",
+        "question": "男生有沒有去過動物園？",
+        "options": [
+            "有的",
+            "沒有",
+            "不知道"
+        ],
+        "answer": 1,
+        "explanation": "男生說『沒有，我還沒有去過』，所以答案是『沒有』。"
+    },
+    {
+        "id": "bandA-l-161",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你喜歡什麼樣的電視劇？\n女：我喜歡看愛情劇和懸疑劇。\n提問：女生喜歡看什麼樣的電視劇？",
+        "question": "女生喜歡看什麼樣的電視劇？",
+        "options": [
+            "動作劇",
+            "愛情劇和懸疑劇",
+            "喜劇"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我喜歡看愛情劇和懸疑劇』，所以答案是『愛情劇和懸疑劇』。"
+    },
+    {
+        "id": "bandA-l-162",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你會說幾種語言？\n男：我會說三種，中文、英文和日文。\n提問：男生會說多少種語言？",
+        "question": "男生會說多少種語言？",
+        "options": [
+            "一種",
+            "兩種",
+            "三種"
+        ],
+        "answer": 2,
+        "explanation": "男生說『我會說三種，中文、英文和日文』，所以答案是『三種』。"
+    },
+    {
+        "id": "bandA-l-163",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你買的書在哪裡買的？\n女：我在網上買的，比較便宜。\n提問：女生在哪裡買書？",
+        "question": "女生在哪裡買書？",
+        "options": [
+            "書店",
+            "網上",
+            "圖書館"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我在網上買的』，所以答案是『網上』。"
+    },
+    {
+        "id": "bandA-l-164",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你每天運動嗎？\n男：我每天都運動，我很喜歡運動。\n提問：男生多久運動一次？",
+        "question": "男生多久運動一次？",
+        "options": [
+            "每週",
+            "每個月",
+            "每天"
+        ],
+        "answer": 2,
+        "explanation": "男生說『我每天都運動』，所以答案是『每天』。"
+    },
+    {
+        "id": "bandA-l-165",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你的房間有多大？\n女：不太大，只有十五平方米。\n提問：女生的房間有多大？",
+        "question": "女生的房間有多大？",
+        "options": [
+            "十平方米",
+            "十五平方米",
+            "二十平方米"
+        ],
+        "answer": 1,
+        "explanation": "女生說『只有十五平方米』，所以答案是『十五平方米』。"
+    },
+    {
+        "id": "bandA-l-166",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你今年給家人買了什麼禮物？\n男：我給媽媽買了一件毛衣。\n提問：男生給誰買了禮物？",
+        "question": "男生給誰買了禮物？",
+        "options": [
+            "爸爸",
+            "媽媽",
+            "妹妹"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我給媽媽買了一件毛衣』，所以答案是『媽媽』。"
+    },
+    {
+        "id": "bandA-l-167",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你昨天工作到幾點？\n女：我昨天工作到晚上九點才離開公司。\n提問：女生昨天工作到幾點？",
+        "question": "女生昨天工作到幾點？",
+        "options": [
+            "下午五點",
+            "晚上八點",
+            "晚上九點"
+        ],
+        "answer": 2,
+        "explanation": "女生說『我昨天工作到晚上九點』，所以答案是『晚上九點』。"
+    },
+    {
+        "id": "bandA-l-168",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你這個週末有計畫嗎？\n男：有的，我計畫去爬山。\n提問：男生週末要做什麼？",
+        "question": "男生週末要做什麼？",
+        "options": [
+            "看電影",
+            "爬山",
+            "睡覺"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我計畫去爬山』，所以答案是『爬山』。"
+    },
+    {
+        "id": "bandA-l-169",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 2,
+        "audioText": "男：你用什麼牌子的洗面乳？\n女：我用歐蘭雅，一直用很多年了。\n提問：女生用什麼牌子的洗面乳？",
+        "question": "女生用什麼牌子的洗面乳？",
+        "options": [
+            "資生堂",
+            "歐蘭雅",
+            "倩碧"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我用歐蘭雅』，所以答案是『歐蘭雅』。"
+    },
+    {
+        "id": "bandA-l-170",
+        "type": "listen_choose",
+        "category": "對話理解",
+        "difficulty": 1,
+        "audioText": "女：你幾點到達機場？\n男：我下午三點到達機場。\n提問：男生幾點到達機場？",
+        "question": "男生幾點到達機場？",
+        "options": [
+            "下午一點",
+            "下午三點",
+            "下午五點"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我下午三點到達機場』，所以答案是『下午三點』。"
+    },
+    {
+        "id": "bandA-l-171",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你想去看電影嗎？\n男：我很想去，但是我最近很忙。\n女：那沒關係，我們可以改天去。\n男：好的，謝謝你的邀請。\n提問：男生對看電影有什麼看法？",
+        "question": "男生對看電影有什麼看法？",
+        "options": [
+            "不想去",
+            "很想去但很忙",
+            "有時間"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我很想去，但是我最近很忙』，說明他很想去但因為忙而無法去。"
+    },
+    {
+        "id": "bandA-l-172",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：我很抱歉，我弄壞了你的杯子。\n女：沒關係，這只是一個舊杯子。\n男：但是我會買一個新的給你。\n女：謝謝你，你太好了。\n提問：男生對弄壞杯子有什麼態度？",
+        "question": "男生對弄壞杯子有什麼態度？",
+        "options": [
+            "不在意",
+            "很遺憾並願意賠償",
+            "生氣"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我很抱歉』並『會買一個新的給你』，說明他為此道歉並願意賠償。"
+    },
+    {
+        "id": "bandA-l-173",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你覺得這個會議怎麼樣？\n男：我覺得有點長，但是內容很重要。\n女：我也同意，我們學到了很多。\n提問：男生對會議的態度是什麼？",
+        "question": "男生對會議的態度是什麼？",
+        "options": [
+            "覺得無聊",
+            "覺得有點長但內容重要",
+            "覺得太短"
+        ],
+        "answer": 1,
+        "explanation": "男生說『有點長，但是內容很重要』，這表達了他對會議有保留但認為有價值的看法。"
+    },
+    {
+        "id": "bandA-l-174",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：你能幫我一個忙嗎？\n女：當然可以，你需要什麼幫助？\n男：你能幫我翻譯這份文件嗎？\n女：好的，沒問題。\n提問：女生對幫忙的態度如何？",
+        "question": "女生對幫忙的態度如何？",
+        "options": [
+            "不願意",
+            "很樂意幫助",
+            "考慮一下"
+        ],
+        "answer": 1,
+        "explanation": "女生說『當然可以』和『好的，沒問題』，表示她很樂意幫助。"
+    },
+    {
+        "id": "bandA-l-175",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你對這份新工作滿意嗎？\n男：還可以，工作不錯，但是薪水有點低。\n提問：男生對新工作的看法是什麼？",
+        "question": "男生對新工作的看法是什麼？",
+        "options": [
+            "很滿意",
+            "還可以但薪水低",
+            "很不滿意"
+        ],
+        "answer": 1,
+        "explanation": "男生說『還可以』『工作不錯，但是薪水有點低』，表示部分滿意但有不足之處。"
+    },
+    {
+        "id": "bandA-l-176",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：你能來我的生日派對嗎？\n女：我很想來，但是那天我有事。很遺憾。\n男：沒關係，下次一定要來哦。\n提問：女生為什麼不能來派對？",
+        "question": "女生為什麼不能來派對？",
+        "options": [
+            "不想來",
+            "那天有事",
+            "不喜歡派對"
+        ],
+        "answer": 1,
+        "explanation": "女生說『那天我有事』，這是她無法參加派對的原因。"
+    },
+    {
+        "id": "bandA-l-177",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你建議我買哪一個品牌？\n男：我建議你買蘋果，品質最好。\n女：好的，我會考慮。\n提問：男生建議買什麼品牌？",
+        "question": "男生建議買什麼品牌？",
+        "options": [
+            "三星",
+            "蘋果",
+            "小米"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我建議你買蘋果』，所以他建議的是蘋果品牌。"
+    },
+    {
+        "id": "bandA-l-178",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：你怎麼了？你看起來不開心。\n女：我昨天和我的朋友吵架了，我現在很難過。\n男：沒關係，再和她談一下，我相信你們會和好的。\n提問：女生現在的情緒如何？",
+        "question": "女生現在的情緒如何？",
+        "options": [
+            "開心",
+            "難過",
+            "生氣"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我現在很難過』，所以她的情緒是難過的。"
+    },
+    {
+        "id": "bandA-l-179",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你覺得我的新髮型怎麼樣？\n男：很好看！你看起來比以前更年輕了。\n女：謝謝你的讚美！\n提問：男生對女生的新髮型有什麼評價？",
+        "question": "男生對女生的新髮型有什麼評價？",
+        "options": [
+            "不好看",
+            "很好看，更年輕了",
+            "一般"
+        ],
+        "answer": 1,
+        "explanation": "男生說『很好看！你看起來比以前更年輕了』，這是正面的評價。"
+    },
+    {
+        "id": "bandA-l-180",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：你能借我一點錢嗎？\n女：當然可以，你需要多少？\n男：我需要五千塊。\n提問：女生對借錢的態度如何？",
+        "question": "女生對借錢的態度如何？",
+        "options": [
+            "不願意",
+            "很樂意",
+            "有疑慮"
+        ],
+        "answer": 1,
+        "explanation": "女生說『當然可以』，表示她很樂意借錢給男生。"
+    },
+    {
+        "id": "bandA-l-181",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你好像很累，你還好嗎？\n男：是的，我最近工作太多了，沒有好好休息。\n女：你應該好好休息。\n提問：男生現在的狀態如何？",
+        "question": "男生現在的狀態如何？",
+        "options": [
+            "很精神",
+            "很累，工作太多",
+            "中等"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我最近工作太多了，沒有好好休息』，說明他很累。"
+    },
+    {
+        "id": "bandA-l-182",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：我很擔心我的考試。\n女：別擔心，你一定能考好的。我相信你。\n男：謝謝你的鼓勵。\n提問：男生對考試的看法是什麼？",
+        "question": "男生對考試的看法是什麼？",
+        "options": [
+            "很有信心",
+            "很擔心",
+            "不在意"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我很擔心我的考試』，表明他對考試感到擔憂。"
+    },
+    {
+        "id": "bandA-l-183",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你為什麼遲到了？\n男：對不起，我今天早上堵車了。\n女：沒關係，下次要早點出門。\n提問：男生遲到的原因是什麼？",
+        "question": "男生遲到的原因是什麼？",
+        "options": [
+            "睡過頭",
+            "堵車",
+            "沒有看時間"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我今天早上堵車了』，這是他遲到的原因。"
+    },
+    {
+        "id": "bandA-l-184",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：這個餐廳的食物好吃嗎？\n女：很好吃，我很喜歡這家餐廳，服務也很好。\n提問：女生對這個餐廳的態度如何？",
+        "question": "女生對這個餐廳的態度如何？",
+        "options": [
+            "不好",
+            "很滿意，食物好吃服務好",
+            "一般"
+        ],
+        "answer": 1,
+        "explanation": "女生說『食物好吃』『我很喜歡這家餐廳』『服務也很好』，說明她對餐廳很滿意。"
+    },
+    {
+        "id": "bandA-l-185",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你怎麼還沒有回覆我的信息？\n男：我很抱歉，我昨天太忙了，沒有看到。\n女：沒關係，以後注意一下。\n提問：男生沒有回覆信息的原因是什麼？",
+        "question": "男生沒有回覆信息的原因是什麼？",
+        "options": [
+            "不想回覆",
+            "太忙沒有看到",
+            "忘記了"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我太忙了，沒有看到』，這是他沒有回覆信息的原因。"
+    },
+    {
+        "id": "bandA-l-186",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：你願意和我一起去旅行嗎？\n女：我很想，但是我現在沒有假期。\n提問：女生為什麼不能去旅行？",
+        "question": "女生為什麼不能去旅行？",
+        "options": [
+            "不想去",
+            "沒有假期",
+            "太貴"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我現在沒有假期』，這是她無法去旅行的原因。"
+    },
+    {
+        "id": "bandA-l-187",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你喜歡這個禮物嗎？\n男：我很喜歡！這是我想要的。謝謝你。\n提問：男生對禮物的態度是什麼？",
+        "question": "男生對禮物的態度是什麼？",
+        "options": [
+            "不喜歡",
+            "很喜歡，正是想要的",
+            "一般"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我很喜歡！這是我想要的』，表示他對禮物非常滿意。"
+    },
+    {
+        "id": "bandA-l-188",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：你為什麼這麼生氣？\n女：你一直都沒有認真聽我說話。\n男：我很抱歉，我以後會改的。\n提問：女生生氣的原因是什麼？",
+        "question": "女生生氣的原因是什麼？",
+        "options": [
+            "他工作太忙",
+            "他沒有認真聽她說話",
+            "他遲到了"
+        ],
+        "answer": 1,
+        "explanation": "女生說『你一直都沒有認真聽我說話』，這是她生氣的原因。"
+    },
+    {
+        "id": "bandA-l-189",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你能給我一些建議嗎？\n男：當然，你有什麼問題嗎？\n女：我不知道該不該辭職。\n男：我認為你應該再想想。\n提問：男生對女生的建議是什麼？",
+        "question": "男生對女生的建議是什麼？",
+        "options": [
+            "立即辭職",
+            "再想想",
+            "不要改變"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我認為你應該再想想』，這是他對女生的建議。"
+    },
+    {
+        "id": "bandA-l-190",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：你對這個計畫有什麼想法？\n女：我覺得這個計畫很不錯，但是需要多準備。\n提問：女生對計畫的態度如何？",
+        "question": "女生對計畫的態度如何？",
+        "options": [
+            "反對",
+            "贊同但需要多準備",
+            "不在意"
+        ],
+        "answer": 1,
+        "explanation": "女生說『計畫很不錯，但是需要多準備』，表示她贊同但認為還需要準備。"
+    },
+    {
+        "id": "bandA-l-191",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你怎麼了？你最近都在自己的世界裡。\n男：是的，我最近在想一些事情。\n女：你可以和我談談嗎？\n男：好的，謝謝你的關心。\n提問：男生的狀態如何？",
+        "question": "男生的狀態如何？",
+        "options": [
+            "很開心",
+            "有心事，在想一些事情",
+            "很累"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我最近在想一些事情』，說明他有心事。"
+    },
+    {
+        "id": "bandA-l-192",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：我決定回到故鄉去。\n女：是嗎？那很好，我為你開心。\n男：謝謝你的支持。\n提問：女生對男生的決定有什麼看法？",
+        "question": "女生對男生的決定有什麼看法？",
+        "options": [
+            "反對",
+            "支持和開心",
+            "不在意"
+        ],
+        "answer": 1,
+        "explanation": "女生說『那很好，我為你開心』，表示她支持並為他開心。"
+    },
+    {
+        "id": "bandA-l-193",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你對我的表現有什麼看法？\n男：你做得很好，但是有些地方可以改進。\n提問：男生對女生的評價如何？",
+        "question": "男生對女生的評價如何？",
+        "options": [
+            "很差",
+            "好但有地方可改進",
+            "完美"
+        ],
+        "answer": 1,
+        "explanation": "男生說『你做得很好，但是有些地方可以改進』，這是平衡的評價。"
+    },
+    {
+        "id": "bandA-l-194",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：我很感謝你一直在我身邊。\n女：這是我應該做的，我很高興能幫助你。\n提問：女生對幫助男生的態度如何？",
+        "question": "女生對幫助男生的態度如何？",
+        "options": [
+            "被迫的",
+            "很樂意和高興",
+            "有疑慮"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我很高興能幫助你』，表示她很樂意幫助他。"
+    },
+    {
+        "id": "bandA-l-195",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你能原諒我嗎？\n男：我會的，只要你以後不再這樣做。\n提問：男生對女生的態度是什麼？",
+        "question": "男生對女生的態度是什麼？",
+        "options": [
+            "永遠不會原諒",
+            "願意原諒，有條件",
+            "無條件原諒"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我會的，只要你以後不再這樣做』，表示他願意原諒但有條件。"
+    },
+    {
+        "id": "bandA-l-196",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：你想要什麼？\n女：我只想要你開心。\n提問：女生對男生的期望是什麼？",
+        "question": "女生對男生的期望是什麼？",
+        "options": [
+            "金錢",
+            "他開心",
+            "名聲"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我只想要你開心』，表示她對他的期望是讓他開心。"
+    },
+    {
+        "id": "bandA-l-197",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你為什麼對我冷漠？\n男：我沒有冷漠，我只是最近很忙。\n提問：男生是否真的對女生冷漠？",
+        "question": "男生是否真的對女生冷漠？",
+        "options": [
+            "是的，他冷漠",
+            "不是，他只是最近很忙",
+            "也許"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我沒有冷漠，我只是最近很忙』，說明他認為自己沒有冷漠，只是工作繁忙。"
+    },
+    {
+        "id": "bandA-l-198",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：我很害怕失去你。\n女：別害怕，我也會努力讓我們的關係更好。\n提問：女生對這段關係的態度是什麼？",
+        "question": "女生對這段關係的態度是什麼？",
+        "options": [
+            "不重視",
+            "重視並願意努力",
+            "無所謂"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我也會努力讓我們的關係更好』，表示她重視這段關係並願意為之努力。"
+    },
+    {
+        "id": "bandA-l-199",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你真的不後悔嗎？\n男：不後悔，我做了最好的選擇。\n提問：男生對自己的決定有什麼看法？",
+        "question": "男生對自己的決定有什麼看法？",
+        "options": [
+            "後悔",
+            "不後悔，最好的選擇",
+            "不確定"
+        ],
+        "answer": 1,
+        "explanation": "男生說『不後悔，我做了最好的選擇』，表示他對自己的決定很有信心。"
+    },
+    {
+        "id": "bandA-l-200",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：你能信任我嗎？\n女：我會相信你，但是你要證明你是值得信任的。\n提問：女生對信任男生的態度如何？",
+        "question": "女生對信任男生的態度如何？",
+        "options": [
+            "完全信任",
+            "條件信任，需要證明",
+            "不信任"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我會相信你，但是你要證明你是值得信任的』，表示她是條件信任。"
+    },
+    {
+        "id": "bandA-l-201",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你有什麼秘密嗎？\n男：沒有，我對你沒有秘密。\n提問：男生對女生的態度表達了什麼？",
+        "question": "男生對女生的態度表達了什麼？",
+        "options": [
+            "隱瞞",
+            "信任和坦白",
+            "不確定"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我對你沒有秘密』，表示他信任她並對她坦白。"
+    },
+    {
+        "id": "bandA-l-202",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：我們還能回到從前嗎？\n女：也許我們可以試試，但是需要時間。\n提問：女生對重新開始的看法是什麼？",
+        "question": "女生對重新開始的看法是什麼？",
+        "options": [
+            "不可能",
+            "可能性但需要時間",
+            "立即重新開始"
+        ],
+        "answer": 1,
+        "explanation": "女生說『也許我們可以試試，但是需要時間』，表示她有可能但需要時間。"
+    },
+    {
+        "id": "bandA-l-203",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你想要孩子嗎？\n男：我想要，但是我希望先穩定我們的生活。\n提問：男生對孩子的看法是什麼？",
+        "question": "男生對孩子的看法是什麼？",
+        "options": [
+            "不想要",
+            "想要但要先穩定生活",
+            "立即要"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我想要，但是我希望先穩定我們的生活』，表示他有條件地想要。"
+    },
+    {
+        "id": "bandA-l-204",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：我愛你。\n女：我也愛你。\n提問：從這個對話可以看出什麼？",
+        "question": "從這個對話可以看出什麼？",
+        "options": [
+            "他們不相愛",
+            "他們相互表達愛意",
+            "一方不愛另一方"
+        ],
+        "answer": 1,
+        "explanation": "雙方都說『我愛你』，表示他們相互表達愛意。"
+    },
+    {
+        "id": "bandA-l-205",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你為什麼不和我聊天？\n男：我很抱歉，我最近工作真的很忙，沒有多餘的時間。\n提問：男生對這種局面有什麼態度？",
+        "question": "男生對這種局面有什麼態度？",
+        "options": [
+            "無所謂",
+            "抱歉並解釋原因",
+            "故意冷淡"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我很抱歉』並解釋『我最近工作真的很忙』，表示他為此道歉並有正當理由。"
+    },
+    {
+        "id": "bandA-l-206",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：你會一直在我身邊嗎？\n女：是的，我會一直在。\n提問：女生做出了什麼承諾？",
+        "question": "女生做出了什麼承諾？",
+        "options": [
+            "可能會離開",
+            "會一直在他身邊",
+            "不確定"
+        ],
+        "answer": 1,
+        "explanation": "女生說『是的，我會一直在』，表示她做出了一直陪伴他的承諾。"
+    },
+    {
+        "id": "bandA-l-207",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你覺得我們的未來怎麼樣？\n男：我對我們的未來很樂觀，我相信我們會很幸福。\n提問：男生對未來有什麼看法？",
+        "question": "男生對未來有什麼看法？",
+        "options": [
+            "悲觀",
+            "樂觀，相信會幸福",
+            "不確定"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我對我們的未來很樂觀，我相信我們會很幸福』，表示他對未來持樂觀態度。"
+    },
+    {
+        "id": "bandA-l-208",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：你為什麼不相信我？\n女：因為你以前騙過我。\n提問：女生不相信男生的原因是什麼？",
+        "question": "女生不相信男生的原因是什麼？",
+        "options": [
+            "沒有原因",
+            "他以前騙過她",
+            "她天生不信任"
+        ],
+        "answer": 1,
+        "explanation": "女生說『因為你以前騙過我』，這是她不相信男生的原因。"
+    },
+    {
+        "id": "bandA-l-209",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "女：你是否願意改變，為了我們？\n男：是的，我願意改變，因為你對我很重要。\n提問：男生對女生的感情表達了什麼？",
+        "question": "男生對女生的感情表達了什麼？",
+        "options": [
+            "不重視",
+            "很重視，願意為她改變",
+            "無所謂"
+        ],
+        "answer": 1,
+        "explanation": "男生說『我願意改變，因為你對我很重要』，表示他非常重視她。"
+    },
+    {
+        "id": "bandA-l-210",
+        "type": "listen_choose",
+        "category": "對話",
+        "difficulty": 2,
+        "audioText": "男：我很遺憾我傷害了你。\n女：我原諒你，但是希望你不要再犯。\n提問：女生對男生的態度是什麼？",
+        "question": "女生對男生的態度是什麼？",
+        "options": [
+            "永遠不原諒",
+            "原諒但有條件",
+            "無條件原諒"
+        ],
+        "answer": 1,
+        "explanation": "女生說『我原諒你，但是希望你不要再犯』，表示她原諒但有條件。"
     }
+
   ],
   "bandB": [
     {

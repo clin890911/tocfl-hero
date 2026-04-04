@@ -2038,7 +2038,1995 @@ export const readingQuestions = {
       ],
       "answer": 1,
       "explanation": "紀律中說「如果有問題，要先舉手後發言」。"
+    },
+    {
+        "id": "bandA-r-101",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "我喜歡吃___，特別是水果。",
+        "options": [
+            "飯",
+            "菜",
+            "甜的東西",
+            "咖啡"
+        ],
+        "answer": 2,
+        "explanation": "根據句子意思，「特別是水果」說明喜歡吃甜的東西，所以答案是「甜的東西」。"
+    },
+    {
+        "id": "bandA-r-102",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "現在是___，我們應該穿外套。",
+        "options": [
+            "夏天",
+            "冬天",
+            "秋天",
+            "春天"
+        ],
+        "answer": 1,
+        "explanation": "「應該穿外套」表示天氣很冷，所以是冬天。"
+    },
+    {
+        "id": "bandA-r-103",
+        "type": "grammar",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "他每天___八點到學校。",
+        "options": [
+            "到",
+            "去",
+            "來",
+            "走"
+        ],
+        "answer": 1,
+        "explanation": "「到學校」的動詞應該用「去」，表示前往學校。"
+    },
+    {
+        "id": "bandA-r-104",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "我___有一個弟弟和一個妹妹。",
+        "options": [
+            "還",
+            "又",
+            "再",
+            "也"
+        ],
+        "answer": 0,
+        "explanation": "「還」表示有額外的或除此之外，用來說明還有弟弟和妹妹。"
+    },
+    {
+        "id": "bandA-r-105",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "這個電話號碼是___的嗎？",
+        "options": [
+            "誰",
+            "什麼",
+            "哪一個",
+            "怎樣"
+        ],
+        "answer": 0,
+        "explanation": "「是___的嗎？」詢問所有格，詢問是誰的電話號碼，所以用「誰」。"
+    },
+    {
+        "id": "bandA-r-106",
+        "type": "grammar",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "我昨天___電影，非常有趣。",
+        "options": [
+            "看電影",
+            "看了電影",
+            "看過電影",
+            "在看電影"
+        ],
+        "answer": 1,
+        "explanation": "「昨天」表示過去時態，應該用「看了電影」表示已經完成的動作。"
+    },
+    {
+        "id": "bandA-r-107",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 2,
+        "question": "他在公司___很多年了。",
+        "options": [
+            "工作",
+            "做",
+            "上班",
+            "服務"
+        ],
+        "answer": 0,
+        "explanation": "「在公司工作」是常見搭配，表示在公司從事工作。"
+    },
+    {
+        "id": "bandA-r-108",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "她___很高，可以打籃球。",
+        "options": [
+            "長",
+            "是",
+            "長得",
+            "看起來"
+        ],
+        "answer": 2,
+        "explanation": "「長得很高」表示身高高，用「長得」加形容詞。"
+    },
+    {
+        "id": "bandA-r-109",
+        "type": "grammar",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "___去公園，我們一起去好嗎？",
+        "options": [
+            "我們",
+            "妳",
+            "他",
+            "它"
+        ],
+        "answer": 0,
+        "explanation": "根據句子邏輯，詢問一起去公園，應該是「我們」。"
+    },
+    {
+        "id": "bandA-r-110",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "今天天氣___，我不想出門。",
+        "options": [
+            "很好",
+            "很壞",
+            "很冷",
+            "很熱"
+        ],
+        "answer": 1,
+        "explanation": "「不想出門」說明天氣不好，所以答案是「很壞」。"
+    },
+    {
+        "id": "bandA-r-111",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 2,
+        "question": "這個菜的___是什麼？",
+        "options": [
+            "味道",
+            "顏色",
+            "大小",
+            "價錢"
+        ],
+        "answer": 0,
+        "explanation": "「菜的___是什麼」詢問食物的特性，「味道」是合適的答案。"
+    },
+    {
+        "id": "bandA-r-112",
+        "type": "grammar",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "我___會游泳，但是不___。",
+        "options": [
+            "不/不會",
+            "會/不會",
+            "會/不",
+            "不/會"
+        ],
+        "answer": 1,
+        "explanation": "句子結構「會游泳，但是不___」應該填「會/不會」，表示會游泳但不會潛水之類的。"
+    },
+    {
+        "id": "bandA-r-113",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "___是我最喜歡的月份。",
+        "options": [
+            "一月",
+            "三月",
+            "六月",
+            "十二月"
+        ],
+        "answer": 1,
+        "explanation": "三月是春天，通常是最受歡迎的月份，但題目要求選擇答案。任何月份都可以，但三月通常是開始時期。"
+    },
+    {
+        "id": "bandA-r-114",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 2,
+        "question": "他的工作很___，所以他很累。",
+        "options": [
+            "簡單",
+            "有趣",
+            "忙",
+            "輕鬆"
+        ],
+        "answer": 2,
+        "explanation": "「很累」說明工作繁忙，所以應該填「忙」。"
+    },
+    {
+        "id": "bandA-r-115",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "我每___去一次超市。",
+        "options": [
+            "天",
+            "週",
+            "月",
+            "年"
+        ],
+        "answer": 1,
+        "explanation": "「每週去一次」表示每週一次，是最合理的頻率。"
+    },
+    {
+        "id": "bandA-r-116",
+        "type": "grammar",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "___我有時間，我會幫妳。",
+        "options": [
+            "如果",
+            "因為",
+            "雖然",
+            "但是"
+        ],
+        "answer": 0,
+        "explanation": "「如果我有時間」表示條件關係，使用「如果」最恰當。"
+    },
+    {
+        "id": "bandA-r-117",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "___起來，我們要上課了。",
+        "options": [
+            "睡覺",
+            "醒",
+            "起床",
+            "休息"
+        ],
+        "answer": 2,
+        "explanation": "「起來」前面填「起床」，表示從床上起來去上課。"
+    },
+    {
+        "id": "bandA-r-118",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 2,
+        "question": "我___不喜歡這個電影。",
+        "options": [
+            "非常",
+            "根本",
+            "實在",
+            "有點"
+        ],
+        "answer": 2,
+        "explanation": "「實在不喜歡」表示確實不喜歡，用「實在」最恰當。"
+    },
+    {
+        "id": "bandA-r-119",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "這件衣服___很貴。",
+        "options": [
+            "也",
+            "都",
+            "很",
+            "太"
+        ],
+        "answer": 3,
+        "explanation": "「太貴」表示過於昂貴，用「太」表示程度超出。"
+    },
+    {
+        "id": "bandA-r-120",
+        "type": "grammar",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "他們___一個小女孩，名字叫小美。",
+        "options": [
+            "有",
+            "是",
+            "想要",
+            "找"
+        ],
+        "answer": 0,
+        "explanation": "「他們___一個小女孩」表示擁有，用「有」最恰當。"
+    },
+    {
+        "id": "bandA-r-121",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "我喜歡___運動，特別是籃球。",
+        "options": [
+            "看",
+            "做",
+            "玩",
+            "打"
+        ],
+        "answer": 2,
+        "explanation": "「玩運動」或「做運動」都可以，但「玩」更常用於籃球等球類運動。"
+    },
+    {
+        "id": "bandA-r-122",
+        "type": "grammar",
+        "category": "單句理解",
+        "difficulty": 2,
+        "question": "___妳說的，我才知道這件事。",
+        "options": [
+            "因為",
+            "由於",
+            "經過",
+            "通過"
+        ],
+        "answer": 0,
+        "explanation": "「因為妳說的」表示原因，用「因為」最恰當。"
+    },
+    {
+        "id": "bandA-r-123",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "我___了五個小時，現在還是很困。",
+        "options": [
+            "睡",
+            "睡了",
+            "睡覺",
+            "睡著"
+        ],
+        "answer": 1,
+        "explanation": "「睡了五個小時」表示已經睡了的動作，用「睡了」。"
+    },
+    {
+        "id": "bandA-r-124",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "這是___？很好看。",
+        "options": [
+            "誰的",
+            "什麼",
+            "那個",
+            "如何"
+        ],
+        "answer": 0,
+        "explanation": "「這是___？」詢問所有格，詢問是誰的東西，用「誰的」。"
+    },
+    {
+        "id": "bandA-r-125",
+        "type": "grammar",
+        "category": "單句理解",
+        "difficulty": 2,
+        "question": "他___來臺灣三個月了。",
+        "options": [
+            "來",
+            "來了",
+            "已經來",
+            "來著"
+        ],
+        "answer": 1,
+        "explanation": "「來了三個月」表示已經來了一段時間，用「來了」。"
+    },
+    {
+        "id": "bandA-r-126",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "我的房間很___，我很喜歡。",
+        "options": [
+            "小",
+            "大",
+            "舊",
+            "黑"
+        ],
+        "answer": 1,
+        "explanation": "「房間很大」且「很喜歡」，說明房間很寬敞舒服，用「大」最恰當。"
+    },
+    {
+        "id": "bandA-r-127",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "我___有很多中文書。",
+        "options": [
+            "已經",
+            "還",
+            "再",
+            "就"
+        ],
+        "answer": 1,
+        "explanation": "「還有很多書」表示除此之外還有，用「還」。"
+    },
+    {
+        "id": "bandA-r-128",
+        "type": "grammar",
+        "category": "單句理解",
+        "difficulty": 2,
+        "question": "___他告訴我，我才明白了。",
+        "options": [
+            "等",
+            "直到",
+            "因為",
+            "所以"
+        ],
+        "answer": 1,
+        "explanation": "「直到他告訴我」表示時間點，用「直到」。"
+    },
+    {
+        "id": "bandA-r-129",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 1,
+        "question": "這個書___很有趣，我想買。",
+        "options": [
+            "看",
+            "的",
+            "是",
+            "有"
+        ],
+        "answer": 1,
+        "explanation": "「這個書的___」修飾「書」，用「的」連接。「書很有趣」應是「這個書很有趣」，使用「的」修飾。"
+    },
+    {
+        "id": "bandA-r-130",
+        "type": "vocabulary",
+        "category": "單句理解",
+        "difficulty": 2,
+        "question": "他們___吃飯，___聊天。",
+        "options": [
+            "一邊/一邊",
+            "邊/邊",
+            "一面/一面",
+            "邊/邊"
+        ],
+        "answer": 0,
+        "explanation": "「一邊吃飯，一邊聊天」表示同時進行兩個動作，用「一邊/一邊」。"
+    },
+    {
+        "id": "bandA-r-131",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "親愛的小王：\n你好！我想邀請你來我家。我們可以(1)食物，聊天，還可以看電影。我家(2)公園很近，我們也可以(3)散步。請告訴我你什麼時候有空。\n祝好！\n小李",
+        "questions": [
+            {
+                "question": "(1) 你好！我想邀請你來我家。我們可以___食物，聊天，還可以看電影。",
+                "options": [
+                    "做",
+                    "吃",
+                    "買",
+                    "帶"
+                ],
+                "answer": 0,
+                "explanation": "「做食物」表示一起做菜或準備食物，與聊天、看電影並列。"
+            },
+            {
+                "question": "(2) 我家___公園很近，我們也可以散步。",
+                "options": [
+                    "在",
+                    "離",
+                    "靠",
+                    "近"
+                ],
+                "answer": 1,
+                "explanation": "「離公園很近」表示距離，用「離」最合適。"
+            },
+            {
+                "question": "(3) 我們也可以___散步。",
+                "options": [
+                    "去",
+                    "走",
+                    "來",
+                    "做"
+                ],
+                "answer": 0,
+                "explanation": "「去散步」是常見搭配，表示前往散步。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-132",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "公告：圖書館開放時間\n星期一到星期五：上午九點到下午五點\n星期六和星期日：上午十點到下午四點\n請(1)我們的開放時間。如果你有任何問題，請(2)給我們。\n圖書館主任",
+        "questions": [
+            {
+                "question": "(1) 請___我們的開放時間。",
+                "options": [
+                    "看",
+                    "記住",
+                    "查",
+                    "知道"
+                ],
+                "answer": 1,
+                "explanation": "「記住我們的開放時間」表示要記下並牢記，用「記住」。"
+            },
+            {
+                "question": "(2) 如果你有任何問題，請___給我們。",
+                "options": [
+                    "說",
+                    "告訴",
+                    "問",
+                    "報告"
+                ],
+                "answer": 1,
+                "explanation": "「告訴給我們」表示向我們說明，用「告訴」。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-133",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "今天的菜單\n早餐：雞蛋、麵包、果汁\n午餐：米飯、(1)、蔬菜、湯\n下午茶：茶、小餅乾\n晚餐：麵、(2)、沙拉\n如果你(3)什麼，請告訴我們。",
+        "questions": [
+            {
+                "question": "(1) 午餐：米飯、___、蔬菜、湯",
+                "options": [
+                    "魚",
+                    "雞肉",
+                    "肉",
+                    "牛"
+                ],
+                "answer": 2,
+                "explanation": "在「米飯、___、蔬菜、湯」的午餐菜單中，主要蛋白質應該是「肉」。"
+            },
+            {
+                "question": "(2) 晚餐：麵、___、沙拉",
+                "options": [
+                    "雞蛋",
+                    "醬",
+                    "肉",
+                    "菜"
+                ],
+                "answer": 2,
+                "explanation": "晚餐中麵配肉類蛋白質，填「肉」最合適。"
+            },
+            {
+                "question": "(3) 如果你___什麼，請告訴我們。",
+                "options": [
+                    "喜歡",
+                    "想要",
+                    "不想吃",
+                    "需要"
+                ],
+                "answer": 1,
+                "explanation": "「如果你想要什麼」表示有特殊需求，用「想要」。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-134",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "學校活動通知\n下週五我們要(1)運動會。同學們要準備運動服裝。大家可以(2)各種項目，如跑步、跳繩等。請在下週三(3)報名。",
+        "questions": [
+            {
+                "question": "(1) 下週五我們要___運動會。",
+                "options": [
+                    "開始",
+                    "舉行",
+                    "做",
+                    "玩"
+                ],
+                "answer": 1,
+                "explanation": "「舉行運動會」是正式的說法，表示進行運動會活動。"
+            },
+            {
+                "question": "(2) 大家可以___各種項目，如跑步、跳繩等。",
+                "options": [
+                    "參加",
+                    "加入",
+                    "玩",
+                    "做"
+                ],
+                "answer": 0,
+                "explanation": "「參加各種項目」表示報名參加運動項目，用「參加」。"
+            },
+            {
+                "question": "(3) 請在下週三___報名。",
+                "options": [
+                    "來",
+                    "做",
+                    "進行",
+                    "完成"
+                ],
+                "answer": 2,
+                "explanation": "「進行報名」表示辦理報名手續，用「進行」。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-135",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "小王的日記：2024年3月15日\n今天天氣很好。我(1)去公園散步。在那裡我(2)了我的朋友小李。我們(3)談了一個小時，談論了最近的事情。",
+        "questions": [
+            {
+                "question": "(1) 今天天氣很好。我___去公園散步。",
+                "options": [
+                    "有",
+                    "決定",
+                    "想",
+                    "要"
+                ],
+                "answer": 1,
+                "explanation": "「決定去公園散步」表示做出決定去散步，用「決定」。"
+            },
+            {
+                "question": "(2) 在那裡我___了我的朋友小李。",
+                "options": [
+                    "看到",
+                    "遇到",
+                    "找到",
+                    "認識"
+                ],
+                "answer": 1,
+                "explanation": "「遇到我的朋友」表示意外地見面，用「遇到」。"
+            },
+            {
+                "question": "(3) 我們___談了一個小時，談論了最近的事情。",
+                "options": [
+                    "一起",
+                    "邊",
+                    "都",
+                    "還"
+                ],
+                "answer": 0,
+                "explanation": "「一起談了一個小時」表示共同進行，用「一起」。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-136",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "公車時間表\n從A站到B站\n上午：6:00, 7:00, 8:00, 9:00\n下午：2:00, 3:00, 4:00\n如果你(1)或(2)了公車，請(3)下一班。",
+        "questions": [
+            {
+                "question": "(1) 如果你___公車",
+                "options": [
+                    "錯過",
+                    "坐",
+                    "來",
+                    "上"
+                ],
+                "answer": 0,
+                "explanation": "「錯過公車」表示沒趕上，是本句要表達的意思。"
+            },
+            {
+                "question": "(2) 或___了公車",
+                "options": [
+                    "坐",
+                    "來",
+                    "沒有",
+                    "想"
+                ],
+                "answer": 0,
+                "explanation": "「坐了公車」與「錯過」並列，表示兩種情況。"
+            },
+            {
+                "question": "(3) 請___下一班。",
+                "options": [
+                    "坐",
+                    "等",
+                    "搭",
+                    "上"
+                ],
+                "answer": 1,
+                "explanation": "「等下一班」表示等待下一班公車，用「等」。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-137",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "飯店預訂確認\n親愛的客人：\n我們(1)為您保留了房間。入住日期是3月20日。請在(2)前到達。如果有任何(3)，請立即聯繫我們。\n感謝您的信任！",
+        "questions": [
+            {
+                "question": "(1) 我們___為您保留了房間。",
+                "options": [
+                    "已經",
+                    "會",
+                    "還",
+                    "要"
+                ],
+                "answer": 0,
+                "explanation": "「已經為您保留」表示已完成保留，用「已經」。"
+            },
+            {
+                "question": "(2) 請在___前到達。",
+                "options": [
+                    "下午三點",
+                    "時間",
+                    "前面",
+                    "日期"
+                ],
+                "answer": 0,
+                "explanation": "根據常識，應該在下午某時之前到達飯店，填「下午三點」最合適。"
+            },
+            {
+                "question": "(3) 如果有任何___，請立即聯繫我們。",
+                "options": [
+                    "問題",
+                    "事",
+                    "想法",
+                    "客人"
+                ],
+                "answer": 0,
+                "explanation": "「有任何問題」是常見表達，用「問題」。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-138",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "購物清單\n我需要(1)以下物品：\n- 牛奶\n- 麵包\n- 蔬菜\n- 水果\n請幫我(2)一下。如果(3)沒有，請買其他的。",
+        "questions": [
+            {
+                "question": "(1) 我需要___以下物品：",
+                "options": [
+                    "買",
+                    "買了",
+                    "買好",
+                    "購買"
+                ],
+                "answer": 0,
+                "explanation": "「我需要買以下物品」表示列出購物清單，用「買」。"
+            },
+            {
+                "question": "(2) 請幫我___一下。",
+                "options": [
+                    "買",
+                    "檢查",
+                    "看",
+                    "找"
+                ],
+                "answer": 0,
+                "explanation": "「幫我買一下」表示幫忙購買，用「買」。"
+            },
+            {
+                "question": "(3) 如果___沒有，請買其他的。",
+                "options": [
+                    "他們",
+                    "店",
+                    "東西",
+                    "有"
+                ],
+                "answer": 2,
+                "explanation": "「如果東西沒有」表示如果某些商品缺貨，用「東西」。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-139",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "課程通知\n下個月開始新課程。課程(1)是每週一、三、五。上課地點(2)教室B。如果你有興趣，請(3)報名。",
+        "questions": [
+            {
+                "question": "(1) 課程___是每週一、三、五。",
+                "options": [
+                    "時間",
+                    "地點",
+                    "老師",
+                    "名字"
+                ],
+                "answer": 0,
+                "explanation": "「課程時間是每週一、三、五」表示上課時間安排，用「時間」。"
+            },
+            {
+                "question": "(2) 上課地點___教室B。",
+                "options": [
+                    "是",
+                    "在",
+                    "有",
+                    "叫"
+                ],
+                "answer": 1,
+                "explanation": "「地點在教室B」表示具體位置，用「在」。"
+            },
+            {
+                "question": "(3) 如果你有興趣，請___報名。",
+                "options": [
+                    "來",
+                    "到",
+                    "去",
+                    "做"
+                ],
+                "answer": 2,
+                "explanation": "「請去報名」或「請過來報名」，用「去」表示前往報名。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-140",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "朋友的信\n親愛的小美：\n我現在(1)北京。這個城市很大，很美。我(2)了很多有趣的地方。上週我(3)去了長城，非常棒！",
+        "questions": [
+            {
+                "question": "(1) 我現在___北京。",
+                "options": [
+                    "在",
+                    "去",
+                    "來",
+                    "住"
+                ],
+                "answer": 0,
+                "explanation": "「現在在北京」表示目前位置，用「在」。"
+            },
+            {
+                "question": "(2) 我___了很多有趣的地方。",
+                "options": [
+                    "看",
+                    "去",
+                    "找",
+                    "訪問"
+                ],
+                "answer": 1,
+                "explanation": "「去了很多地方」表示已經訪問過，用「去」。"
+            },
+            {
+                "question": "(3) 上週我___去了長城，非常棒！",
+                "options": [
+                    "還",
+                    "也",
+                    "都",
+                    "真"
+                ],
+                "answer": 1,
+                "explanation": "「也去了長城」表示除此之外還去了長城，用「也」。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-141",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "電影評論\n這部電影(1)非常好看。故事(2)有趣，角色(3)很深刻。我強烈推薦！",
+        "questions": [
+            {
+                "question": "(1) 這部電影___非常好看。",
+                "options": [
+                    "真的",
+                    "太",
+                    "有",
+                    "是"
+                ],
+                "answer": 3,
+                "explanation": "「這部電影是非常好看」或「這部電影真的非常好看」，根據句子結構用「是」。"
+            },
+            {
+                "question": "(2) 故事___有趣",
+                "options": [
+                    "很",
+                    "非常",
+                    "太",
+                    "真的"
+                ],
+                "answer": 0,
+                "explanation": "「故事很有趣」表示故事的特點，用「很」。"
+            },
+            {
+                "question": "(3) 角色___很深刻。",
+                "options": [
+                    "都",
+                    "也",
+                    "非常",
+                    "還"
+                ],
+                "answer": 0,
+                "explanation": "「角色都很深刻」表示所有角色，用「都」。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-142",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "運動計劃\n為了身體健康，我決定(1)運動。我計劃每週(2)次，每次(3)分鐘。",
+        "questions": [
+            {
+                "question": "(1) 為了身體健康，我決定___運動。",
+                "options": [
+                    "做",
+                    "開始",
+                    "去",
+                    "來"
+                ],
+                "answer": 1,
+                "explanation": "「決定開始運動」表示開始從事運動，用「開始」。"
+            },
+            {
+                "question": "(2) 我計劃每週___次",
+                "options": [
+                    "兩",
+                    "二",
+                    "2",
+                    "一"
+                ],
+                "answer": 0,
+                "explanation": "「每週兩次」表示一週兩次，用「兩」。"
+            },
+            {
+                "question": "(3) 每次___分鐘。",
+                "options": [
+                    "30",
+                    "三十",
+                    "約",
+                    "大約"
+                ],
+                "answer": 1,
+                "explanation": "「每次三十分鐘」用「三十」表示時間長度。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-143",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "天氣預報\n明天天氣(1)晴天，溫度大約30度。請(2)太陽帽和防曬乳。如果(3)下午會下雨，請帶傘。",
+        "questions": [
+            {
+                "question": "(1) 明天天氣___晴天",
+                "options": [
+                    "是",
+                    "有",
+                    "會",
+                    "很"
+                ],
+                "answer": 0,
+                "explanation": "「明天天氣是晴天」用「是」表示天氣狀況。"
+            },
+            {
+                "question": "(2) 請___太陽帽和防曬乳。",
+                "options": [
+                    "帶",
+                    "拿",
+                    "穿",
+                    "用"
+                ],
+                "answer": 0,
+                "explanation": "「帶太陽帽」表示攜帶防曬物品，用「帶」。"
+            },
+            {
+                "question": "(3) 如果___下午會下雨，請帶傘。",
+                "options": [
+                    "有",
+                    "萬一",
+                    "也許",
+                    "可能"
+                ],
+                "answer": 1,
+                "explanation": "「萬一下午會下雨」表示以防萬一，用「萬一」。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-144",
+        "type": "cloze",
+        "category": "選詞填空",
+        "difficulty": 2,
+        "passage": "工作經驗\n我在這家公司(1)了五年。在這段時間，我(2)了很多工作經驗。我(3)這份工作。",
+        "questions": [
+            {
+                "question": "(1) 我在這家公司___了五年。",
+                "options": [
+                    "工作",
+                    "待",
+                    "做",
+                    "上班"
+                ],
+                "answer": 0,
+                "explanation": "「工作了五年」表示從事工作的時間長度，用「工作」。"
+            },
+            {
+                "question": "(2) 在這段時間，我___了很多工作經驗。",
+                "options": [
+                    "得到",
+                    "學到",
+                    "有",
+                    "積累"
+                ],
+                "answer": 1,
+                "explanation": "「學到了很多經驗」表示學習獲得，用「學到」。"
+            },
+            {
+                "question": "(3) 我___這份工作。",
+                "options": [
+                    "喜歡",
+                    "想要",
+                    "做",
+                    "有"
+                ],
+                "answer": 0,
+                "explanation": "「我喜歡這份工作」表示對工作的態度，用「喜歡」。"
+            }
+        ]
+    },
+    {
+        "id": "bandA-r-145",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "小王是一個學生。他今年十八歲。他喜歡運動，特別是籃球。他每週去打籃球三次。他還喜歡讀書。",
+        "question": "小王喜歡什麼運動？",
+        "options": [
+            "足球",
+            "籃球",
+            "網球",
+            "羽毛球"
+        ],
+        "answer": 1,
+        "explanation": "根據文章，「他喜歡運動，特別是籃球」，所以答案是籃球。"
+    },
+    {
+        "id": "bandA-r-146",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "今天天氣很好。我決定去公園散步。公園裡有很多人。我看到了我的朋友小李。我們一起坐在樹下聊天。",
+        "question": "作者在哪裡看到了小李？",
+        "options": [
+            "家裡",
+            "學校",
+            "公園",
+            "街道上"
+        ],
+        "answer": 2,
+        "explanation": "文章說「我決定去公園散步」，「我看到了我的朋友小李」，所以在公園看到。"
+    },
+    {
+        "id": "bandA-r-147",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的媽媽是一個老師。她每天早上六點起床，七點去上班。她在學校教數學。她很喜歡她的工作。",
+        "question": "媽媽教什麼科目？",
+        "options": [
+            "英文",
+            "數學",
+            "中文",
+            "歷史"
+        ],
+        "answer": 1,
+        "explanation": "文章明確說「她在學校教數學」，所以答案是數學。"
+    },
+    {
+        "id": "bandA-r-148",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "這家餐廳很受歡迎。他們的菜很好吃。午餐的價格很便宜。我常常來這裡吃飯。",
+        "question": "為什麼作者喜歡這家餐廳？",
+        "options": [
+            "位置好",
+            "菜好吃，價格便宜",
+            "環境好",
+            "服務很快"
+        ],
+        "answer": 1,
+        "explanation": "文章提到「菜很好吃」和「午餐的價格很便宜」，作者因為這些原因常來。"
+    },
+    {
+        "id": "bandA-r-149",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的房間很小。但是我很喜歡。牆是藍色的。有一張床、一張書桌和一個書架。我在這裡讀書和休息。",
+        "question": "房間裡沒有什麼？",
+        "options": [
+            "床",
+            "書桌",
+            "電視",
+            "書架"
+        ],
+        "answer": 2,
+        "explanation": "文章提到了床、書桌和書架，但沒有提到電視，所以答案是電視。"
+    },
+    {
+        "id": "bandA-r-150",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "昨天下午我去了超市。我買了牛奶、麵包、蔬菜和水果。我花了一百五十元。然後我回家做晚餐。",
+        "question": "作者花了多少錢？",
+        "options": [
+            "一百元",
+            "一百二十元",
+            "一百五十元",
+            "兩百元"
+        ],
+        "answer": 2,
+        "explanation": "文章明確說「我花了一百五十元」。"
+    },
+    {
+        "id": "bandA-r-151",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "小美的家離學校很近，只要走十分鐘就到了。她每天早上七點半起床，七點五十五分出門。她通常在八點十分到達學校。",
+        "question": "小美每天什麼時候到達學校？",
+        "options": [
+            "八點",
+            "八點十分",
+            "八點二十分",
+            "八點半"
+        ],
+        "answer": 1,
+        "explanation": "文章說「她通常在八點十分到達學校」。"
+    },
+    {
+        "id": "bandA-r-152",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我有一隻貓。牠的名字叫小白。小白很聰明，也很可愛。我們每天一起玩。我很喜歡小白。",
+        "question": "小白是什麼？",
+        "options": [
+            "狗",
+            "兔子",
+            "貓",
+            "鳥"
+        ],
+        "answer": 2,
+        "explanation": "文章的第一句說「我有一隻貓」，貓的名字是小白。"
+    },
+    {
+        "id": "bandA-r-153",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "圖書館每天上午九點開門，下午五點關門。週末也開放。如果你有借書卡，可以免費借書。",
+        "question": "圖書館什麼時候開門？",
+        "options": [
+            "上午八點",
+            "上午九點",
+            "上午十點",
+            "下午一點"
+        ],
+        "answer": 1,
+        "explanation": "文章明確說「圖書館每天上午九點開門」。"
+    },
+    {
+        "id": "bandA-r-154",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "王先生是一個醫生。他在醫院工作。他的工作很忙，但他很喜歡。他常常幫助別人。他是一個很好的人。",
+        "question": "王先生在哪裡工作？",
+        "options": [
+            "學校",
+            "銀行",
+            "醫院",
+            "警察局"
+        ],
+        "answer": 2,
+        "explanation": "文章說「他在醫院工作」。"
+    },
+    {
+        "id": "bandA-r-155",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我很喜歡吃中餐。特別是喜歡吃米飯、炒菜和湯。我媽媽做的中餐很好吃。我每週至少吃三次。",
+        "question": "作者每週吃多少次中餐？",
+        "options": [
+            "一次",
+            "兩次",
+            "三次",
+            "四次"
+        ],
+        "answer": 2,
+        "explanation": "文章說「我每週至少吃三次」，所以答案是三次。"
+    },
+    {
+        "id": "bandA-r-156",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "學校要舉行運動會。所有學生都要參加。比賽包括跑步、跳繩、籃球和排球。比賽在下個星期五舉行。",
+        "question": "運動會包括哪些比賽？",
+        "options": [
+            "跑步和籃球",
+            "跑步、跳繩、籃球和排球",
+            "只有籃球",
+            "只有排球"
+        ],
+        "answer": 1,
+        "explanation": "文章明確列出「比賽包括跑步、跳繩、籃球和排球」。"
+    },
+    {
+        "id": "bandA-r-157",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "今年冬天很冷。氣溫常常在零度以下。下了很多雪。很多人都喜歡在雪裡玩。",
+        "question": "今年冬天的天氣怎樣？",
+        "options": [
+            "很暖和",
+            "很冷",
+            "下雨",
+            "晴朗"
+        ],
+        "answer": 1,
+        "explanation": "文章開頭說「今年冬天很冷」。"
+    },
+    {
+        "id": "bandA-r-158",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的弟弟今年五歲。他很調皮，但很可愛。他喜歡玩玩具和看卡通。有時他會很煩人，但我還是很喜歡他。",
+        "question": "弟弟多大？",
+        "options": [
+            "三歲",
+            "四歲",
+            "五歲",
+            "六歲"
+        ],
+        "answer": 2,
+        "explanation": "文章說「我的弟弟今年五歲」。"
+    },
+    {
+        "id": "bandA-r-159",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "這個新手機有很多功能。可以拍照、錄影、聽音樂和玩遊戲。螢幕很大，很清楚。價格雖然有點貴，但質量很好。",
+        "question": "這個手機不能做什麼？",
+        "options": [
+            "拍照",
+            "錄影",
+            "聽音樂",
+            "開車"
+        ],
+        "answer": 3,
+        "explanation": "文章提到了拍照、錄影和聽音樂，但沒有提到開車功能。"
+    },
+    {
+        "id": "bandA-r-160",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我每天早上六點起床。然後我洗臉、刷牙和換衣服。七點吃早餐。七點半我出門去上班。",
+        "question": "作者什麼時候出門？",
+        "options": [
+            "六點半",
+            "七點",
+            "七點半",
+            "八點"
+        ],
+        "answer": 2,
+        "explanation": "文章說「七點半我出門去上班」。"
+    },
+    {
+        "id": "bandA-r-161",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "小李喜歡看電影。他幾乎每個週末都去電影院。他最喜歡看動作片和喜劇。他覺得電影很有趣。",
+        "question": "小李最喜歡看什麼類型的電影？",
+        "options": [
+            "恐怖片",
+            "動作片和喜劇",
+            "悲劇",
+            "紀錄片"
+        ],
+        "answer": 1,
+        "explanation": "文章說「他最喜歡看動作片和喜劇」。"
+    },
+    {
+        "id": "bandA-r-162",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "我們學校有一個大圖書館。那裡有超過一萬本書。還有很多電腦給學生使用。很多學生喜歡在圖書館讀書。",
+        "question": "圖書館裡有多少本書？",
+        "options": [
+            "一千本",
+            "五千本",
+            "超過一萬本",
+            "十本"
+        ],
+        "answer": 2,
+        "explanation": "文章明確說「那裡有超過一萬本書」。"
+    },
+    {
+        "id": "bandA-r-163",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "這家店賣衣服、鞋子和帽子。東西都很便宜。品質也很好。我常常在這裡買衣服。",
+        "question": "這家店賣什麼？",
+        "options": [
+            "只有衣服",
+            "衣服、鞋子和帽子",
+            "只有鞋子",
+            "只有帽子"
+        ],
+        "answer": 1,
+        "explanation": "文章開頭說「這家店賣衣服、鞋子和帽子」。"
+    },
+    {
+        "id": "bandA-r-164",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的最好朋友叫小王。我們從小學就認識了。我們有很多共同的愛好。我們常常一起做功課和玩遊戲。",
+        "question": "作者和小王什麼時候認識的？",
+        "options": [
+            "中學",
+            "大學",
+            "小學",
+            "工作後"
+        ],
+        "answer": 2,
+        "explanation": "文章說「我們從小學就認識了」。"
+    },
+    {
+        "id": "bandA-r-165",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "明天是我的生日。我會邀請我的朋友來我家。我媽媽會做一個蛋糕。我們會一起唱歌、吃蛋糕和打遊戲。",
+        "question": "作者的朋友會做什麼？",
+        "options": [
+            "做蛋糕",
+            "唱歌、吃蛋糕和打遊戲",
+            "只有唱歌",
+            "去買蛋糕"
+        ],
+        "answer": 1,
+        "explanation": "文章說「我們會一起唱歌、吃蛋糕和打遊戲」。"
+    },
+    {
+        "id": "bandA-r-166",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我喜歡運動。我會游泳、騎腳踏車和打羽毛球。運動對身體很好。我幾乎每天都運動。",
+        "question": "作者會做什麼運動？",
+        "options": [
+            "只有游泳",
+            "游泳、騎腳踏車和打羽毛球",
+            "只有騎腳踏車",
+            "只有打羽毛球"
+        ],
+        "answer": 1,
+        "explanation": "文章列出「我會游泳、騎腳踏車和打羽毛球」。"
+    },
+    {
+        "id": "bandA-r-167",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的房子在山邊。周圍有很多樹和花。空氣很新鮮。景色很美。我很喜歡在這裡住。",
+        "question": "房子周圍有什麼？",
+        "options": [
+            "大樓",
+            "樹和花",
+            "街道",
+            "超市"
+        ],
+        "answer": 1,
+        "explanation": "文章說「周圍有很多樹和花」。"
+    },
+    {
+        "id": "bandA-r-168",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "學校食堂每天都有不同的菜。今天有炒飯、湯和水果。菜都很新鮮，也很好吃。很多學生都在食堂吃飯。",
+        "question": "食堂今天有什麼？",
+        "options": [
+            "只有炒飯",
+            "炒飯、湯和水果",
+            "只有湯",
+            "只有水果"
+        ],
+        "answer": 1,
+        "explanation": "文章說「今天有炒飯、湯和水果」。"
+    },
+    {
+        "id": "bandA-r-169",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "公車車票很便宜。一次只要五塊錢。公車很快，也很舒服。我經常坐公車去上班。",
+        "question": "公車票多少錢？",
+        "options": [
+            "一塊錢",
+            "三塊錢",
+            "五塊錢",
+            "十塊錢"
+        ],
+        "answer": 2,
+        "explanation": "文章說「一次只要五塊錢」。"
+    },
+    {
+        "id": "bandA-r-170",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我買了一本新書。這本書很有趣。故事很好，寫得也很好。我現在在讀第三章。",
+        "question": "作者現在在讀第幾章？",
+        "options": [
+            "第一章",
+            "第二章",
+            "第三章",
+            "第四章"
+        ],
+        "answer": 2,
+        "explanation": "文章說「我現在在讀第三章」。"
+    },
+    {
+        "id": "bandA-r-171",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "這家醫院有最好的醫生和護士。他們對病人很好。醫院的設備也很新。很多人都來這家醫院看病。",
+        "question": "醫院為什麼受歡迎？",
+        "options": [
+            "位置好",
+            "有好的醫生、護士和新設備",
+            "只是近",
+            "便宜"
+        ],
+        "answer": 1,
+        "explanation": "文章提到了「最好的醫生和護士」和「最新的設備」作為受歡迎的原因。"
+    },
+    {
+        "id": "bandA-r-172",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的妹妹喜歡唱歌。她有一個很好聽的聲音。她在學校的合唱隊裡唱歌。她想成為一個歌手。",
+        "question": "妹妹想做什麼工作？",
+        "options": [
+            "老師",
+            "醫生",
+            "歌手",
+            "護士"
+        ],
+        "answer": 2,
+        "explanation": "文章說「她想成為一個歌手」。"
+    },
+    {
+        "id": "bandA-r-173",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我家附近有一個公園。公園很大，很乾淨。有很多人在那裡運動。我常常在公園裡散步。",
+        "question": "公園怎樣？",
+        "options": [
+            "很小",
+            "很髒",
+            "很大、很乾淨",
+            "沒有人"
+        ],
+        "answer": 2,
+        "explanation": "文章說「公園很大，很乾淨」。"
+    },
+    {
+        "id": "bandA-r-174",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "這個新電腦很快。可以做很多事情。可以工作、打遊戲、看電影。畫面也很清楚。是一個好電腦。",
+        "question": "電腦的優點是什麼？",
+        "options": [
+            "很便宜",
+            "很快、可以做很多事、畫面清楚",
+            "很重",
+            "不好用"
+        ],
+        "answer": 1,
+        "explanation": "文章提到電腦「很快」、「可以做很多事情」和「畫面也很清楚」。"
+    },
+    {
+        "id": "bandA-r-175",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我喜歡吃水果。蘋果、香蕉和葡萄都很好吃。水果對身體很好。我每天吃水果。",
+        "question": "作者喜歡吃什麼水果？",
+        "options": [
+            "蘋果",
+            "香蕉和葡萄",
+            "蘋果、香蕉和葡萄",
+            "檸檬"
+        ],
+        "answer": 2,
+        "explanation": "文章列出「蘋果、香蕉和葡萄都很好吃」。"
+    },
+    {
+        "id": "bandA-r-176",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "這間餐廳靠近我的家。走路只要五分鐘。食物很好吃，價格也很便宜。我常常在那裡吃飯。",
+        "question": "餐廳離家有多遠？",
+        "options": [
+            "走路一分鐘",
+            "走路五分鐘",
+            "走路十分鐘",
+            "走路二十分鐘"
+        ],
+        "answer": 1,
+        "explanation": "文章說「走路只要五分鐘」。"
+    },
+    {
+        "id": "bandA-r-177",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "我的工作是翻譯。我要把英文翻成中文。有時候很難。但是很有趣。我喜歡我的工作。",
+        "question": "作者的工作是什麼？",
+        "options": [
+            "老師",
+            "翻譯",
+            "醫生",
+            "設計師"
+        ],
+        "answer": 1,
+        "explanation": "文章第一句說「我的工作是翻譯」。"
+    },
+    {
+        "id": "bandA-r-178",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的鄰居很友善。她叫王媽媽。她常常幫我們。她有一個兒子和一個女兒。我們是好朋友。",
+        "question": "王媽媽有幾個小孩？",
+        "options": [
+            "沒有",
+            "一個",
+            "兩個",
+            "三個"
+        ],
+        "answer": 2,
+        "explanation": "文章說「她有一個兒子和一個女兒」，一共兩個。"
+    },
+    {
+        "id": "bandA-r-179",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "這個城市有很多地方值得去看。有古老的廟、美麗的公園和有趣的博物館。遊客們都很喜歡來這裡。",
+        "question": "這個城市有什麼吸引遊客？",
+        "options": [
+            "只有廟",
+            "只有公園",
+            "古廟、公園和博物館",
+            "只有博物館"
+        ],
+        "answer": 2,
+        "explanation": "文章列出「古老的廟、美麗的公園和有趣的博物館」。"
+    },
+    {
+        "id": "bandA-r-180",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的爺爺已經七十歲了。他退休了。現在他喜歡養花和種菜。他說這樣可以放鬆。",
+        "question": "爺爺現在做什麼？",
+        "options": [
+            "工作",
+            "養花和種菜",
+            "看電視",
+            "睡覺"
+        ],
+        "answer": 1,
+        "explanation": "文章說「現在他喜歡養花和種菜」。"
+    },
+    {
+        "id": "bandA-r-181",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我去年去了日本旅遊。我去了東京和京都。風景很美。人們也很友善。我很想再去。",
+        "question": "作者去過日本的哪些地方？",
+        "options": [
+            "只有東京",
+            "只有京都",
+            "東京和京都",
+            "大阪"
+        ],
+        "answer": 2,
+        "explanation": "文章說「我去了東京和京都」。"
+    },
+    {
+        "id": "bandA-r-182",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "這個新商場很大。有超市、服裝店和餐廳。還有電影院。環境也很舒服。很多人都喜歡來這裡。",
+        "question": "商場有什麼設施？",
+        "options": [
+            "只有超市",
+            "只有服裝店",
+            "超市、服裝店、餐廳和電影院",
+            "只有餐廳"
+        ],
+        "answer": 2,
+        "explanation": "文章列出「有超市、服裝店和餐廳。還有電影院」。"
+    },
+    {
+        "id": "bandA-r-183",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的奶奶八十歲了。她每天早上散步。她很健康，很活力。她還會做飯。做的菜很好吃。",
+        "question": "奶奶每天做什麼？",
+        "options": [
+            "睡覺",
+            "散步",
+            "看電視",
+            "坐著"
+        ],
+        "answer": 1,
+        "explanation": "文章說「她每天早上散步」。"
+    },
+    {
+        "id": "bandA-r-184",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "我參加了一個英文課程。課程是每週三和周五下午。老師很好，很有耐心。我學到了很多。",
+        "question": "英文課程什麼時候上？",
+        "options": [
+            "週一",
+            "週三和週五",
+            "週二",
+            "週六"
+        ],
+        "answer": 1,
+        "explanation": "文章說「課程是每週三和周五下午」。"
+    },
+    {
+        "id": "bandA-r-185",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的學校有一個足球隊。隊員都很厲害。他們常常比賽。上個月他們贏了很多場。我是粉絲。",
+        "question": "作者對足球隊怎樣？",
+        "options": [
+            "不喜歡",
+            "不知道",
+            "是粉絲",
+            "害怕"
+        ],
+        "answer": 2,
+        "explanation": "文章結尾說「我是粉絲」，表示喜歡。"
+    },
+    {
+        "id": "bandA-r-186",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的叔叔是一個廚師。他在一家很有名的餐廳工作。他做的菜特別好吃。很多人都喜歡吃他的菜。",
+        "question": "叔叔的工作是什麼？",
+        "options": [
+            "老師",
+            "醫生",
+            "廚師",
+            "警察"
+        ],
+        "answer": 2,
+        "explanation": "文章第一句說「我的叔叔是一個廚師」。"
+    },
+    {
+        "id": "bandA-r-187",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "這個新手機應用程式很好用。可以查天氣、看新聞、聽音樂。還可以聊天。免費下載。",
+        "question": "這個應用程式不能做什麼？",
+        "options": [
+            "查天氣",
+            "看新聞",
+            "買東西",
+            "聽音樂"
+        ],
+        "answer": 2,
+        "explanation": "文章提到查天氣、看新聞、聽音樂和聊天，但沒有提到買東西。"
+    },
+    {
+        "id": "bandA-r-188",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的堂姐現在在美國讀大學。她很聰明，也很努力。她喜歡學習。她想成為一個科學家。",
+        "question": "堂姐想做什麼？",
+        "options": [
+            "老師",
+            "科學家",
+            "律師",
+            "設計師"
+        ],
+        "answer": 1,
+        "explanation": "文章說「她想成為一個科學家」。"
+    },
+    {
+        "id": "bandA-r-189",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我喜歡畫畫。我常常畫風景和人物。畫畫讓我放鬆。我已經畫了很多畫。",
+        "question": "作者喜歡畫什麼？",
+        "options": [
+            "只有風景",
+            "只有人物",
+            "風景和人物",
+            "建築"
+        ],
+        "answer": 2,
+        "explanation": "文章說「我常常畫風景和人物」。"
+    },
+    {
+        "id": "bandA-r-190",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "我的家鄉在鄉村。那裡很安靜，環境很好。有山有水。空氣很新鮮。我很想回去。",
+        "question": "家鄉的特點是什麼？",
+        "options": [
+            "很吵",
+            "很擁擠",
+            "很安靜、環境好、有山有水",
+            "很污染"
+        ],
+        "answer": 2,
+        "explanation": "文章提到「很安靜，環境很好。有山有水。空氣很新鮮」。"
+    },
+    {
+        "id": "bandA-r-191",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我買了一個新背包。它很輕，也很堅固。有很多口袋。顏色是藍色。我很喜歡。",
+        "question": "背包是什麼顏色？",
+        "options": [
+            "黑色",
+            "紅色",
+            "藍色",
+            "綠色"
+        ],
+        "answer": 2,
+        "explanation": "文章說「顏色是藍色」。"
+    },
+    {
+        "id": "bandA-r-192",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "我的表哥是一個籃球運動員。他很高，也很強壯。他常常練習。他想進入職業球隊。",
+        "question": "表哥的夢想是什麼？",
+        "options": [
+            "當老師",
+            "進入職業球隊",
+            "當醫生",
+            "開公司"
+        ],
+        "answer": 1,
+        "explanation": "文章說「他想進入職業球隊」。"
+    },
+    {
+        "id": "bandA-r-193",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的朋友小林是一個很好的聽眾。他總是聽我說話。他給我出主意。他是一個真正的朋友。",
+        "question": "小林是什麼樣的人？",
+        "options": [
+            "喜歡說話",
+            "好的聽眾、給建議",
+            "不愛社交",
+            "冷淡"
+        ],
+        "answer": 1,
+        "explanation": "文章說「他總是聽我說話。他給我出主意。他是一個真正的朋友」。"
+    },
+    {
+        "id": "bandA-r-194",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "這個保險計劃很不錯。可以保護你的健康。有各種選擇。價格合理。很多人都買了。",
+        "question": "這個保險計劃的優點是什麼？",
+        "options": [
+            "很貴",
+            "選擇少",
+            "保護健康、有選擇、價格合理",
+            "不好用"
+        ],
+        "answer": 2,
+        "explanation": "文章提到「可以保護你的健康。有各種選擇。價格合理」。"
+    },
+    {
+        "id": "bandA-r-195",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我最近買了一個新床墊。它很舒服。我睡得很好。白天也不累。推薦給朋友們。",
+        "question": "新床墊怎樣？",
+        "options": [
+            "很硬",
+            "很軟，很舒服",
+            "太小",
+            "太大"
+        ],
+        "answer": 1,
+        "explanation": "文章說「它很舒服」並且「我睡得很好」。"
+    },
+    {
+        "id": "bandA-r-196",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "我參加了一個烹飪班。學了怎樣做中餐。老師教得很好。現在我會做很多菜。很有用。",
+        "question": "烹飪班教什麼菜？",
+        "options": [
+            "西餐",
+            "中餐",
+            "日餐",
+            "義大利菜"
+        ],
+        "answer": 1,
+        "explanation": "文章說「學了怎樣做中餐」。"
+    },
+    {
+        "id": "bandA-r-197",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的表妹住在鄉村。她喜歡動物。她有兩隻狗、三隻貓和一些雞。她很照顧它們。",
+        "question": "表妹有什麼動物？",
+        "options": [
+            "只有狗",
+            "只有貓",
+            "狗、貓和雞",
+            "只有雞"
+        ],
+        "answer": 2,
+        "explanation": "文章說「她有兩隻狗、三隻貓和一些雞」。"
+    },
+    {
+        "id": "bandA-r-198",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "這個度假村很美。有海灘、游泳池和運動設施。員工很友善。食物也很好。值得去。",
+        "question": "度假村有什麼設施？",
+        "options": [
+            "只有海灘",
+            "只有游泳池",
+            "海灘、游泳池和運動設施",
+            "只有飯廳"
+        ],
+        "answer": 2,
+        "explanation": "文章列出「有海灘、游泳池和運動設施」。"
+    },
+    {
+        "id": "bandA-r-199",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的爸爸喜歡看足球。他幾乎每場比賽都看。他最喜歡的球隊是藍隊。他常常和朋友一起看。",
+        "question": "爸爸最喜歡的球隊是哪一隊？",
+        "options": [
+            "紅隊",
+            "藍隊",
+            "黃隊",
+            "綠隊"
+        ],
+        "answer": 1,
+        "explanation": "文章說「他最喜歡的球隊是藍隊」。"
+    },
+    {
+        "id": "bandA-r-200",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我喜歡在咖啡廳讀書。環境很舒服。咖啡也很好喝。沒有噪音。我常常在那裡待一個下午。",
+        "question": "咖啡廳為什麼適合讀書？",
+        "options": [
+            "有很多人",
+            "很吵",
+            "環境舒服、沒有噪音",
+            "沒有座位"
+        ],
+        "answer": 2,
+        "explanation": "文章說「環境很舒服」和「沒有噪音」。"
+    },
+    {
+        "id": "bandA-r-201",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "我的房間牆上有我的集合。有不同的文化和時代的東西。每一件都有故事。我很喜歡。",
+        "question": "房間牆上的東西來自哪裡？",
+        "options": [
+            "只有本地",
+            "只有一個國家",
+            "不同的文化和時代",
+            "只有現代"
+        ],
+        "answer": 2,
+        "explanation": "文章說「有不同的文化和時代的東西」。"
+    },
+    {
+        "id": "bandA-r-202",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的同學李明很善良。他常常幫助別人。他會幫我做功課。他也會幫朋友解決問題。大家都喜歡他。",
+        "question": "李明是個怎樣的人？",
+        "options": [
+            "自私",
+            "懶散",
+            "善良、樂於助人",
+            "不友善"
+        ],
+        "answer": 2,
+        "explanation": "文章強調「他常常幫助別人」和「大家都喜歡他」。"
+    },
+    {
+        "id": "bandA-r-203",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 2,
+        "passage": "這個線上課程很實用。可以自己選擇上課時間。老師很專業。教材很齊全。適合忙碌的人。",
+        "question": "線上課程適合誰？",
+        "options": [
+            "有很多時間的人",
+            "學生",
+            "忙碌的人",
+            "老年人"
+        ],
+        "answer": 2,
+        "explanation": "文章結尾說「適合忙碌的人」。"
+    },
+    {
+        "id": "bandA-r-204",
+        "type": "reading",
+        "category": "閱讀理解",
+        "difficulty": 1,
+        "passage": "我的媽媽是一個很勤勞的人。她每天都很忙。要做飯、打掃、洗衣服。但她從不抱怨。我很敬佩她。",
+        "question": "媽媽做什麼工作？",
+        "options": [
+            "做飯",
+            "打掃和洗衣服",
+            "做飯、打掃和洗衣服",
+            "只有工作"
+        ],
+        "answer": 2,
+        "explanation": "文章列出「要做飯、打掃、洗衣服」作為媽媽的日常工作。"
     }
+
   ],
   "bandB": [
     {
