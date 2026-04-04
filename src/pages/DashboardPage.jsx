@@ -12,11 +12,17 @@ import {
   Star,
   Calendar,
   AlertCircle,
+  Zap,
+  BookMarked,
+  RotateCcw,
+  BarChart3,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getLevelInfo, achievementsList } from '../data/achievements';
+import { getSRStats } from '../data/spacedRepetition';
+import { getWordbook } from '../data/vocabularyData';
 
 const DashboardPage = () => {
   const { user, userStats } = useAuth();
@@ -24,6 +30,9 @@ const DashboardPage = () => {
   const [animateCounters, setAnimateCounters] = useState(false);
   const [readingWrongCount, setReadingWrongCount] = useState(0);
   const [listeningWrongCount, setListeningWrongCount] = useState(0);
+  const [srStats, setSrStats] = useState(null);
+  const [dailyDone, setDailyDone] = useState(false);
+  const [wordbookCount, setWordbookCount] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimateCounters(true), 300);
@@ -37,6 +46,16 @@ const DashboardPage = () => {
       setReadingWrongCount(rw.length);
       setListeningWrongCount(lw.length);
     } catch {}
+    // SR stats
+    setSrStats(getSRStats());
+    // Daily challenge status
+    try {
+      const saved = JSON.parse(localStorage.getItem('tocfl_daily_challenge') || '{}');
+      const today = new Date().toDateString();
+      setDailyDone(saved.date === today && saved.completed);
+    } catch {}
+    // Wordbook count
+    setWordbookCount(getWordbook().length);
   }, []);
 
   if (!user || !userStats) {
@@ -304,6 +323,92 @@ const DashboardPage = () => {
                 <Award className="w-8 h-8 text-pink-300" />
               </motion.div>
             </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Study Hub - SR / Daily / Flashcard / Analytics */}
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Smart Review */}
+          <motion.div variants={itemVariants} whileHover={{ y: -5 }}>
+            <Link to="/reading" className="block">
+              <div className={`rounded-xl p-5 border shadow-lg text-center ${
+                srStats && srStats.dueNow > 0
+                  ? 'bg-gradient-to-br from-red-800 to-red-900 border-red-600'
+                  : 'bg-gradient-to-br from-slate-700 to-slate-800 border-slate-600'
+              }`}>
+                <RotateCcw className={`w-7 h-7 mx-auto mb-2 ${
+                  srStats && srStats.dueNow > 0 ? 'text-red-300' : 'text-slate-400'
+                }`} />
+                <p className="text-white font-bold text-sm mb-1">
+                  {lang === 'id' ? 'Review Cerdas' : '智慧複習'}
+                </p>
+                <p className={`text-xs ${srStats && srStats.dueNow > 0 ? 'text-red-200' : 'text-slate-400'}`}>
+                  {srStats ? (srStats.dueNow > 0 ? `${srStats.dueNow} ${lang === 'id' ? 'perlu diulang' : '題待複習'}` : (lang === 'id' ? 'Semua selesai!' : '全部完成！')) : '...'}
+                </p>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Daily Challenge */}
+          <motion.div variants={itemVariants} whileHover={{ y: -5 }}>
+            <Link to="/daily" className="block">
+              <div className={`rounded-xl p-5 border shadow-lg text-center ${
+                dailyDone
+                  ? 'bg-gradient-to-br from-emerald-800 to-emerald-900 border-emerald-600'
+                  : 'bg-gradient-to-br from-amber-800 to-amber-900 border-amber-600'
+              }`}>
+                <Zap className={`w-7 h-7 mx-auto mb-2 ${
+                  dailyDone ? 'text-emerald-300' : 'text-amber-300'
+                }`} />
+                <p className="text-white font-bold text-sm mb-1">
+                  {lang === 'id' ? 'Tantangan Harian' : '每日挑戰'}
+                </p>
+                <p className={`text-xs ${dailyDone ? 'text-emerald-200' : 'text-amber-200'}`}>
+                  {dailyDone
+                    ? (lang === 'id' ? 'Selesai hari ini!' : '今日已完成！')
+                    : (lang === 'id' ? 'Belum dikerjakan' : '今日尚未挑戰')
+                  }
+                </p>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Flashcard / Wordbook */}
+          <motion.div variants={itemVariants} whileHover={{ y: -5 }}>
+            <Link to="/flashcard" className="block">
+              <div className="bg-gradient-to-br from-indigo-800 to-indigo-900 rounded-xl p-5 border border-indigo-600 shadow-lg text-center">
+                <BookMarked className="w-7 h-7 mx-auto mb-2 text-indigo-300" />
+                <p className="text-white font-bold text-sm mb-1">
+                  {lang === 'id' ? 'Kartu Kata' : '詞彙閃卡'}
+                </p>
+                <p className="text-indigo-200 text-xs">
+                  {wordbookCount > 0
+                    ? `${wordbookCount} ${lang === 'id' ? 'kata disimpan' : '個生詞'}`
+                    : (lang === 'id' ? 'Mulai belajar' : '開始學習')
+                  }
+                </p>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Analytics */}
+          <motion.div variants={itemVariants} whileHover={{ y: -5 }}>
+            <Link to="/analytics" className="block">
+              <div className="bg-gradient-to-br from-cyan-800 to-cyan-900 rounded-xl p-5 border border-cyan-600 shadow-lg text-center">
+                <BarChart3 className="w-7 h-7 mx-auto mb-2 text-cyan-300" />
+                <p className="text-white font-bold text-sm mb-1">
+                  {lang === 'id' ? 'Analisis Belajar' : '學習分析'}
+                </p>
+                <p className="text-cyan-200 text-xs">
+                  {lang === 'id' ? 'Lihat kemajuan' : '查看進度'}
+                </p>
+              </div>
+            </Link>
           </motion.div>
         </motion.div>
 

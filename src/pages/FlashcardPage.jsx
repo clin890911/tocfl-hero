@@ -158,7 +158,7 @@ export default function FlashcardPage() {
           </motion.div>
 
           {/* Band Selection */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {/* Band A */}
             <motion.button
               onClick={() => setBand('bandA')}
@@ -195,6 +195,26 @@ export default function FlashcardPage() {
               <div className="flex items-center gap-2">
                 <span className="px-2 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-medium">
                   {vocabularyData.bandB.length} {t('flashcard.words')}
+                </span>
+              </div>
+            </motion.button>
+
+            {/* Band C */}
+            <motion.button
+              onClick={() => setBand('bandC')}
+              className="bg-white rounded-2xl p-6 shadow-lg border-2 border-emerald-200 hover:border-emerald-400 transition-all text-left"
+              whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}
+              whileTap={{ scale: 0.98 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25 }}
+            >
+              <span className="text-3xl mb-3 block">🏅</span>
+              <h3 className="text-xl font-bold text-gray-800 mb-1">Band C</h3>
+              <p className="text-sm text-gray-500 mb-3">{lang === 'id' ? 'Tingkat Lanjutan' : '流利精通級'}</p>
+              <div className="flex items-center gap-2">
+                <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium">
+                  {vocabularyData.bandC.length} {t('flashcard.words')}
                 </span>
               </div>
             </motion.button>

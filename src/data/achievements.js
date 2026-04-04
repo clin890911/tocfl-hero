@@ -1,14 +1,16 @@
+import { Target, Award, Star, Flame, BookOpen, Trophy, Headphones, Medal, Crown, Zap } from 'lucide-react';
+
 export const achievementsList = [
-  { id: 'first_quiz', name: '初試身手', description: '完成第一次測驗', icon: '🎯', xpReward: 20 },
-  { id: 'perfect_score', name: '滿分達人', description: '測驗中全部答對', icon: '💯', xpReward: 50 },
-  { id: 'xp_master', name: '經驗大師', description: '單次測驗獲得50XP以上', icon: '⭐', xpReward: 30 },
-  { id: 'week_streak', name: '連續七天', description: '連續登入練習7天', icon: '🔥', xpReward: 100 },
-  { id: 'quiz_10', name: '學習達人', description: '完成10次測驗', icon: '📚', xpReward: 50 },
-  { id: 'quiz_50', name: '華語英雄', description: '完成50次測驗', icon: '🏆', xpReward: 200 },
-  { id: 'reading_master', name: '閱讀高手', description: '閱讀測驗正確率達90%以上', icon: '📖', xpReward: 80 },
-  { id: 'listening_master', name: '聽力高手', description: '聽力測驗正確率達90%以上', icon: '🎧', xpReward: 80 },
-  { id: 'band_a_complete', name: 'Band A 完成', description: '完成所有入門基礎級題目', icon: '🥉', xpReward: 150 },
-  { id: 'band_b_complete', name: 'Band B 完成', description: '完成所有進階高階級題目', icon: '🥇', xpReward: 300 },
+  { id: 'first_quiz', name: '初試身手', description: '完成第一次測驗', icon: Target, xpReward: 20 },
+  { id: 'perfect_score', name: '滿分達人', description: '測驗中全部答對', icon: Award, xpReward: 50 },
+  { id: 'xp_master', name: '經驗大師', description: '單次測驗獲得50XP以上', icon: Star, xpReward: 30 },
+  { id: 'week_streak', name: '連續七天', description: '連續登入練習7天', icon: Flame, xpReward: 100 },
+  { id: 'quiz_10', name: '學習達人', description: '完成10次測驗', icon: BookOpen, xpReward: 50 },
+  { id: 'quiz_50', name: '華語英雄', description: '完成50次測驗', icon: Trophy, xpReward: 200 },
+  { id: 'reading_master', name: '閱讀高手', description: '閱讀測驗正確率達90%以上', icon: BookOpen, xpReward: 80 },
+  { id: 'listening_master', name: '聽力高手', description: '聽力測驗正確率達90%以上', icon: Headphones, xpReward: 80 },
+  { id: 'band_a_complete', name: 'Band A 完成', description: '完成所有入門基礎級題目', icon: Medal, xpReward: 150 },
+  { id: 'band_b_complete', name: 'Band B 完成', description: '完成所有進階高階級題目', icon: Crown, xpReward: 300 },
 ];
 
 export const getLevelInfo = (totalXP) => {

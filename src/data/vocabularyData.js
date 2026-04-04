@@ -73,6 +73,34 @@ export const vocabularyData = {
     // ===== 場所 =====
     { id: 'v-a-049', chinese: '醫院', pinyin: 'yī yuàn', indonesian: 'Rumah sakit', category: '場所', example: '他在醫院工作。', exampleId: 'Dia bekerja di rumah sakit.' },
     { id: 'v-a-050', chinese: '超市', pinyin: 'chāo shì', indonesian: 'Supermarket', category: '場所', example: '我去超市買東西。', exampleId: 'Saya pergi ke supermarket beli barang.' },
+    { id: 'v-a-051', chinese: '銀行', pinyin: 'yín háng', indonesian: 'Bank', category: '場所', example: '我要去銀行換錢。', exampleId: 'Saya mau pergi ke bank tukar uang.' },
+    { id: 'v-a-052', chinese: '郵局', pinyin: 'yóu jú', indonesian: 'Kantor pos', category: '場所', example: '我去郵局寄信。', exampleId: 'Saya pergi ke kantor pos mengirim surat.' },
+
+    // ===== 天氣 =====
+    { id: 'v-a-053', chinese: '天氣', pinyin: 'tiān qì', indonesian: 'Cuaca', category: '天氣', example: '今天天氣怎麼樣？', exampleId: 'Bagaimana cuaca hari ini?' },
+    { id: 'v-a-054', chinese: '熱', pinyin: 'rè', indonesian: 'Panas', category: '天氣', example: '夏天很熱。', exampleId: 'Musim panas sangat panas.' },
+    { id: 'v-a-055', chinese: '冷', pinyin: 'lěng', indonesian: 'Dingin', category: '天氣', example: '冬天很冷。', exampleId: 'Musim dingin sangat dingin.' },
+    { id: 'v-a-056', chinese: '下雨', pinyin: 'xià yǔ', indonesian: 'Hujan', category: '天氣', example: '外面下雨了。', exampleId: 'Di luar sedang hujan.' },
+    { id: 'v-a-057', chinese: '晴天', pinyin: 'qíng tiān', indonesian: 'Cerah', category: '天氣', example: '今天是晴天。', exampleId: 'Hari ini cerah.' },
+
+    // ===== 身體 =====
+    { id: 'v-a-058', chinese: '頭', pinyin: 'tóu', indonesian: 'Kepala', category: '身體', example: '我頭很痛。', exampleId: 'Kepala saya sangat sakit.' },
+    { id: 'v-a-059', chinese: '手', pinyin: 'shǒu', indonesian: 'Tangan', category: '身體', example: '請洗手。', exampleId: 'Tolong cuci tangan.' },
+    { id: 'v-a-060', chinese: '腳', pinyin: 'jiǎo', indonesian: 'Kaki', category: '身體', example: '我的腳很痠。', exampleId: 'Kaki saya sangat pegal.' },
+    { id: 'v-a-061', chinese: '眼睛', pinyin: 'yǎn jīng', indonesian: 'Mata', category: '身體', example: '她的眼睛很大。', exampleId: 'Matanya sangat besar.' },
+    { id: 'v-a-062', chinese: '嘴巴', pinyin: 'zuǐ ba', indonesian: 'Mulut', category: '身體', example: '嘴巴不舒服。', exampleId: 'Mulut tidak nyaman.' },
+
+    // ===== 顏色 =====
+    { id: 'v-a-063', chinese: '紅色', pinyin: 'hóng sè', indonesian: 'Merah', category: '顏色', example: '她穿紅色的衣服。', exampleId: 'Dia memakai baju merah.' },
+    { id: 'v-a-064', chinese: '藍色', pinyin: 'lán sè', indonesian: 'Biru', category: '顏色', example: '天空是藍色的。', exampleId: 'Langit berwarna biru.' },
+    { id: 'v-a-065', chinese: '白色', pinyin: 'bái sè', indonesian: 'Putih', category: '顏色', example: '我喜歡白色。', exampleId: 'Saya suka warna putih.' },
+    { id: 'v-a-066', chinese: '黑色', pinyin: 'hēi sè', indonesian: 'Hitam', category: '顏色', example: '他的頭髮是黑色的。', exampleId: 'Rambutnya berwarna hitam.' },
+    { id: 'v-a-067', chinese: '綠色', pinyin: 'lǜ sè', indonesian: 'Hijau', category: '顏色', example: '樹葉是綠色的。', exampleId: 'Daun berwarna hijau.' },
+
+    // ===== 數量 =====
+    { id: 'v-a-068', chinese: '一', pinyin: 'yī', indonesian: 'Satu', category: '數字', example: '我要一杯咖啡。', exampleId: 'Saya mau satu gelas kopi.' },
+    { id: 'v-a-069', chinese: '百', pinyin: 'bǎi', indonesian: 'Seratus', category: '數字', example: '這本書一百塊。', exampleId: 'Buku ini seratus dolar.' },
+    { id: 'v-a-070', chinese: '千', pinyin: 'qiān', indonesian: 'Seribu', category: '數字', example: '一千塊太貴了。', exampleId: 'Seribu dolar terlalu mahal.' },
   ],
   bandB: [
     // ===== 社交與情感 =====
@@ -123,6 +151,141 @@ export const vocabularyData = {
     { id: 'v-b-033', chinese: '討論', pinyin: 'tǎo lùn', indonesian: 'Diskusi', category: '學術', example: '我們來討論這個問題。', exampleId: 'Ayo kita diskusikan masalah ini.' },
     { id: 'v-b-034', chinese: '內容', pinyin: 'nèi róng', indonesian: 'Isi / Konten', category: '學術', example: '這本書的內容很豐富。', exampleId: 'Isi buku ini sangat kaya.' },
     { id: 'v-b-035', chinese: '原因', pinyin: 'yuán yīn', indonesian: 'Alasan / Penyebab', category: '學術', example: '你知道原因嗎？', exampleId: 'Apakah kamu tahu alasannya?' },
+
+    // ===== 旅遊 =====
+    { id: 'v-b-036', chinese: '旅遊', pinyin: 'lǚ yóu', indonesian: 'Berwisata', category: '旅遊', example: '我喜歡去國外旅遊。', exampleId: 'Saya suka berwisata ke luar negeri.' },
+    { id: 'v-b-037', chinese: '護照', pinyin: 'hù zhào', indonesian: 'Paspor', category: '旅遊', example: '出國要帶護照。', exampleId: 'Pergi ke luar negeri harus bawa paspor.' },
+    { id: 'v-b-038', chinese: '簽證', pinyin: 'qiān zhèng', indonesian: 'Visa', category: '旅遊', example: '我需要申請簽證。', exampleId: 'Saya perlu mengajukan visa.' },
+    { id: 'v-b-039', chinese: '行李', pinyin: 'xíng lǐ', indonesian: 'Bagasi', category: '旅遊', example: '我的行李太重了。', exampleId: 'Bagasi saya terlalu berat.' },
+    { id: 'v-b-040', chinese: '訂房', pinyin: 'dìng fáng', indonesian: 'Pesan kamar', category: '旅遊', example: '我已經訂好房間了。', exampleId: 'Saya sudah memesan kamar.' },
+
+    // ===== 購物 =====
+    { id: 'v-b-041', chinese: '打折', pinyin: 'dǎ zhé', indonesian: 'Diskon', category: '購物', example: '這件衣服打八折。', exampleId: 'Baju ini diskon 20%.' },
+    { id: 'v-b-042', chinese: '便宜', pinyin: 'pián yi', indonesian: 'Murah', category: '購物', example: '這個很便宜。', exampleId: 'Ini sangat murah.' },
+    { id: 'v-b-043', chinese: '貴', pinyin: 'guì', indonesian: 'Mahal', category: '購物', example: '這個太貴了。', exampleId: 'Ini terlalu mahal.' },
+    { id: 'v-b-044', chinese: '付錢', pinyin: 'fù qián', indonesian: 'Membayar', category: '購物', example: '可以用信用卡付錢嗎？', exampleId: 'Bisa bayar pakai kartu kredit?' },
+    { id: 'v-b-045', chinese: '退貨', pinyin: 'tuì huò', indonesian: 'Mengembalikan barang', category: '購物', example: '這件衣服可以退貨嗎？', exampleId: 'Baju ini bisa dikembalikan?' },
+
+    // ===== 醫療 =====
+    { id: 'v-b-046', chinese: '看病', pinyin: 'kàn bìng', indonesian: 'Periksa ke dokter', category: '醫療', example: '我要去看病。', exampleId: 'Saya mau pergi ke dokter.' },
+    { id: 'v-b-047', chinese: '藥', pinyin: 'yào', indonesian: 'Obat', category: '醫療', example: '你吃藥了嗎？', exampleId: 'Sudah minum obat belum?' },
+    { id: 'v-b-048', chinese: '發燒', pinyin: 'fā shāo', indonesian: 'Demam', category: '醫療', example: '我發燒了。', exampleId: 'Saya demam.' },
+    { id: 'v-b-049', chinese: '過敏', pinyin: 'guò mǐn', indonesian: 'Alergi', category: '醫療', example: '我對花生過敏。', exampleId: 'Saya alergi kacang tanah.' },
+    { id: 'v-b-050', chinese: '保險', pinyin: 'bǎo xiǎn', indonesian: 'Asuransi', category: '醫療', example: '你有買健康保險嗎？', exampleId: 'Apakah kamu punya asuransi kesehatan?' },
+
+    // ===== 節慶 =====
+    { id: 'v-b-051', chinese: '春節', pinyin: 'chūn jié', indonesian: 'Tahun Baru Imlek', category: '節慶', example: '春節是臺灣最重要的節日。', exampleId: 'Imlek adalah hari raya terpenting di Taiwan.' },
+    { id: 'v-b-052', chinese: '中秋節', pinyin: 'zhōng qiū jié', indonesian: 'Festival Pertengahan Musim Gugur', category: '節慶', example: '中秋節要吃月餅。', exampleId: 'Saat Festival Musim Gugur harus makan kue bulan.' },
+    { id: 'v-b-053', chinese: '紅包', pinyin: 'hóng bāo', indonesian: 'Angpao', category: '節慶', example: '過年小孩會收到紅包。', exampleId: 'Saat Imlek anak-anak menerima angpao.' },
+    { id: 'v-b-054', chinese: '放假', pinyin: 'fàng jià', indonesian: 'Libur', category: '節慶', example: '明天放假一天。', exampleId: 'Besok libur satu hari.' },
+    { id: 'v-b-055', chinese: '慶祝', pinyin: 'qìng zhù', indonesian: 'Merayakan', category: '節慶', example: '我們一起慶祝生日。', exampleId: 'Kita merayakan ulang tahun bersama.' },
+
+    // ===== 交際用語 =====
+    { id: 'v-b-056', chinese: '介紹', pinyin: 'jiè shào', indonesian: 'Memperkenalkan', category: '交際', example: '讓我介紹一下自己。', exampleId: 'Izinkan saya memperkenalkan diri.' },
+    { id: 'v-b-057', chinese: '聯絡', pinyin: 'lián luò', indonesian: 'Menghubungi', category: '交際', example: '我們保持聯絡。', exampleId: 'Kita tetap berhubungan.' },
+    { id: 'v-b-058', chinese: '邀請', pinyin: 'yāo qǐng', indonesian: 'Mengundang', category: '交際', example: '我邀請你來我家。', exampleId: 'Saya mengundangmu ke rumah saya.' },
+    { id: 'v-b-059', chinese: '拒絕', pinyin: 'jù jué', indonesian: 'Menolak', category: '交際', example: '他拒絕了我的邀請。', exampleId: 'Dia menolak undangan saya.' },
+    { id: 'v-b-060', chinese: '同意', pinyin: 'tóng yì', indonesian: 'Setuju', category: '交際', example: '我同意你的看法。', exampleId: 'Saya setuju dengan pendapatmu.' },
+
+    // ===== 住房 =====
+    { id: 'v-b-061', chinese: '租房', pinyin: 'zū fáng', indonesian: 'Menyewa rumah', category: '住房', example: '我在找房子租。', exampleId: 'Saya sedang mencari rumah untuk disewa.' },
+    { id: 'v-b-062', chinese: '房租', pinyin: 'fáng zū', indonesian: 'Uang sewa', category: '住房', example: '這裡的房租很貴。', exampleId: 'Uang sewa di sini sangat mahal.' },
+    { id: 'v-b-063', chinese: '搬家', pinyin: 'bān jiā', indonesian: 'Pindah rumah', category: '住房', example: '下個月我要搬家。', exampleId: 'Bulan depan saya mau pindah rumah.' },
+    { id: 'v-b-064', chinese: '鄰居', pinyin: 'lín jū', indonesian: 'Tetangga', category: '住房', example: '我的鄰居很友善。', exampleId: 'Tetangga saya sangat ramah.' },
+    { id: 'v-b-065', chinese: '公寓', pinyin: 'gōng yù', indonesian: 'Apartemen', category: '住房', example: '我住在公寓裡。', exampleId: 'Saya tinggal di apartemen.' },
+  ],
+  bandC: [
+    // ===== 成語與慣用語 =====
+    { id: 'v-c-001', chinese: '一舉兩得', pinyin: 'yī jǔ liǎng dé', indonesian: 'Sekali dayung dua pulau terlampaui', category: '成語', example: '學中文又能交朋友，一舉兩得。', exampleId: 'Belajar bahasa Mandarin sekaligus berteman, sekali dayung dua pulau terlampaui.' },
+    { id: 'v-c-002', chinese: '半途而廢', pinyin: 'bàn tú ér fèi', indonesian: 'Menyerah di tengah jalan', category: '成語', example: '做事不能半途而廢。', exampleId: 'Melakukan sesuatu tidak boleh menyerah di tengah jalan.' },
+    { id: 'v-c-003', chinese: '入境隨俗', pinyin: 'rù jìng suí sú', indonesian: 'Di mana bumi dipijak, di situ langit dijunjung', category: '成語', example: '到了新的國家要入境隨俗。', exampleId: 'Di negara baru harus mengikuti adat setempat.' },
+    { id: 'v-c-004', chinese: '自言自語', pinyin: 'zì yán zì yǔ', indonesian: 'Berbicara sendiri', category: '成語', example: '他常常自言自語。', exampleId: 'Dia sering berbicara sendiri.' },
+    { id: 'v-c-005', chinese: '異口同聲', pinyin: 'yì kǒu tóng shēng', indonesian: 'Serentak / Satu suara', category: '成語', example: '大家異口同聲地說好。', exampleId: 'Semua orang serentak berkata setuju.' },
+    { id: 'v-c-006', chinese: '脫穎而出', pinyin: 'tuō yǐng ér chū', indonesian: 'Menonjol / Unggul', category: '成語', example: '她在比賽中脫穎而出。', exampleId: 'Dia menonjol dalam kompetisi.' },
+    { id: 'v-c-007', chinese: '愛不釋手', pinyin: 'ài bú shì shǒu', indonesian: 'Sangat menyukai hingga tak mau melepaskan', category: '成語', example: '這本書讓我愛不釋手。', exampleId: 'Buku ini membuat saya sangat menyukainya.' },
+    { id: 'v-c-008', chinese: '刻骨銘心', pinyin: 'kè gǔ míng xīn', indonesian: 'Sangat berkesan / Tak terlupakan', category: '成語', example: '那次旅行讓我刻骨銘心。', exampleId: 'Perjalanan itu sangat berkesan bagi saya.' },
+
+    // ===== 政治經濟 =====
+    { id: 'v-c-009', chinese: '政策', pinyin: 'zhèng cè', indonesian: 'Kebijakan', category: '政經', example: '政府推出新的教育政策。', exampleId: 'Pemerintah meluncurkan kebijakan pendidikan baru.' },
+    { id: 'v-c-010', chinese: '經濟', pinyin: 'jīng jì', indonesian: 'Ekonomi', category: '政經', example: '臺灣的經濟發展很快。', exampleId: 'Perkembangan ekonomi Taiwan sangat cepat.' },
+    { id: 'v-c-011', chinese: '投資', pinyin: 'tóu zī', indonesian: 'Investasi', category: '政經', example: '他投資了一家公司。', exampleId: 'Dia berinvestasi di sebuah perusahaan.' },
+    { id: 'v-c-012', chinese: '競爭', pinyin: 'jìng zhēng', indonesian: 'Persaingan', category: '政經', example: '市場競爭很激烈。', exampleId: 'Persaingan pasar sangat ketat.' },
+    { id: 'v-c-013', chinese: '趨勢', pinyin: 'qū shì', indonesian: 'Tren', category: '政經', example: '這是未來的趨勢。', exampleId: 'Ini adalah tren masa depan.' },
+    { id: 'v-c-014', chinese: '消費', pinyin: 'xiāo fèi', indonesian: 'Konsumsi', category: '政經', example: '年輕人的消費習慣改變了。', exampleId: 'Kebiasaan konsumsi anak muda telah berubah.' },
+    { id: 'v-c-015', chinese: '國際', pinyin: 'guó jì', indonesian: 'Internasional', category: '政經', example: '這是一個國際會議。', exampleId: 'Ini adalah konferensi internasional.' },
+
+    // ===== 抽象概念 =====
+    { id: 'v-c-016', chinese: '價值', pinyin: 'jià zhí', indonesian: 'Nilai', category: '抽象', example: '教育有很大的價值。', exampleId: 'Pendidikan memiliki nilai yang besar.' },
+    { id: 'v-c-017', chinese: '觀念', pinyin: 'guān niàn', indonesian: 'Konsep / Pandangan', category: '抽象', example: '每個人的觀念不同。', exampleId: 'Pandangan setiap orang berbeda.' },
+    { id: 'v-c-018', chinese: '態度', pinyin: 'tài dù', indonesian: 'Sikap', category: '抽象', example: '態度決定一切。', exampleId: 'Sikap menentukan segalanya.' },
+    { id: 'v-c-019', chinese: '道理', pinyin: 'dào lǐ', indonesian: 'Kebenaran / Logika', category: '抽象', example: '你說的很有道理。', exampleId: 'Yang kamu katakan sangat masuk akal.' },
+    { id: 'v-c-020', chinese: '立場', pinyin: 'lì chǎng', indonesian: 'Posisi / Pendirian', category: '抽象', example: '我能理解你的立場。', exampleId: 'Saya bisa memahami pendirianmu.' },
+    { id: 'v-c-021', chinese: '現象', pinyin: 'xiàn xiàng', indonesian: 'Fenomena', category: '抽象', example: '這是一種社會現象。', exampleId: 'Ini adalah sebuah fenomena sosial.' },
+    { id: 'v-c-022', chinese: '程度', pinyin: 'chéng dù', indonesian: 'Tingkat / Derajat', category: '抽象', example: '你的中文程度很好。', exampleId: 'Tingkat bahasa Mandarinmu sangat bagus.' },
+
+    // ===== 學術寫作 =====
+    { id: 'v-c-023', chinese: '論文', pinyin: 'lùn wén', indonesian: 'Tesis / Makalah', category: '學術寫作', example: '我在寫畢業論文。', exampleId: 'Saya sedang menulis tesis kelulusan.' },
+    { id: 'v-c-024', chinese: '摘要', pinyin: 'zhāi yào', indonesian: 'Abstrak / Ringkasan', category: '學術寫作', example: '請先看這篇文章的摘要。', exampleId: 'Tolong baca abstrak artikel ini dulu.' },
+    { id: 'v-c-025', chinese: '結論', pinyin: 'jié lùn', indonesian: 'Kesimpulan', category: '學術寫作', example: '你的結論是什麼？', exampleId: 'Apa kesimpulanmu?' },
+    { id: 'v-c-026', chinese: '分析', pinyin: 'fēn xī', indonesian: 'Analisis', category: '學術寫作', example: '我們需要分析這個問題。', exampleId: 'Kita perlu menganalisis masalah ini.' },
+    { id: 'v-c-027', chinese: '證據', pinyin: 'zhèng jù', indonesian: 'Bukti', category: '學術寫作', example: '你有什麼證據？', exampleId: 'Apa buktimu?' },
+    { id: 'v-c-028', chinese: '假設', pinyin: 'jiǎ shè', indonesian: 'Hipotesis / Asumsi', category: '學術寫作', example: '這個假設需要驗證。', exampleId: 'Hipotesis ini perlu diverifikasi.' },
+    { id: 'v-c-029', chinese: '引用', pinyin: 'yǐn yòng', indonesian: 'Mengutip', category: '學術寫作', example: '寫論文要引用參考資料。', exampleId: 'Menulis makalah harus mengutip referensi.' },
+
+    // ===== 媒體傳播 =====
+    { id: 'v-c-030', chinese: '媒體', pinyin: 'méi tǐ', indonesian: 'Media', category: '媒體', example: '媒體報導了這個消息。', exampleId: 'Media memberitakan berita ini.' },
+    { id: 'v-c-031', chinese: '輿論', pinyin: 'yú lùn', indonesian: 'Opini publik', category: '媒體', example: '輿論對他很不利。', exampleId: 'Opini publik sangat tidak menguntungkan baginya.' },
+    { id: 'v-c-032', chinese: '報導', pinyin: 'bào dǎo', indonesian: 'Laporan berita', category: '媒體', example: '新聞報導說明天會下雨。', exampleId: 'Berita melaporkan besok akan hujan.' },
+    { id: 'v-c-033', chinese: '廣告', pinyin: 'guǎng gào', indonesian: 'Iklan', category: '媒體', example: '這個廣告很有創意。', exampleId: 'Iklan ini sangat kreatif.' },
+    { id: 'v-c-034', chinese: '社群', pinyin: 'shè qún', indonesian: 'Komunitas / Media sosial', category: '媒體', example: '社群媒體改變了我們的生活。', exampleId: 'Media sosial telah mengubah kehidupan kita.' },
+
+    // ===== 法律 =====
+    { id: 'v-c-035', chinese: '法律', pinyin: 'fǎ lǜ', indonesian: 'Hukum', category: '法律', example: '每個人都要遵守法律。', exampleId: 'Setiap orang harus mematuhi hukum.' },
+    { id: 'v-c-036', chinese: '權利', pinyin: 'quán lì', indonesian: 'Hak', category: '法律', example: '每個人都有受教育的權利。', exampleId: 'Setiap orang berhak mendapat pendidikan.' },
+    { id: 'v-c-037', chinese: '義務', pinyin: 'yì wù', indonesian: 'Kewajiban', category: '法律', example: '納稅是公民的義務。', exampleId: 'Membayar pajak adalah kewajiban warga negara.' },
+    { id: 'v-c-038', chinese: '合約', pinyin: 'hé yuē', indonesian: 'Kontrak', category: '法律', example: '請你簽這份合約。', exampleId: 'Tolong tandatangani kontrak ini.' },
+    { id: 'v-c-039', chinese: '規定', pinyin: 'guī dìng', indonesian: 'Peraturan', category: '法律', example: '學校有很多規定。', exampleId: 'Sekolah punya banyak peraturan.' },
+
+    // ===== 心理情緒 =====
+    { id: 'v-c-040', chinese: '焦慮', pinyin: 'jiāo lǜ', indonesian: 'Cemas', category: '心理', example: '考試前我很焦慮。', exampleId: 'Saya sangat cemas sebelum ujian.' },
+    { id: 'v-c-041', chinese: '沮喪', pinyin: 'jǔ sàng', indonesian: 'Depresi / Murung', category: '心理', example: '失敗後他很沮喪。', exampleId: 'Setelah gagal dia sangat murung.' },
+    { id: 'v-c-042', chinese: '滿足', pinyin: 'mǎn zú', indonesian: 'Puas', category: '心理', example: '我對現在的生活很滿足。', exampleId: 'Saya sangat puas dengan kehidupan sekarang.' },
+    { id: 'v-c-043', chinese: '自信', pinyin: 'zì xìn', indonesian: 'Percaya diri', category: '心理', example: '她是一個很有自信的人。', exampleId: 'Dia adalah orang yang sangat percaya diri.' },
+    { id: 'v-c-044', chinese: '勇氣', pinyin: 'yǒng qì', indonesian: 'Keberanian', category: '心理', example: '你要有勇氣面對困難。', exampleId: 'Kamu harus punya keberanian menghadapi kesulitan.' },
+    { id: 'v-c-045', chinese: '耐心', pinyin: 'nài xīn', indonesian: 'Kesabaran', category: '心理', example: '學語言需要耐心。', exampleId: 'Belajar bahasa butuh kesabaran.' },
+
+    // ===== 自然科學 =====
+    { id: 'v-c-046', chinese: '實驗', pinyin: 'shí yàn', indonesian: 'Eksperimen', category: '科學', example: '我們做了一個實驗。', exampleId: 'Kami melakukan sebuah eksperimen.' },
+    { id: 'v-c-047', chinese: '理論', pinyin: 'lǐ lùn', indonesian: 'Teori', category: '科學', example: '這個理論還需要證明。', exampleId: 'Teori ini masih perlu dibuktikan.' },
+    { id: 'v-c-048', chinese: '數據', pinyin: 'shù jù', indonesian: 'Data', category: '科學', example: '我們需要更多的數據。', exampleId: 'Kita membutuhkan lebih banyak data.' },
+    { id: 'v-c-049', chinese: '技術', pinyin: 'jì shù', indonesian: 'Teknologi / Teknik', category: '科學', example: '新技術發展很快。', exampleId: 'Teknologi baru berkembang sangat cepat.' },
+    { id: 'v-c-050', chinese: '方法', pinyin: 'fāng fǎ', indonesian: 'Metode / Cara', category: '科學', example: '這個方法很有效。', exampleId: 'Metode ini sangat efektif.' },
+
+    // ===== 社會議題 =====
+    { id: 'v-c-051', chinese: '平等', pinyin: 'píng děng', indonesian: 'Kesetaraan', category: '社會', example: '男女應該平等。', exampleId: 'Pria dan wanita harus setara.' },
+    { id: 'v-c-052', chinese: '歧視', pinyin: 'qí shì', indonesian: 'Diskriminasi', category: '社會', example: '我們不應該歧視別人。', exampleId: 'Kita tidak boleh mendiskriminasi orang lain.' },
+    { id: 'v-c-053', chinese: '志工', pinyin: 'zhì gōng', indonesian: 'Relawan', category: '社會', example: '他是一名志工。', exampleId: 'Dia adalah seorang relawan.' },
+    { id: 'v-c-054', chinese: '公益', pinyin: 'gōng yì', indonesian: 'Kepentingan publik', category: '社會', example: '這是一個公益活動。', exampleId: 'Ini adalah kegiatan sosial.' },
+    { id: 'v-c-055', chinese: '人口', pinyin: 'rén kǒu', indonesian: 'Populasi', category: '社會', example: '臺灣的人口大約兩千三百萬。', exampleId: 'Populasi Taiwan sekitar 23 juta.' },
+
+    // ===== 臺灣文化 =====
+    { id: 'v-c-056', chinese: '夜市', pinyin: 'yè shì', indonesian: 'Pasar malam', category: '臺灣', example: '臺灣的夜市很有名。', exampleId: 'Pasar malam Taiwan sangat terkenal.' },
+    { id: 'v-c-057', chinese: '珍珠奶茶', pinyin: 'zhēn zhū nǎi chá', indonesian: 'Bubble tea', category: '臺灣', example: '珍珠奶茶是臺灣最有名的飲料。', exampleId: 'Bubble tea adalah minuman paling terkenal di Taiwan.' },
+    { id: 'v-c-058', chinese: '捷運', pinyin: 'jié yùn', indonesian: 'MRT', category: '臺灣', example: '臺北的捷運很方便。', exampleId: 'MRT Taipei sangat nyaman.' },
+    { id: 'v-c-059', chinese: '悠遊卡', pinyin: 'yōu yóu kǎ', indonesian: 'Kartu EasyCard', category: '臺灣', example: '搭捷運可以用悠遊卡。', exampleId: 'Naik MRT bisa pakai kartu EasyCard.' },
+    { id: 'v-c-060', chinese: '小籠包', pinyin: 'xiǎo lóng bāo', indonesian: 'Xiao long bao (dimsum kukus)', category: '臺灣', example: '鼎泰豐的小籠包很有名。', exampleId: 'Xiao long bao Din Tai Fung sangat terkenal.' },
+    { id: 'v-c-061', chinese: '廟', pinyin: 'miào', indonesian: 'Kuil', category: '臺灣', example: '臺灣有很多廟。', exampleId: 'Taiwan punya banyak kuil.' },
+    { id: 'v-c-062', chinese: '臺語', pinyin: 'tái yǔ', indonesian: 'Bahasa Hokkien Taiwan', category: '臺灣', example: '有些老人只會說臺語。', exampleId: 'Beberapa orang tua hanya bisa berbicara bahasa Hokkien.' },
+
+    // ===== 進階動詞 =====
+    { id: 'v-c-063', chinese: '克服', pinyin: 'kè fú', indonesian: 'Mengatasi', category: '進階動詞', example: '你要克服這個困難。', exampleId: 'Kamu harus mengatasi kesulitan ini.' },
+    { id: 'v-c-064', chinese: '適應', pinyin: 'shì yìng', indonesian: 'Beradaptasi', category: '進階動詞', example: '我已經適應了臺灣的生活。', exampleId: 'Saya sudah beradaptasi dengan kehidupan di Taiwan.' },
+    { id: 'v-c-065', chinese: '溝通', pinyin: 'gōu tōng', indonesian: 'Berkomunikasi', category: '進階動詞', example: '溝通是很重要的。', exampleId: 'Komunikasi sangat penting.' },
+    { id: 'v-c-066', chinese: '挑戰', pinyin: 'tiǎo zhàn', indonesian: 'Tantangan', category: '進階動詞', example: '學中文是一個挑戰。', exampleId: 'Belajar bahasa Mandarin adalah sebuah tantangan.' },
+    { id: 'v-c-067', chinese: '堅持', pinyin: 'jiān chí', indonesian: 'Bertahan / Konsisten', category: '進階動詞', example: '只要堅持就會成功。', exampleId: 'Asal bertahan pasti akan berhasil.' },
+    { id: 'v-c-068', chinese: '犧牲', pinyin: 'xī shēng', indonesian: 'Berkorban', category: '進階動詞', example: '父母為孩子犧牲了很多。', exampleId: 'Orang tua berkorban banyak untuk anak-anak.' },
+    { id: 'v-c-069', chinese: '反省', pinyin: 'fǎn xǐng', indonesian: 'Introspeksi', category: '進階動詞', example: '我們應該時常反省自己。', exampleId: 'Kita harus sering introspeksi diri.' },
+    { id: 'v-c-070', chinese: '貢獻', pinyin: 'gòng xiàn', indonesian: 'Kontribusi', category: '進階動詞', example: '他對社會有很大的貢獻。', exampleId: 'Dia memiliki kontribusi besar terhadap masyarakat.' },
   ],
 };
 

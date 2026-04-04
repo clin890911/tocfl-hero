@@ -21,6 +21,8 @@ import { useAuth } from '../contexts/AuthContext';
 import { useGame } from '../contexts/GameContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { readingQuestions } from '../data/readingQuestions';
+import { addToSR, reviewItem } from '../data/spacedRepetition';
+import { logStudySession } from './AnalyticsPage';
 
 const ReadingPage = () => {
   const { user } = useAuth();
@@ -86,11 +88,6 @@ const ReadingPage = () => {
       }
     });
     return result;
-  };
-
-  const getExplanation = (q) => {
-    if (lang === 'id' && q.explanationId) return q.explanationId;
-    return q.explanation;
   };
 
   // Wrong answer bank (localStorage)
@@ -219,6 +216,16 @@ const ReadingPage = () => {
     answers.forEach((a, idx) => {
       if (a.isCorrect) removeFromWrongBank(questions[idx].id);
     });
+    // SR integration: add wrong answers and review correct ones
+    answers.forEach((a, idx) => {
+      const qId = questions[idx].id;
+      if (!a.isCorrect) {
+        addToSR(qId, 'reading');
+        reviewItem(qId, 1); // answered wrong
+      } else {
+        reviewItem(qId, 4); // answered correctly
+      }
+    });
     if (user) {
       await submitQuizResult({
         correct: correctCount,
@@ -228,6 +235,8 @@ const ReadingPage = () => {
         quizId: `reading-${selectedBand}-${Date.now()}`,
       });
     }
+    // Log study session for analytics
+    logStudySession('reading', correctCount, questions.length, selectedBand);
     setScreen('results');
   };
 

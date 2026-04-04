@@ -9,7 +9,8 @@ const translations = {
       logout: '登出',
       dashboard: '我的學習',
       flashcard: '詞彙卡',
-      daily: '每日挑戰'
+      daily: '每日挑戰',
+      analytics: '學習分析'
     },
     home: {
       title: 'TOCFL Hero 🏆',
@@ -193,7 +194,8 @@ const translations = {
       logout: 'Keluar',
       dashboard: 'Belajarku',
       flashcard: 'Kartu Kata',
-      daily: 'Tantangan'
+      daily: 'Tantangan',
+      analytics: 'Analisis'
     },
     home: {
       title: 'TOCFL Hero 🏆',

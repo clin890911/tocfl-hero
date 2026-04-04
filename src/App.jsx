@@ -10,6 +10,7 @@ import LeaderboardPage from './pages/LeaderboardPage';
 import DashboardPage from './pages/DashboardPage';
 import FlashcardPage from './pages/FlashcardPage';
 import DailyChallengePage from './pages/DailyChallengePage';
+import AnalyticsPage from './pages/AnalyticsPage';
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
@@ -38,6 +39,7 @@ function AppContent() {
           <Route path="/leaderboard" element={<LeaderboardPage />} />
           <Route path="/flashcard" element={<FlashcardPage />} />
           <Route path="/daily" element={<DailyChallengePage />} />
+          <Route path="/analytics" element={<AnalyticsPage />} />
           <Route path="/dashboard" element={
             <ProtectedRoute>
               <DashboardPage />

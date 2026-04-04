@@ -41,11 +41,33 @@ export function GameProvider({ children }) {
 
     // Check achievements
     const achievements = [...(userData.achievements || [])];
+    // First quiz
+    if (!achievements.includes('first_quiz')) achievements.push('first_quiz');
     if (xpGained >= 50 && !achievements.includes('xp_master')) achievements.push('xp_master');
     if (correct === total && !achievements.includes('perfect_score')) achievements.push('perfect_score');
     if ((userData.streak || 0) >= 7 && !achievements.includes('week_streak')) achievements.push('week_streak');
     if (completedQuizzes.length >= 10 && !achievements.includes('quiz_10')) achievements.push('quiz_10');
     if (completedQuizzes.length >= 50 && !achievements.includes('quiz_50')) achievements.push('quiz_50');
+    // Reading/Listening master: 90%+ accuracy with at least 20 total questions
+    const newReadingStats = type === 'reading'
+      ? { correct: currentStats.correct + correct, total: currentStats.total + total }
+      : (userData.readingStats || { correct: 0, total: 0 });
+    const newListeningStats = type === 'listening'
+      ? { correct: currentStats.correct + correct, total: currentStats.total + total }
+      : (userData.listeningStats || { correct: 0, total: 0 });
+    if (newReadingStats.total >= 20 && (newReadingStats.correct / newReadingStats.total) >= 0.9 && !achievements.includes('reading_master')) {
+      achievements.push('reading_master');
+    }
+    if (newListeningStats.total >= 20 && (newListeningStats.correct / newListeningStats.total) >= 0.9 && !achievements.includes('listening_master')) {
+      achievements.push('listening_master');
+    }
+    // Band completion: progress reaches 100%
+    if (progress >= 100 && band === 'A' && !achievements.includes('band_a_complete')) {
+      achievements.push('band_a_complete');
+    }
+    if (progress >= 100 && band === 'B' && !achievements.includes('band_b_complete')) {
+      achievements.push('band_b_complete');
+    }
 
     await updateUserData(user.uid, {
       totalXP: (userData.totalXP || 0) + xpGained,

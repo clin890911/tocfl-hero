@@ -8,6 +8,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { readingQuestions } from '../data/readingQuestions';
 import { listeningQuestions } from '../data/listeningQuestions';
 import { addToSR } from '../data/spacedRepetition';
+import { logStudySession } from './AnalyticsPage';
 
 const DAILY_KEY = 'tocfl_daily_challenge';
 const DAILY_RESULT_KEY = 'tocfl_daily_result';
@@ -151,6 +152,8 @@ export default function DailyChallengePage() {
         });
       }
 
+      // Log for analytics
+      logStudySession('daily', finalCorrect, questions.length, 'A');
       setPhase('result');
     }
   }, [currentIndex, questions, answers, selectedAnswer, currentQuestion, startTime, user, userData, submitQuizResult]);

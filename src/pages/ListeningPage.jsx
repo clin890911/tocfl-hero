@@ -24,6 +24,8 @@ import { useAuth } from '../contexts/AuthContext';
 import { useGame } from '../contexts/GameContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { listeningQuestions } from '../data/listeningQuestions';
+import { addToSR, reviewItem } from '../data/spacedRepetition';
+import { logStudySession } from './AnalyticsPage';
 
 const useAudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -299,6 +301,16 @@ const ListeningPage = () => {
     answers.forEach((a, idx) => {
       if (a.isCorrect) removeFromWrongBank(questions[idx].id);
     });
+    // SR integration: add wrong answers and review correct ones
+    answers.forEach((a, idx) => {
+      const qId = questions[idx].id;
+      if (!a.isCorrect) {
+        addToSR(qId, 'listening');
+        reviewItem(qId, 1); // answered wrong
+      } else {
+        reviewItem(qId, 4); // answered correctly
+      }
+    });
     if (user) {
       await submitQuizResult({
         correct: correctCount,
@@ -308,6 +320,8 @@ const ListeningPage = () => {
         quizId: `listening-${selectedBand}-${Date.now()}`,
       });
     }
+    // Log study session for analytics
+    logStudySession('listening', correctCount, questions.length, selectedBand);
     setScreen('results');
   };
 
