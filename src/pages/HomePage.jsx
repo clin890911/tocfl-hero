@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Flame, Zap, BookOpen, Headphones, Award, Users, MessageSquare, Sparkles, AlertCircle } from 'lucide-react';
+import {
+  Flame, Zap, BookOpen, Headphones, Award, Users, MessageSquare, Sparkles,
+  AlertCircle, Calendar, RotateCcw, BookMarked, ArrowRight, Target, Brain
+} from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getLevelInfo } from '../data/achievements';
 import { readingQuestions } from '../data/readingQuestions';
 import { listeningQuestions } from '../data/listeningQuestions';
+import { getSRStats, getStudyRecommendation } from '../data/spacedRepetition';
 
 export default function HomePage() {
   const { user, userData, loading, signInWithGoogle } = useAuth();
@@ -14,6 +18,9 @@ export default function HomePage() {
   const [levelInfo, setLevelInfo] = useState(null);
   const [readingWrongCount, setReadingWrongCount] = useState(0);
   const [listeningWrongCount, setListeningWrongCount] = useState(0);
+  const [srStats, setSrStats] = useState(null);
+  const [recommendations, setRecommendations] = useState([]);
+  const [dailyDone, setDailyDone] = useState(false);
 
   useEffect(() => {
     if (userData?.totalXP !== undefined) {
@@ -28,34 +35,37 @@ export default function HomePage() {
       setReadingWrongCount(rw.length);
       setListeningWrongCount(lw.length);
     } catch {}
-  }, []);
+
+    // SR 統計
+    const stats = getSRStats();
+    setSrStats(stats);
+
+    // 學習建議
+    const recs = getStudyRecommendation(userData);
+    setRecommendations(recs);
+
+    // 每日挑戰狀態
+    try {
+      const dailyResult = JSON.parse(localStorage.getItem('tocfl_daily_result') || '{}');
+      setDailyDone(dailyResult.date === new Date().toDateString());
+    } catch {}
+  }, [userData]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
     },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
   };
 
   const cardHoverVariants = {
-    hover: {
-      y: -8,
-      boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15)',
-      transition: { duration: 0.3 },
-    },
+    hover: { y: -8, boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15)', transition: { duration: 0.3 } },
   };
 
   const buttonHoverVariants = {
@@ -70,12 +80,10 @@ export default function HomePage() {
         className="relative overflow-hidden pt-16 pb-24"
         style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
       >
-        {/* Decorative circles */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full" style={{ opacity: 0.1, transform: 'translate(-50%, -50%)' }} />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full" style={{ opacity: 0.1, transform: 'translate(33%, 33%)' }} />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Main Title */}
           <div className="text-center mb-8">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>
               {t('home.title')}
@@ -88,13 +96,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* User Stats Bar (if logged in) */}
+          {/* User Stats Bar */}
           {user && userData && levelInfo && (
-            <div
-              className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-6 mb-12 border border-white/30"
-            >
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-6 mb-12 border border-white/30">
               <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
-                {/* XP Display */}
                 <div className="flex items-center gap-3">
                   <div className="bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full p-3">
                     <Zap className="w-6 h-6 text-white" />
@@ -104,8 +109,6 @@ export default function HomePage() {
                     <p className="text-2xl font-bold text-gray-800">{levelInfo.totalXP}</p>
                   </div>
                 </div>
-
-                {/* Streak Display */}
                 <div className="flex items-center gap-3">
                   <div className="bg-gradient-to-br from-red-400 to-orange-400 rounded-full p-3">
                     <Flame className="w-6 h-6 text-white" />
@@ -115,13 +118,8 @@ export default function HomePage() {
                     <p className="text-2xl font-bold text-gray-800">{userData.streak || 0}</p>
                   </div>
                 </div>
-
-                {/* Level Display */}
                 <div className="flex items-center gap-3">
-                  <div
-                    className="rounded-full p-3"
-                    style={{ backgroundColor: levelInfo.color + '33' }}
-                  >
+                  <div className="rounded-full p-3" style={{ backgroundColor: levelInfo.color + '33' }}>
                     <Award className="w-6 h-6" style={{ color: levelInfo.color }} />
                   </div>
                   <div>
@@ -129,8 +127,6 @@ export default function HomePage() {
                     <p className="text-2xl font-bold text-gray-800">{levelInfo.name}</p>
                   </div>
                 </div>
-
-                {/* Level Progress Bar */}
                 <div className="w-full sm:w-48">
                   <p className="text-sm text-gray-600 font-medium mb-2">{t('dashboard.levelProgress')}</p>
                   <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
@@ -150,34 +146,137 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Practice Mode Selection */}
+      {/* ========== NEW: Quick Actions / Smart Recommendations ========== */}
       <motion.section
-        className="py-20 px-4 sm:px-6 lg:px-8"
+        className="py-12 px-4 sm:px-6 lg:px-8 -mt-8 relative z-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <div className="max-w-6xl mx-auto">
-          <motion.h2
-            className="text-4xl font-bold text-center text-gray-800 mb-4"
-            variants={itemVariants}
-          >
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Daily Challenge */}
+            <motion.div variants={itemVariants}>
+              <Link to="/daily" className="block">
+                <motion.div
+                  className={`rounded-2xl p-5 shadow-lg border-2 transition-all h-full ${
+                    dailyDone
+                      ? 'bg-gray-50 border-gray-200'
+                      : 'bg-gradient-to-br from-amber-50 to-orange-50 border-amber-300 animate-pulse-slow'
+                  }`}
+                  whileHover={{ y: -4, boxShadow: '0 15px 30px rgba(0,0,0,0.1)' }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <Zap className={`w-5 h-5 ${dailyDone ? 'text-gray-400' : 'text-amber-500'}`} />
+                    <span className="font-bold text-gray-800 text-sm">{t('daily.title')}</span>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    {dailyDone ? t('daily.alreadyDone') : t('daily.todayReady')}
+                  </p>
+                  {!dailyDone && (
+                    <div className="mt-2 text-xs font-semibold text-amber-600 flex items-center gap-1">
+                      {t('daily.startNow')} <ArrowRight size={12} />
+                    </div>
+                  )}
+                </motion.div>
+              </Link>
+            </motion.div>
+
+            {/* Smart Review */}
+            <motion.div variants={itemVariants}>
+              <Link to="/reading" className="block">
+                <motion.div
+                  className={`rounded-2xl p-5 shadow-lg border-2 h-full ${
+                    srStats && srStats.dueNow > 0
+                      ? 'bg-gradient-to-br from-red-50 to-pink-50 border-red-300'
+                      : 'bg-white border-gray-200'
+                  }`}
+                  whileHover={{ y: -4, boxShadow: '0 15px 30px rgba(0,0,0,0.1)' }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <Brain className={`w-5 h-5 ${srStats && srStats.dueNow > 0 ? 'text-red-500' : 'text-gray-400'}`} />
+                    <span className="font-bold text-gray-800 text-sm">{t('home.smartReview')}</span>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    {srStats && srStats.dueNow > 0
+                      ? `${srStats.dueNow} ${t('home.dueReview')}`
+                      : t('home.allCaughtUp')
+                    }
+                  </p>
+                  {srStats && srStats.totalItems > 0 && (
+                    <div className="mt-2 text-xs text-gray-400">
+                      {t('home.totalInSR')}: {srStats.totalItems}
+                    </div>
+                  )}
+                </motion.div>
+              </Link>
+            </motion.div>
+
+            {/* Flashcards */}
+            <motion.div variants={itemVariants}>
+              <Link to="/flashcard" className="block">
+                <motion.div
+                  className="rounded-2xl p-5 shadow-lg border-2 bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200 h-full"
+                  whileHover={{ y: -4, boxShadow: '0 15px 30px rgba(0,0,0,0.1)' }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <BookMarked className="w-5 h-5 text-emerald-500" />
+                    <span className="font-bold text-gray-800 text-sm">{t('flashcard.title')}</span>
+                  </div>
+                  <p className="text-xs text-gray-500">{t('flashcard.quickDesc')}</p>
+                  <div className="mt-2 text-xs font-semibold text-emerald-600 flex items-center gap-1">
+                    {t('home.startPractice')} <ArrowRight size={12} />
+                  </div>
+                </motion.div>
+              </Link>
+            </motion.div>
+
+            {/* Wrong Bank Summary */}
+            <motion.div variants={itemVariants}>
+              <Link to="/reading" className="block">
+                <motion.div
+                  className={`rounded-2xl p-5 shadow-lg border-2 h-full ${
+                    readingWrongCount + listeningWrongCount > 0
+                      ? 'bg-gradient-to-br from-orange-50 to-yellow-50 border-orange-200'
+                      : 'bg-white border-gray-200'
+                  }`}
+                  whileHover={{ y: -4, boxShadow: '0 15px 30px rgba(0,0,0,0.1)' }}
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <RotateCcw className={`w-5 h-5 ${readingWrongCount + listeningWrongCount > 0 ? 'text-orange-500' : 'text-gray-400'}`} />
+                    <span className="font-bold text-gray-800 text-sm">{t('results.wrongBank')}</span>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    {readingWrongCount + listeningWrongCount > 0
+                      ? `📖 ${readingWrongCount} + 🎧 ${listeningWrongCount}`
+                      : t('results.noWrongQuestions')
+                    }
+                  </p>
+                </motion.div>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Practice Mode Selection */}
+      <motion.section
+        className="py-16 px-4 sm:px-6 lg:px-8"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 className="text-4xl font-bold text-center text-gray-800 mb-4" variants={itemVariants}>
             {t('home.chooseMode')}
           </motion.h2>
-          <motion.p
-            className="text-center text-gray-600 mb-12"
-            variants={itemVariants}
-          >
+          <motion.p className="text-center text-gray-600 mb-12" variants={itemVariants}>
             {t('home.loginToTrack')}
           </motion.p>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Reading Card */}
-            <motion.div
-              variants={itemVariants}
-              whileHover="hover"
-              className="group"
-            >
+            <motion.div variants={itemVariants} whileHover="hover" className="group">
               <Link to="/reading" className="block h-full">
                 <motion.div
                   className="h-full bg-white rounded-3xl shadow-lg p-8 border-2 border-blue-200 hover:border-blue-400 transition-colors cursor-pointer"
@@ -186,15 +285,10 @@ export default function HomePage() {
                   <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                     <BookOpen className="w-8 h-8 text-white" />
                   </div>
-
                   <h3 className="text-3xl font-bold text-gray-800 mb-3">
                     📖 {t('home.readingTest')}
                   </h3>
-
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {t('home.readingDesc')}
-                  </p>
-
+                  <p className="text-gray-600 mb-4 leading-relaxed">{t('home.readingDesc')}</p>
                   <div className="flex items-center gap-3 mb-4 text-sm">
                     <span className="px-2.5 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">
                       {readingQuestions.bandA.length + readingQuestions.bandB.length} {lang === 'id' ? 'soal resmi' : '道官方題目'}
@@ -203,12 +297,10 @@ export default function HomePage() {
                       Band A + B
                     </span>
                   </div>
-
                   <div className="flex items-center gap-2 text-blue-600 mb-4">
                     <Sparkles className="w-4 h-4" />
                     <span className="text-sm font-medium">{t('home.feature1Title')}</span>
                   </div>
-
                   {readingWrongCount > 0 && (
                     <div className="flex items-center gap-2 mb-4 px-3 py-2 bg-red-50 rounded-lg border border-red-200">
                       <AlertCircle className="w-4 h-4 text-red-500" />
@@ -217,7 +309,6 @@ export default function HomePage() {
                       </span>
                     </div>
                   )}
-
                   <motion.button
                     className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-3 rounded-xl hover:shadow-lg transition-shadow"
                     variants={buttonHoverVariants}
@@ -231,11 +322,7 @@ export default function HomePage() {
             </motion.div>
 
             {/* Listening Card */}
-            <motion.div
-              variants={itemVariants}
-              whileHover="hover"
-              className="group"
-            >
+            <motion.div variants={itemVariants} whileHover="hover" className="group">
               <Link to="/listening" className="block h-full">
                 <motion.div
                   className="h-full bg-white rounded-3xl shadow-lg p-8 border-2 border-purple-200 hover:border-purple-400 transition-colors cursor-pointer"
@@ -244,15 +331,10 @@ export default function HomePage() {
                   <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform">
                     <Headphones className="w-8 h-8 text-white" />
                   </div>
-
                   <h3 className="text-3xl font-bold text-gray-800 mb-3">
                     🎧 {t('home.listeningTest')}
                   </h3>
-
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {t('home.listeningDesc')}
-                  </p>
-
+                  <p className="text-gray-600 mb-4 leading-relaxed">{t('home.listeningDesc')}</p>
                   <div className="flex items-center gap-3 mb-4 text-sm">
                     <span className="px-2.5 py-1 bg-purple-100 text-purple-700 rounded-full font-medium">
                       {listeningQuestions.bandA.length + listeningQuestions.bandB.length} {lang === 'id' ? 'soal resmi' : '道官方題目'}
@@ -261,12 +343,10 @@ export default function HomePage() {
                       {lang === 'id' ? 'Audio MP3' : '含 MP3 音檔'}
                     </span>
                   </div>
-
                   <div className="flex items-center gap-2 text-purple-600 mb-4">
                     <Sparkles className="w-4 h-4" />
                     <span className="text-sm font-medium">{t('home.feature3Title')}</span>
                   </div>
-
                   {listeningWrongCount > 0 && (
                     <div className="flex items-center gap-2 mb-4 px-3 py-2 bg-red-50 rounded-lg border border-red-200">
                       <AlertCircle className="w-4 h-4 text-red-500" />
@@ -275,7 +355,6 @@ export default function HomePage() {
                       </span>
                     </div>
                   )}
-
                   <motion.button
                     className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white font-semibold py-3 rounded-xl hover:shadow-lg transition-shadow"
                     variants={buttonHoverVariants}
@@ -299,25 +378,16 @@ export default function HomePage() {
         animate="visible"
       >
         <div className="max-w-6xl mx-auto">
-          <motion.h2
-            className="text-4xl font-bold text-center text-gray-800 mb-4"
-            variants={itemVariants}
-          >
+          <motion.h2 className="text-4xl font-bold text-center text-gray-800 mb-4" variants={itemVariants}>
             {t('home.chooseLevel')}
           </motion.h2>
-          <motion.p
-            className="text-center text-gray-600 mb-12"
-            variants={itemVariants}
-          >
+          <motion.p className="text-center text-gray-600 mb-12" variants={itemVariants}>
             {t('quiz.selectDifficulty')}
           </motion.p>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Band A */}
-            <motion.div
-              className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border-2 border-amber-200"
-              variants={itemVariants}
-            >
+            <motion.div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border-2 border-amber-200" variants={itemVariants}>
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">🥉</span>
                 <div>
@@ -325,18 +395,12 @@ export default function HomePage() {
                   <p className="text-sm text-gray-600">{t('home.bandA')}</p>
                 </div>
               </div>
-
-              <p className="text-gray-700 mb-6">
-                {t('home.readingDesc')}
-              </p>
-
+              <p className="text-gray-700 mb-6">{t('home.readingDesc')}</p>
               {user && userData && (
                 <div className="mb-6">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm font-semibold text-gray-700">{t('dashboard.levelProgress')}</span>
-                    <span className="text-sm font-bold text-amber-600">
-                      {userData.bandAProgress || 0}%
-                    </span>
+                    <span className="text-sm font-bold text-amber-600">{userData.bandAProgress || 0}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                     <motion.div
@@ -348,7 +412,6 @@ export default function HomePage() {
                   </div>
                 </div>
               )}
-
               <motion.button
                 className="w-full bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold py-3 rounded-xl hover:shadow-lg transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
                 variants={buttonHoverVariants}
@@ -361,10 +424,7 @@ export default function HomePage() {
             </motion.div>
 
             {/* Band B */}
-            <motion.div
-              className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 border-2 border-indigo-200"
-              variants={itemVariants}
-            >
+            <motion.div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 border-2 border-indigo-200" variants={itemVariants}>
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">🥇</span>
                 <div>
@@ -372,18 +432,12 @@ export default function HomePage() {
                   <p className="text-sm text-gray-600">{t('home.bandB')}</p>
                 </div>
               </div>
-
-              <p className="text-gray-700 mb-6">
-                {t('home.listeningDesc')}
-              </p>
-
+              <p className="text-gray-700 mb-6">{t('home.listeningDesc')}</p>
               {user && userData && (
                 <div className="mb-6">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm font-semibold text-gray-700">{t('dashboard.levelProgress')}</span>
-                    <span className="text-sm font-bold text-indigo-600">
-                      {userData.bandBProgress || 0}%
-                    </span>
+                    <span className="text-sm font-bold text-indigo-600">{userData.bandBProgress || 0}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                     <motion.div
@@ -395,7 +449,6 @@ export default function HomePage() {
                   </div>
                 </div>
               )}
-
               <motion.button
                 className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold py-3 rounded-xl hover:shadow-lg transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
                 variants={buttonHoverVariants}
@@ -418,36 +471,27 @@ export default function HomePage() {
         animate="visible"
       >
         <div className="max-w-6xl mx-auto">
-          <motion.h2
-            className="text-4xl font-bold text-center text-gray-800 mb-12"
-            variants={itemVariants}
-          >
+          <motion.h2 className="text-4xl font-bold text-center text-gray-800 mb-12" variants={itemVariants}>
             {t('home.whyChoose')}
           </motion.h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Feature 1 */}
             <motion.div
               className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500 text-center hover:shadow-xl transition-shadow"
-              variants={itemVariants}
-              whileHover={{ y: -5 }}
+              variants={itemVariants} whileHover={{ y: -5 }}
             >
               <div className="flex justify-center mb-4">
                 <div className="bg-gradient-to-br from-blue-400 to-blue-600 rounded-full p-4">
-                  <Sparkles className="w-6 h-6 text-white" />
+                  <Brain className="w-6 h-6 text-white" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{t('home.feature2Title')}</h3>
-              <p className="text-gray-600 text-sm">
-                {t('home.feature2Desc')}
-              </p>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">{t('home.feature5Title')}</h3>
+              <p className="text-gray-600 text-sm">{t('home.feature5Desc')}</p>
             </motion.div>
 
-            {/* Feature 2 */}
             <motion.div
               className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-purple-500 text-center hover:shadow-xl transition-shadow"
-              variants={itemVariants}
-              whileHover={{ y: -5 }}
+              variants={itemVariants} whileHover={{ y: -5 }}
             >
               <div className="flex justify-center mb-4">
                 <div className="bg-gradient-to-br from-purple-400 to-purple-600 rounded-full p-4">
@@ -455,49 +499,39 @@ export default function HomePage() {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">{t('home.feature1Title')}</h3>
-              <p className="text-gray-600 text-sm">
-                {t('home.feature1Desc')}
-              </p>
+              <p className="text-gray-600 text-sm">{t('home.feature1Desc')}</p>
             </motion.div>
 
-            {/* Feature 3 */}
             <motion.div
               className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-orange-500 text-center hover:shadow-xl transition-shadow"
-              variants={itemVariants}
-              whileHover={{ y: -5 }}
+              variants={itemVariants} whileHover={{ y: -5 }}
             >
               <div className="flex justify-center mb-4">
                 <div className="bg-gradient-to-br from-orange-400 to-orange-600 rounded-full p-4">
-                  <MessageSquare className="w-6 h-6 text-white" />
+                  <Target className="w-6 h-6 text-white" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{t('home.feature3Title')}</h3>
-              <p className="text-gray-600 text-sm">
-                {t('home.feature3Desc')}
-              </p>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">{t('home.feature6Title')}</h3>
+              <p className="text-gray-600 text-sm">{t('home.feature6Desc')}</p>
             </motion.div>
 
-            {/* Feature 4 */}
             <motion.div
               className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-pink-500 text-center hover:shadow-xl transition-shadow"
-              variants={itemVariants}
-              whileHover={{ y: -5 }}
+              variants={itemVariants} whileHover={{ y: -5 }}
             >
               <div className="flex justify-center mb-4">
                 <div className="bg-gradient-to-br from-pink-400 to-pink-600 rounded-full p-4">
-                  <Users className="w-6 h-6 text-white" />
+                  <Sparkles className="w-6 h-6 text-white" />
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">{t('home.feature4Title')}</h3>
-              <p className="text-gray-600 text-sm">
-                {t('home.feature4Desc')}
-              </p>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">{t('home.feature2Title')}</h3>
+              <p className="text-gray-600 text-sm">{t('home.feature2Desc')}</p>
             </motion.div>
           </div>
         </div>
       </motion.section>
 
-      {/* CTA Section (if not logged in) */}
+      {/* CTA Section */}
       {!loading && !user && (
         <motion.section
           className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
@@ -506,20 +540,12 @@ export default function HomePage() {
           animate="visible"
         >
           <div className="max-w-4xl mx-auto text-center">
-            <motion.h2
-              className="text-4xl sm:text-5xl font-bold text-white mb-6"
-              variants={itemVariants}
-            >
+            <motion.h2 className="text-4xl sm:text-5xl font-bold text-white mb-6" variants={itemVariants}>
               {t('home.startPractice')}
             </motion.h2>
-
-            <motion.p
-              className="text-lg sm:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto"
-              variants={itemVariants}
-            >
+            <motion.p className="text-lg sm:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto" variants={itemVariants}>
               {t('home.loginToTrack')}
             </motion.p>
-
             <motion.button
               onClick={signInWithGoogle}
               className="inline-flex items-center gap-3 bg-white text-indigo-600 font-bold py-4 px-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-all hover:scale-105"
@@ -527,11 +553,7 @@ export default function HomePage() {
               whileHover="hover"
               whileTap="tap"
             >
-              <svg
-                className="w-6 h-6"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
                 <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
                 <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
@@ -551,12 +573,8 @@ export default function HomePage() {
         animate="visible"
       >
         <div className="max-w-6xl mx-auto text-center">
-          <p className="mb-2">
-            TOCFL Hero - {t('home.subtitle')}
-          </p>
-          <p className="text-sm">
-            © 2024-2026 TOCFL Hero. All rights reserved.
-          </p>
+          <p className="mb-2">TOCFL Hero - {t('home.subtitle')}</p>
+          <p className="text-sm">© 2024-2026 TOCFL Hero. All rights reserved.</p>
         </div>
       </motion.footer>
     </div>

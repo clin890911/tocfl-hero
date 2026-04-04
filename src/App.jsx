@@ -8,6 +8,8 @@ import ReadingPage from './pages/ReadingPage';
 import ListeningPage from './pages/ListeningPage';
 import LeaderboardPage from './pages/LeaderboardPage';
 import DashboardPage from './pages/DashboardPage';
+import FlashcardPage from './pages/FlashcardPage';
+import DailyChallengePage from './pages/DailyChallengePage';
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
@@ -34,6 +36,8 @@ function AppContent() {
           <Route path="/reading" element={<ReadingPage />} />
           <Route path="/listening" element={<ListeningPage />} />
           <Route path="/leaderboard" element={<LeaderboardPage />} />
+          <Route path="/flashcard" element={<FlashcardPage />} />
+          <Route path="/daily" element={<DailyChallengePage />} />
           <Route path="/dashboard" element={
             <ProtectedRoute>
               <DashboardPage />

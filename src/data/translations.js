@@ -7,7 +7,9 @@ const translations = {
       leaderboard: '排行榜',
       login: '登入',
       logout: '登出',
-      dashboard: '我的學習'
+      dashboard: '我的學習',
+      flashcard: '詞彙卡',
+      daily: '每日挑戰'
     },
     home: {
       title: 'TOCFL Hero 🏆',
@@ -28,10 +30,18 @@ const translations = {
       feature3Desc: '每題都有詳細的答案解釋',
       feature4Title: '隨時練習',
       feature4Desc: '手機、平板、電腦都能用',
+      feature5Title: '智慧複習',
+      feature5Desc: 'SM-2 間隔重複演算法，自動排程最佳複習時間',
+      feature6Title: '每日挑戰',
+      feature6Desc: '每天精選10題混合練習，保持學習節奏',
       startPractice: '開始練習',
       chooseLevel: '選擇等級',
       bandA: '入門基礎級',
-      bandB: '進階高階級'
+      bandB: '進階高階級',
+      smartReview: '智慧複習',
+      dueReview: '題到期待複習',
+      allCaughtUp: '太棒了！目前沒有到期的複習',
+      totalInSR: '複習系統中'
     },
     quiz: {
       title: {
@@ -132,6 +142,45 @@ const translations = {
       zh: '中文',
       id: 'Indonesia',
       switch: '切換語言'
+    },
+    flashcard: {
+      title: '詞彙閃卡',
+      subtitle: '翻轉卡片，快速記憶中文詞彙',
+      badge: '詞彙練習',
+      words: '個詞彙',
+      wordbook: '我的生詞本',
+      wordbookDesc: '收藏的生詞，隨時複習',
+      sessionComplete: '練習完成！',
+      reviewed: '已複習',
+      known: '已掌握',
+      needReview: '需要複習',
+      retryUnknown: '重練不熟的',
+      restart: '重新開始',
+      noCards: '沒有卡片，請先選擇詞庫或收藏一些生詞',
+      allCategories: '全部分類',
+      shuffle: '隨機排序',
+      tapToFlip: '點擊翻轉卡片',
+      dontKnow: '不熟',
+      knowIt: '會了',
+      listen: '聽發音',
+      addToWordbook: '收藏',
+      quickDesc: '翻轉卡片快速記詞彙'
+    },
+    daily: {
+      title: '每日挑戰',
+      description: '每天10道精選題目，閱讀+聽力混合挑戰！',
+      questions: '道題目',
+      readListen: '閱讀+聽力',
+      startChallenge: '開始挑戰',
+      startNow: '立刻挑戰',
+      todayReady: '今日挑戰已就緒！',
+      alreadyDone: '今日挑戰已完成',
+      comeBackTomorrow: '明天再來挑戰新題目！',
+      challengeComplete: '挑戰完成！',
+      practiceMore: '繼續練習',
+      studyVocab: '學習詞彙',
+      seeResults: '查看結果',
+      listenText: '聽力內容'
     }
   },
   id: {
@@ -142,7 +191,9 @@ const translations = {
       leaderboard: 'Peringkat',
       login: 'Masuk',
       logout: 'Keluar',
-      dashboard: 'Belajarku'
+      dashboard: 'Belajarku',
+      flashcard: 'Kartu Kata',
+      daily: 'Tantangan'
     },
     home: {
       title: 'TOCFL Hero 🏆',
@@ -163,10 +214,18 @@ const translations = {
       feature3Desc: 'Setiap soal dilengkapi penjelasan jawaban yang detail',
       feature4Title: 'Latihan Kapan Saja',
       feature4Desc: 'Bisa digunakan di HP, tablet, dan komputer',
+      feature5Title: 'Review Cerdas',
+      feature5Desc: 'Algoritma SM-2 mengatur jadwal review otomatis untuk efisiensi belajar',
+      feature6Title: 'Tantangan Harian',
+      feature6Desc: '10 soal campuran setiap hari, jaga ritme belajarmu',
       startPractice: 'Mulai Latihan',
       chooseLevel: 'Pilih Level',
       bandA: 'Tingkat Dasar',
-      bandB: 'Tingkat Lanjutan'
+      bandB: 'Tingkat Lanjutan',
+      smartReview: 'Review Cerdas',
+      dueReview: 'soal perlu direview',
+      allCaughtUp: 'Hebat! Tidak ada review yang tertunda',
+      totalInSR: 'Dalam sistem review'
     },
     quiz: {
       title: {
@@ -267,6 +326,45 @@ const translations = {
       zh: '中文',
       id: 'Indonesia',
       switch: 'Ganti Bahasa'
+    },
+    flashcard: {
+      title: 'Kartu Kosakata',
+      subtitle: 'Balik kartu, hafal kosakata Mandarin dengan cepat',
+      badge: 'Latihan Kosakata',
+      words: 'kata',
+      wordbook: 'Buku Kata Saya',
+      wordbookDesc: 'Kosakata yang disimpan, review kapan saja',
+      sessionComplete: 'Latihan Selesai!',
+      reviewed: 'Sudah direview',
+      known: 'Sudah hafal',
+      needReview: 'Perlu review',
+      retryUnknown: 'Ulangi yang belum hafal',
+      restart: 'Mulai Ulang',
+      noCards: 'Tidak ada kartu. Pilih kumpulan kata atau simpan kosakata dulu',
+      allCategories: 'Semua Kategori',
+      shuffle: 'Acak Urutan',
+      tapToFlip: 'Ketuk untuk membalik kartu',
+      dontKnow: 'Belum hafal',
+      knowIt: 'Sudah hafal',
+      listen: 'Dengarkan',
+      addToWordbook: 'Simpan',
+      quickDesc: 'Balik kartu, hafal kosakata cepat'
+    },
+    daily: {
+      title: 'Tantangan Harian',
+      description: '10 soal pilihan setiap hari, campuran membaca + mendengar!',
+      questions: 'soal',
+      readListen: 'Baca + Dengar',
+      startChallenge: 'Mulai Tantangan',
+      startNow: 'Mulai sekarang',
+      todayReady: 'Tantangan hari ini sudah siap!',
+      alreadyDone: 'Tantangan hari ini selesai',
+      comeBackTomorrow: 'Datang lagi besok untuk soal baru!',
+      challengeComplete: 'Tantangan Selesai!',
+      practiceMore: 'Latihan Lebih Banyak',
+      studyVocab: 'Belajar Kosakata',
+      seeResults: 'Lihat Hasil',
+      listenText: 'Teks Mendengar'
     }
   }
 };

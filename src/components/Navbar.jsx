@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Home, BookOpen, Headphones, Trophy, User, LogIn, LogOut, Menu, X, Globe } from 'lucide-react';
+import { Home, BookOpen, Headphones, Trophy, User, LogIn, LogOut, Menu, X, Globe, Zap, BookMarked } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Navbar = () => {
@@ -13,8 +13,10 @@ export const Navbar = () => {
 
   const navLinks = [
     { path: '/', label: t('nav.home'), icon: Home },
+    { path: '/daily', label: t('nav.daily'), icon: Zap },
     { path: '/reading', label: t('nav.reading'), icon: BookOpen },
     { path: '/listening', label: t('nav.listening'), icon: Headphones },
+    { path: '/flashcard', label: t('nav.flashcard'), icon: BookMarked },
     { path: '/leaderboard', label: t('nav.leaderboard'), icon: Trophy },
   ];
 
@@ -42,20 +44,20 @@ export const Navbar = () => {
         </Link>
 
         {/* Center Navigation Links */}
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-6">
           {navLinks.map((item) => {
             const Icon = item.icon;
             return (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-all duration-200 ${
+                className={`flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-all duration-200 text-sm ${
                   isActive(item.path)
                     ? 'bg-white text-purple-600 shadow-md'
                     : 'text-white hover:bg-white/20'
                 }`}
               >
-                <Icon size={20} />
+                <Icon size={18} />
                 <span>{item.label}</span>
               </Link>
             );
@@ -77,7 +79,7 @@ export const Navbar = () => {
           {user ? (
             <div className="flex items-center gap-4">
               {/* Avatar & User Info */}
-              <div className="flex items-center gap-3 bg-white/20 rounded-full px-4 py-2">
+              <Link to="/dashboard" className="flex items-center gap-3 bg-white/20 hover:bg-white/30 rounded-full px-4 py-2 transition-colors">
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                   <User size={20} className="text-purple-600" />
                 </div>
@@ -85,7 +87,7 @@ export const Navbar = () => {
                   <span className="text-white font-semibold text-sm">{user.name}</span>
                   <span className="text-white/80 text-xs">XP: {user.xp || 0}</span>
                 </div>
-              </div>
+              </Link>
 
               {/* Logout Button */}
               <button
@@ -172,7 +174,11 @@ export const Navbar = () => {
               {/* User Section */}
               {user ? (
                 <div className="space-y-2">
-                  <div className="flex items-center gap-3 bg-white/20 rounded-lg px-4 py-3">
+                  <Link
+                    to="/dashboard"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-3 bg-white/20 rounded-lg px-4 py-3"
+                  >
                     <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0">
                       <User size={18} className="text-purple-600" />
                     </div>
@@ -180,7 +186,7 @@ export const Navbar = () => {
                       <span className="text-white font-semibold text-sm">{user.name}</span>
                       <span className="text-white/80 text-xs">XP: {user.xp || 0}</span>
                     </div>
-                  </div>
+                  </Link>
 
                   <button
                     onClick={handleLogout}
