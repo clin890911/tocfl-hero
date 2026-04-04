@@ -89,8 +89,8 @@ const ReadingPage = () => {
 
   const startQuiz = (band, count) => {
     const bandData = band === 'A' ? readingQuestions.bandA : readingQuestions.bandB;
-    let selected = count === 'all' ? bandData : bandData.slice(0, parseInt(count));
-    selected = shuffleArray(selected);
+    let shuffled = shuffleArray(bandData);
+    let selected = count === 'all' ? shuffled : shuffled.slice(0, parseInt(count));
     selected = flattenQuestions(selected);
 
     setSelectedBand(band);
@@ -201,7 +201,7 @@ const ReadingPage = () => {
                     {t('quiz.totalQuestions').replace('{count}', item.count)}
                   </p>
                   <div className="space-y-3">
-                    {[5, 10, 'all'].map((count) => (
+                    {[5, 10, 20, 'all'].map((count) => (
                       <motion.button
                         key={count}
                         whileHover={{ x: 4 }}

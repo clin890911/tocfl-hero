@@ -165,8 +165,8 @@ const ListeningPage = () => {
 
   const startQuiz = (band, count) => {
     const bandData = band === 'A' ? listeningQuestions.bandA : listeningQuestions.bandB;
-    let selected = count === 'all' ? bandData : bandData.slice(0, parseInt(count));
-    selected = shuffleArray(selected);
+    let shuffled = shuffleArray(bandData);
+    let selected = count === 'all' ? shuffled : shuffled.slice(0, parseInt(count));
     selected = flattenQuestions(selected);
 
     setSelectedBand(band);
