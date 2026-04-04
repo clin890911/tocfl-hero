@@ -88,6 +88,37 @@ const ReadingPage = () => {
     return result;
   };
 
+  // Wrong answer bank (localStorage)
+  const WRONG_BANK_KEY = 'tocfl_reading_wrong_bank';
+  const getWrongBank = useCallback(() => {
+    try {
+      return JSON.parse(localStorage.getItem(WRONG_BANK_KEY) || '[]');
+    } catch { return []; }
+  }, []);
+
+  const saveToWrongBank = useCallback((wrongItems) => {
+    const existing = getWrongBank();
+    const existingIds = new Set(existing.map(q => q.id));
+    const newItems = wrongItems.filter(q => !existingIds.has(q.id));
+    const merged = [...existing, ...newItems];
+    localStorage.setItem(WRONG_BANK_KEY, JSON.stringify(merged));
+  }, [getWrongBank]);
+
+  const removeFromWrongBank = useCallback((questionId) => {
+    const existing = getWrongBank();
+    const updated = existing.filter(q => q.id !== questionId);
+    localStorage.setItem(WRONG_BANK_KEY, JSON.stringify(updated));
+  }, [getWrongBank]);
+
+  const clearWrongBank = useCallback(() => {
+    localStorage.removeItem(WRONG_BANK_KEY);
+  }, []);
+
+  const [wrongBankCount, setWrongBankCount] = useState(0);
+  useEffect(() => {
+    setWrongBankCount(getWrongBank().length);
+  }, [screen, getWrongBank]);
+
   // Start quiz
   const startQuiz = (band, count) => {
     const bandData = band === 'A' ? readingQuestions.bandA : band === 'B' ? readingQuestions.bandB : readingQuestions.bandC;
@@ -253,78 +284,32 @@ const ReadingPage = () => {
                 whileTap={{ scale: 0.98 }}
                 className="cursor-pointer"
               >
-                <div
-                  className={`bg-gradient-to-br ${item.color} rounded-lg p-8 text-white shadow-lg`}
-                >
+                <div className={`bg-gradient-to-br ${item.color} rounded-lg p-8 text-white shadow-lg`}>
                   <div className="mb-4">
                     <h2 className="text-3xl font-bold">{item.title}</h2>
                     <p className="text-white/80">{item.subtitle}</p>
                   </div>
                   <p className="mb-6 text-white/90">
-                    共 {item.count} 題
+                    {t('quiz.totalQuestions').replace('{count}', item.count)}
                   </p>
-
-            {/* Band B Card with Category Filter */}
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="cursor-pointer">
-              <div className="bg-gradient-to-br from-orange-400 to-red-500 rounded-lg p-8 text-white shadow-lg">
-                <div className="mb-4">
-                  <h2 className="text-3xl font-bold">{t('quiz.bandB')}</h2>
-                  <p className="text-white/80">{t('quiz.levelB')}</p>
-                </div>
-
-                {/* Category Filter Tabs */}
-                <div className="mb-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Filter className="w-4 h-4 text-white/80" />
-                    <span className="text-sm text-white/80 font-medium">
-                      {lang === 'id' ? 'Kategori:' : '題型篩選：'}
-                    </span>
-                  </div>
-                  <div className="flex gap-2">
-                    {[
-                      { key: 'all', label: lang === 'id' ? 'Semua' : '全部', count: bandBCounts.all },
-                      { key: '選詞填空', label: lang === 'id' ? 'Isi Kata' : '選詞填空', count: bandBCounts.cloze },
-                      { key: '閱讀理解', label: lang === 'id' ? 'Bacaan' : '閱讀理解', count: bandBCounts.reading },
-                    ].map((cat) => (
-                      <button
-                        key={cat.key}
-                        onClick={(e) => { e.stopPropagation(); setSelectedCategory(cat.key); }}
-                        className={`flex-1 py-2 px-2 rounded-lg text-sm font-semibold transition-all border ${
-                          selectedCategory === cat.key
-                            ? 'bg-white text-orange-600 border-white shadow-md'
-                            : 'bg-white/15 text-white border-white/30 hover:bg-white/25'
-                        }`}
-                      >
-                        {cat.label}
-                        <span className={`block text-xs mt-0.5 ${selectedCategory === cat.key ? 'text-orange-400' : 'text-white/70'}`}>
-                          {cat.count} {lang === 'id' ? 'soal' : '題'}
-                        </span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  {(() => {
-                    const currentCount = selectedCategory === 'all' ? bandBCounts.all
-                      : selectedCategory === '選詞填空' ? bandBCounts.cloze : bandBCounts.reading;
-                    return [5, 10, 20, 'all'].filter(n => n === 'all' || n <= currentCount).map((count) => (
+                  <div className="space-y-3">
+                    {[5, 10, 20, 'all'].filter(n => n === 'all' || n <= item.count).map((count) => (
                       <motion.button
                         key={count}
                         whileHover={{ x: 4 }}
-                        onClick={() => startQuiz('B', count, selectedCategory)}
+                        onClick={() => startQuiz(item.band, count)}
                         className="w-full bg-white/20 hover:bg-white/30 rounded-lg py-3 font-semibold transition-all backdrop-blur-sm border border-white/30 hover:border-white/50"
                       >
                         {count === 'all'
-                          ? t('quiz.allQuestions').replace('{count}', currentCount)
+                          ? t('quiz.allQuestions').replace('{count}', item.count)
                           : t('quiz.questionsN').replace('{n}', count)}
                         <ChevronRight className="w-4 h-4 inline-block ml-2" />
                       </motion.button>
-                    ));
-                  })()}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
 
           {/* Wrong Answer Bank */}
