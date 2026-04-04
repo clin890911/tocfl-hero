@@ -280,6 +280,9 @@ const ReadingPage = () => {
                 <span className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">
                   {currentQuestion.category}
                 </span>
+                <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">
+                  {lang === 'id' ? '📝 Soal resmi TOCFL' : '📝 TOCFL 官方題庫'}
+                </span>
                 {currentQuestion._totalSubs && (
                   <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
                     {t('quiz.subQuestion').replace('{x}', currentQuestion._subIndex + 1).replace('{y}', currentQuestion._totalSubs)}
@@ -288,7 +291,9 @@ const ReadingPage = () => {
               </div>
 
               <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                {currentQuestion.question}
+                {currentQuestion.category === '選詞填空'
+                  ? `${lang === 'id' ? 'Isi bagian kosong' : '請選擇適當的詞語填入空格'} ${currentQuestion.question}`
+                  : currentQuestion.question}
               </h2>
 
               {currentQuestion.pinyin && (

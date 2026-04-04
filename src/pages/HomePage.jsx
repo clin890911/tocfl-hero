@@ -68,7 +68,7 @@ export default function HomePage() {
             className="text-center mb-8"
             variants={itemVariants}
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4 drop-shadow-lg">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-700 bg-clip-text text-transparent mb-4" style={{ WebkitTextStroke: '0.5px rgba(79, 70, 229, 0.3)' }}>
               {t('home.title')}
             </h1>
             <p className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-4">
