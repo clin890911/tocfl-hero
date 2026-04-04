@@ -7,6 +7,7 @@ import {
   Play,
   Pause,
   ChevronRight,
+  ChevronLeft,
   Check,
   X,
   RotateCcw,
@@ -16,6 +17,7 @@ import {
   Clock,
   AlertCircle,
   Trash2,
+  Grid3X3,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -111,6 +113,7 @@ const ListeningPage = () => {
   const [startTime, setStartTime] = useState(null);
   const [elapsed, setElapsed] = useState(0);
   const [showTranscript, setShowTranscript] = useState(false);
+  const [showNavigator, setShowNavigator] = useState(false);
 
   const { isPlaying, playAudio, speak, stop } = useAudioPlayer();
 
@@ -246,7 +249,7 @@ const ListeningPage = () => {
   };
 
   const handleNextQuestion = () => {
-    stop(); // Stop any playing audio when moving to next question
+    stop();
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedAnswer(null);
@@ -255,6 +258,28 @@ const ListeningPage = () => {
     } else {
       finishQuiz();
     }
+  };
+
+  const handlePrevQuestion = () => {
+    if (currentQuestionIndex > 0) {
+      stop();
+      const prevIdx = currentQuestionIndex - 1;
+      const prevAnswer = answers[prevIdx];
+      setCurrentQuestionIndex(prevIdx);
+      setSelectedAnswer(prevAnswer ? prevAnswer.selectedAnswer : null);
+      setAnswered(!!prevAnswer);
+      setShowTranscript(!!prevAnswer);
+    }
+  };
+
+  const goToQuestion = (idx) => {
+    stop();
+    const existingAnswer = answers[idx];
+    setCurrentQuestionIndex(idx);
+    setSelectedAnswer(existingAnswer ? existingAnswer.selectedAnswer : null);
+    setAnswered(!!existingAnswer);
+    setShowTranscript(!!existingAnswer);
+    setShowNavigator(false);
   };
 
   const finishQuiz = async () => {
@@ -628,19 +653,70 @@ const ListeningPage = () => {
             </motion.div>
           </AnimatePresence>
 
-          <div className="bg-white rounded-lg shadow p-4 sticky bottom-6">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-yellow-500" />
-                <span className="font-bold text-gray-800">
-                  {t('quiz.score')} {correctCount} / {answers.length}
-                </span>
-              </div>
-              {answers.length > 0 && (
-                <span className="text-sm text-gray-600">
-                  {t('results.accuracy')}: {Math.round((correctCount / answers.length) * 100)}%
-                </span>
+          <div className="bg-white rounded-lg shadow sticky bottom-6">
+            <AnimatePresence>
+              {showNavigator && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  className="overflow-hidden border-b border-gray-200"
+                >
+                  <div className="p-4">
+                    <p className="text-sm font-medium text-gray-500 mb-3">
+                      {lang === 'id' ? 'Navigasi Soal' : '題目導覽'}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {questions.map((_, idx) => {
+                        const ans = answers[idx];
+                        const isCurrent = idx === currentQuestionIndex;
+                        let bg = 'bg-gray-100 text-gray-600 hover:bg-gray-200';
+                        if (isCurrent) bg = 'bg-purple-500 text-white ring-2 ring-purple-300';
+                        else if (ans?.isCorrect) bg = 'bg-green-100 text-green-700 border border-green-300';
+                        else if (ans && !ans.isCorrect) bg = 'bg-red-100 text-red-700 border border-red-300';
+                        return (
+                          <button
+                            key={idx}
+                            onClick={() => goToQuestion(idx)}
+                            className={`w-9 h-9 rounded-lg text-sm font-bold transition-all ${bg}`}
+                          >
+                            {idx + 1}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </motion.div>
               )}
+            </AnimatePresence>
+
+            <div className="p-4 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={handlePrevQuestion}
+                  disabled={currentQuestionIndex === 0}
+                  className="p-2 rounded-lg hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >
+                  <ChevronLeft className="w-5 h-5 text-gray-600" />
+                </button>
+                <button
+                  onClick={() => setShowNavigator(!showNavigator)}
+                  className={`p-2 rounded-lg transition-colors ${showNavigator ? 'bg-purple-100 text-purple-600' : 'hover:bg-gray-100 text-gray-600'}`}
+                >
+                  <Grid3X3 className="w-5 h-5" />
+                </button>
+              </div>
+              <div className="flex items-center gap-2">
+                <Star className="w-4 h-4 text-yellow-500" />
+                <span className="font-bold text-gray-800 text-sm">
+                  {correctCount}/{answers.length}
+                </span>
+                {answers.length > 0 && (
+                  <span className="text-xs text-gray-500">
+                    ({Math.round((correctCount / answers.length) * 100)}%)
+                  </span>
+                )}
+              </div>
             </div>
           </div>
         </div>
