@@ -88,62 +88,12 @@ const ReadingPage = () => {
     return result;
   };
 
-  // Get explanation based on current language
-  const getExplanation = (q) => {
-    if (lang === 'id' && q.explanationId) return q.explanationId;
-    return q.explanation;
-  };
-
-  // Wrong answer bank (localStorage)
-  const WRONG_BANK_KEY = 'tocfl_reading_wrong_bank';
-  const getWrongBank = useCallback(() => {
-    try {
-      return JSON.parse(localStorage.getItem(WRONG_BANK_KEY) || '[]');
-    } catch { return []; }
-  }, []);
-
-  const saveToWrongBank = useCallback((wrongItems) => {
-    const existing = getWrongBank();
-    const existingIds = new Set(existing.map(q => q.id));
-    const newItems = wrongItems.filter(q => !existingIds.has(q.id));
-    const merged = [...existing, ...newItems];
-    localStorage.setItem(WRONG_BANK_KEY, JSON.stringify(merged));
-  }, [getWrongBank]);
-
-  const removeFromWrongBank = useCallback((questionId) => {
-    const existing = getWrongBank();
-    const updated = existing.filter(q => q.id !== questionId);
-    localStorage.setItem(WRONG_BANK_KEY, JSON.stringify(updated));
-  }, [getWrongBank]);
-
-  const clearWrongBank = useCallback(() => {
-    localStorage.removeItem(WRONG_BANK_KEY);
-  }, []);
-
-  const [wrongBankCount, setWrongBankCount] = useState(0);
-  useEffect(() => {
-    setWrongBankCount(getWrongBank().length);
-  }, [screen, getWrongBank]);
-
-  // Computed counts for Band B categories
-  const bandBCounts = useMemo(() => {
-    const cloze = readingQuestions.bandB.filter(q => q.category === '選詞填空');
-    const reading = readingQuestions.bandB.filter(q => q.category === '閱讀理解');
-    return {
-      cloze: cloze.length,
-      reading: reading.length,
-      all: readingQuestions.bandB.length,
-    };
-  }, []);
-
-  const startQuiz = (band, count, category = 'all') => {
-    let bandData = band === 'A' ? readingQuestions.bandA : readingQuestions.bandB;
-    // Apply category filter for Band B
-    if (band === 'B' && category !== 'all') {
-      bandData = bandData.filter(q => q.category === category);
-    }
-    let shuffled = shuffleArray(bandData);
-    let selected = count === 'all' ? shuffled : shuffled.slice(0, parseInt(count));
+  // Start quiz
+  const startQuiz = (band, count) => {
+    const bandData = band === 'A' ? readingQuestions.bandA : band === 'B' ? readingQuestions.bandB : readingQuestions.bandC;
+    let selected = count === 'all' ? bandData : bandData.slice(0, parseInt(count));
+    selected = shuffleArray(selected);
+    // Flatten multi-question items so each sub-question is a separate quiz step
     selected = flattenQuestions(selected);
 
     setSelectedBand(band);
@@ -272,34 +222,47 @@ const ReadingPage = () => {
             <p className="text-gray-600">{t('quiz.selectDifficulty')}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            {/* Band A Card */}
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="cursor-pointer">
-              <div className="bg-gradient-to-br from-green-400 to-teal-500 rounded-lg p-8 text-white shadow-lg">
-                <div className="mb-4">
-                  <h2 className="text-3xl font-bold">{t('quiz.bandA')}</h2>
-                  <p className="text-white/80">{t('quiz.levelA')}</p>
-                </div>
-                <p className="mb-6 text-white/90">
-                  {t('quiz.totalQuestions').replace('{count}', readingQuestions.bandA.length)}
-                </p>
-                <div className="space-y-3">
-                  {[5, 10, 20, 'all'].map((count) => (
-                    <motion.button
-                      key={count}
-                      whileHover={{ x: 4 }}
-                      onClick={() => startQuiz('A', count)}
-                      className="w-full bg-white/20 hover:bg-white/30 rounded-lg py-3 font-semibold transition-all backdrop-blur-sm border border-white/30 hover:border-white/50"
-                    >
-                      {count === 'all'
-                        ? t('quiz.allQuestions').replace('{count}', readingQuestions.bandA.length)
-                        : t('quiz.questionsN').replace('{n}', count)}
-                      <ChevronRight className="w-4 h-4 inline-block ml-2" />
-                    </motion.button>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+          {/* Band cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {[
+              {
+                band: 'A',
+                title: '入門基礎級',
+                subtitle: 'Level 1-2',
+                color: 'from-green-400 to-teal-500',
+                count: readingQuestions.bandA.length,
+              },
+              {
+                band: 'B',
+                title: '進階高階級',
+                subtitle: 'Level 3-4',
+                color: 'from-orange-400 to-red-500',
+                count: readingQuestions.bandB.length,
+              },
+              {
+                band: 'C',
+                title: '流利精通級',
+                subtitle: 'Level 5-6',
+                color: 'from-purple-500 to-pink-600',
+                count: readingQuestions.bandC.length,
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.band}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="cursor-pointer"
+              >
+                <div
+                  className={`bg-gradient-to-br ${item.color} rounded-lg p-8 text-white shadow-lg`}
+                >
+                  <div className="mb-4">
+                    <h2 className="text-3xl font-bold">{item.title}</h2>
+                    <p className="text-white/80">{item.subtitle}</p>
+                  </div>
+                  <p className="mb-6 text-white/90">
+                    共 {item.count} 題
+                  </p>
 
             {/* Band B Card with Category Filter */}
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="cursor-pointer">

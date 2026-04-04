@@ -200,9 +200,12 @@ const ListeningPage = () => {
   }, [screen, getWrongBank]);
 
   const startQuiz = (band, count) => {
-    const bandData = band === 'A' ? listeningQuestions.bandA : listeningQuestions.bandB;
-    let shuffled = shuffleArray(bandData);
-    let selected = count === 'all' ? shuffled : shuffled.slice(0, parseInt(count));
+    const bandData =
+      band === 'A' ? listeningQuestions.bandA : band === 'B' ? listeningQuestions.bandB : listeningQuestions.bandC;
+    let selected =
+      count === 'all' ? bandData : bandData.slice(0, parseInt(count));
+    selected = shuffleArray(selected);
+    // Flatten multi-question items so each sub-question is a separate quiz step
     selected = flattenQuestions(selected);
 
     setSelectedBand(band);
@@ -335,7 +338,8 @@ const ListeningPage = () => {
             <p className="text-gray-600">{t('quiz.selectDifficulty')}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          {/* Band cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {[
               {
                 band: 'A',
@@ -350,6 +354,13 @@ const ListeningPage = () => {
                 subtitle: t('quiz.levelB'),
                 color: 'from-orange-400 to-red-500',
                 count: listeningQuestions.bandB.length,
+              },
+              {
+                band: 'C',
+                title: '流利精通級',
+                subtitle: 'Level 5-6',
+                color: 'from-purple-500 to-pink-600',
+                count: listeningQuestions.bandC.length,
               },
             ].map((item) => (
               <motion.div
