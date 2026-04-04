@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Home, BookOpen, Headphones, Trophy, User, LogIn, LogOut, Menu, X, Globe, Zap, BookMarked, BarChart3 } from 'lucide-react';
+import { Home, BookOpen, Headphones, Trophy, User, LogIn, LogOut, Menu, X, Globe, Zap, BookMarked, BarChart3, Brain } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Navbar = () => {
@@ -17,6 +17,7 @@ export const Navbar = () => {
     { path: '/reading', label: t('nav.reading'), icon: BookOpen },
     { path: '/listening', label: t('nav.listening'), icon: Headphones },
     { path: '/flashcard', label: t('nav.flashcard'), icon: BookMarked },
+    { path: '/review', label: t('nav.review'), icon: Brain },
     { path: '/analytics', label: t('nav.analytics'), icon: BarChart3 },
     { path: '/leaderboard', label: t('nav.leaderboard'), icon: Trophy },
   ];

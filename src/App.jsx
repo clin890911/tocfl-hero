@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { GameProvider } from './contexts/GameContext';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import Navbar from './components/Navbar';
+import BottomNav from './components/BottomNav';
 import HomePage from './pages/HomePage';
 import ReadingPage from './pages/ReadingPage';
 import ListeningPage from './pages/ListeningPage';
@@ -11,6 +12,9 @@ import DashboardPage from './pages/DashboardPage';
 import FlashcardPage from './pages/FlashcardPage';
 import DailyChallengePage from './pages/DailyChallengePage';
 import AnalyticsPage from './pages/AnalyticsPage';
+import SmartReviewPage from './pages/SmartReviewPage';
+import ProfilePage from './pages/ProfilePage';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
@@ -29,7 +33,7 @@ function ProtectedRoute({ children }) {
 
 function AppContent() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pb-16 md:pb-0">
       <Navbar />
       <main>
         <Routes>
@@ -40,6 +44,8 @@ function AppContent() {
           <Route path="/flashcard" element={<FlashcardPage />} />
           <Route path="/daily" element={<DailyChallengePage />} />
           <Route path="/analytics" element={<AnalyticsPage />} />
+          <Route path="/review" element={<SmartReviewPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/dashboard" element={
             <ProtectedRoute>
               <DashboardPage />
@@ -48,21 +54,24 @@ function AppContent() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>
+      <BottomNav />
     </div>
   );
 }
 
 function App() {
   return (
-    <LanguageProvider>
-      <Router>
-        <AuthProvider>
-          <GameProvider>
-            <AppContent />
-          </GameProvider>
-        </AuthProvider>
-      </Router>
-    </LanguageProvider>
+    <ErrorBoundary>
+      <LanguageProvider>
+        <Router>
+          <AuthProvider>
+            <GameProvider>
+              <AppContent />
+            </GameProvider>
+          </AuthProvider>
+        </Router>
+      </LanguageProvider>
+    </ErrorBoundary>
   );
 }
 

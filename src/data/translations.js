@@ -10,7 +10,9 @@ const translations = {
       dashboard: '我的學習',
       flashcard: '詞彙卡',
       daily: '每日挑戰',
-      analytics: '學習分析'
+      analytics: '學習分析',
+      review: '智慧複習',
+      profile: '個人設定'
     },
     home: {
       title: 'TOCFL Hero 🏆',
@@ -195,7 +197,9 @@ const translations = {
       dashboard: 'Belajarku',
       flashcard: 'Kartu Kata',
       daily: 'Tantangan',
-      analytics: 'Analisis'
+      analytics: 'Analisis',
+      review: 'Review',
+      profile: 'Pengaturan'
     },
     home: {
       title: 'TOCFL Hero 🏆',
