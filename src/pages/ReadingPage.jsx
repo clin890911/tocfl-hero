@@ -88,6 +88,11 @@ const ReadingPage = () => {
     return result;
   };
 
+  const getExplanation = (q) => {
+    if (lang === 'id' && q.explanationId) return q.explanationId;
+    return q.explanation;
+  };
+
   // Wrong answer bank (localStorage)
   const WRONG_BANK_KEY = 'tocfl_reading_wrong_bank';
   const getWrongBank = useCallback(() => {
