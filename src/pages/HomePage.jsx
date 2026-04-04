@@ -54,27 +54,29 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-indigo-50 to-purple-50">
       {/* Hero Section */}
       <motion.section
-        className="relative overflow-hidden pt-20 pb-32"
+        className="relative overflow-hidden pt-16 pb-24"
+        style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Animated background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 opacity-20 blur-3xl -z-10" />
+        {/* Decorative circles */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-white opacity-10 rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full translate-x-1/3 translate-y-1/3" />
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Main Title */}
           <motion.div
             className="text-center mb-8"
             variants={itemVariants}
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-700 bg-clip-text text-transparent mb-4" style={{ WebkitTextStroke: '0.5px rgba(79, 70, 229, 0.3)' }}>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white mb-4 drop-shadow-lg">
               {t('home.title')}
             </h1>
-            <p className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-4">
+            <p className="text-2xl sm:text-3xl font-semibold text-white/90 mb-4">
               {t('home.subtitle')}
             </p>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
               {t('home.description')}
             </p>
           </motion.div>
@@ -82,7 +84,7 @@ export default function HomePage() {
           {/* User Stats Bar (if logged in) */}
           {user && userData && levelInfo && (
             <motion.div
-              className="bg-white rounded-2xl shadow-lg p-6 mb-12 border border-indigo-100"
+              className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-6 mb-12 border border-white/30"
               variants={itemVariants}
             >
               <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
