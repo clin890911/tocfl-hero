@@ -5,6 +5,8 @@ import { Flame, Zap, BookOpen, Headphones, Award, Users, MessageSquare, Sparkles
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getLevelInfo } from '../data/achievements';
+import { readingQuestions } from '../data/readingQuestions';
+import { listeningQuestions } from '../data/listeningQuestions';
 
 export default function HomePage() {
   const { user, userData, loading, signInWithGoogle } = useAuth();
@@ -189,9 +191,18 @@ export default function HomePage() {
                     📖 {t('home.readingTest')}
                   </h3>
 
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mb-4 leading-relaxed">
                     {t('home.readingDesc')}
                   </p>
+
+                  <div className="flex items-center gap-3 mb-4 text-sm">
+                    <span className="px-2.5 py-1 bg-blue-100 text-blue-700 rounded-full font-medium">
+                      {readingQuestions.bandA.length + readingQuestions.bandB.length} {lang === 'id' ? 'soal resmi' : '道官方題目'}
+                    </span>
+                    <span className="px-2.5 py-1 bg-green-100 text-green-700 rounded-full font-medium">
+                      Band A + B
+                    </span>
+                  </div>
 
                   <div className="flex items-center gap-2 text-blue-600 mb-4">
                     <Sparkles className="w-4 h-4" />
@@ -238,9 +249,18 @@ export default function HomePage() {
                     🎧 {t('home.listeningTest')}
                   </h3>
 
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mb-4 leading-relaxed">
                     {t('home.listeningDesc')}
                   </p>
+
+                  <div className="flex items-center gap-3 mb-4 text-sm">
+                    <span className="px-2.5 py-1 bg-purple-100 text-purple-700 rounded-full font-medium">
+                      {listeningQuestions.bandA.length + listeningQuestions.bandB.length} {lang === 'id' ? 'soal resmi' : '道官方題目'}
+                    </span>
+                    <span className="px-2.5 py-1 bg-green-100 text-green-700 rounded-full font-medium">
+                      {lang === 'id' ? 'Audio MP3' : '含 MP3 音檔'}
+                    </span>
+                  </div>
 
                   <div className="flex items-center gap-2 text-purple-600 mb-4">
                     <Sparkles className="w-4 h-4" />

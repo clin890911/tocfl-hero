@@ -11,6 +11,7 @@ import {
   Award,
   Star,
   Calendar,
+  AlertCircle,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -19,13 +20,23 @@ import { getLevelInfo, achievementsList } from '../data/achievements';
 
 const DashboardPage = () => {
   const { user, userStats } = useAuth();
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const [animateCounters, setAnimateCounters] = useState(false);
+  const [readingWrongCount, setReadingWrongCount] = useState(0);
+  const [listeningWrongCount, setListeningWrongCount] = useState(0);
 
   useEffect(() => {
-    // Trigger counter animations on mount
     const timer = setTimeout(() => setAnimateCounters(true), 300);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    try {
+      const rw = JSON.parse(localStorage.getItem('tocfl_reading_wrong_bank') || '[]');
+      const lw = JSON.parse(localStorage.getItem('tocfl_listening_wrong_bank') || '[]');
+      setReadingWrongCount(rw.length);
+      setListeningWrongCount(lw.length);
+    } catch {}
   }, []);
 
   if (!user || !userStats) {
@@ -477,6 +488,57 @@ const DashboardPage = () => {
             })}
           </div>
         </motion.div>
+
+        {/* Wrong Bank Summary */}
+        {(readingWrongCount > 0 || listeningWrongCount > 0) && (
+          <motion.div
+            className="bg-slate-800 rounded-xl p-6 border border-red-700/50 shadow-lg mb-8"
+            variants={itemVariants}
+          >
+            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <AlertCircle className="w-6 h-6 text-red-400" />
+              {lang === 'id' ? 'Soal yang Perlu Diulangi' : '待複習錯題'}
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {readingWrongCount > 0 && (
+                <Link to="/reading">
+                  <motion.div
+                    className="bg-red-900/30 border border-red-700/50 rounded-lg p-4 flex items-center gap-4 hover:bg-red-900/50 transition-colors"
+                    whileHover={{ x: 4 }}
+                  >
+                    <div className="bg-red-500/20 rounded-full p-3">
+                      <BookOpen className="w-5 h-5 text-red-400" />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold">{lang === 'id' ? 'Tes Membaca' : '閱讀測驗'}</p>
+                      <p className="text-red-300 text-sm">
+                        {readingWrongCount} {lang === 'id' ? 'soal perlu diulangi' : '道錯題待複習'}
+                      </p>
+                    </div>
+                  </motion.div>
+                </Link>
+              )}
+              {listeningWrongCount > 0 && (
+                <Link to="/listening">
+                  <motion.div
+                    className="bg-red-900/30 border border-red-700/50 rounded-lg p-4 flex items-center gap-4 hover:bg-red-900/50 transition-colors"
+                    whileHover={{ x: 4 }}
+                  >
+                    <div className="bg-red-500/20 rounded-full p-3">
+                      <Headphones className="w-5 h-5 text-red-400" />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold">{lang === 'id' ? 'Tes Mendengar' : '聽力測驗'}</p>
+                      <p className="text-red-300 text-sm">
+                        {listeningWrongCount} {lang === 'id' ? 'soal perlu diulangi' : '道錯題待複習'}
+                      </p>
+                    </div>
+                  </motion.div>
+                </Link>
+              )}
+            </div>
+          </motion.div>
+        )}
 
         {/* Quick Action Buttons */}
         <motion.div
