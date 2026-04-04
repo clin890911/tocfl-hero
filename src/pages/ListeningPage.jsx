@@ -451,6 +451,9 @@ const ListeningPage = () => {
                 <span className="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
                   {currentQuestion.category}
                 </span>
+                <span className="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">
+                  {lang === 'id' ? '🎧 Soal resmi TOCFL' : '🎧 TOCFL 官方題庫'}
+                </span>
                 {currentQuestion._totalSubs && (
                   <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
                     {t('quiz.subQuestion').replace('{x}', currentQuestion._subIndex + 1).replace('{y}', currentQuestion._totalSubs)}

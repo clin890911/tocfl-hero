@@ -1,21 +1,32 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Flame, Zap, BookOpen, Headphones, Award, Users, MessageSquare, Sparkles } from 'lucide-react';
+import { Flame, Zap, BookOpen, Headphones, Award, Users, MessageSquare, Sparkles, AlertCircle } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getLevelInfo } from '../data/achievements';
 
 export default function HomePage() {
   const { user, userData, loading, signInWithGoogle } = useAuth();
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   const [levelInfo, setLevelInfo] = useState(null);
+  const [readingWrongCount, setReadingWrongCount] = useState(0);
+  const [listeningWrongCount, setListeningWrongCount] = useState(0);
 
   useEffect(() => {
     if (userData?.totalXP !== undefined) {
       setLevelInfo(getLevelInfo(userData.totalXP));
     }
   }, [userData]);
+
+  useEffect(() => {
+    try {
+      const rw = JSON.parse(localStorage.getItem('tocfl_reading_wrong_bank') || '[]');
+      const lw = JSON.parse(localStorage.getItem('tocfl_listening_wrong_bank') || '[]');
+      setReadingWrongCount(rw.length);
+      setListeningWrongCount(lw.length);
+    } catch {}
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -182,10 +193,19 @@ export default function HomePage() {
                     {t('home.readingDesc')}
                   </p>
 
-                  <div className="flex items-center gap-2 text-blue-600 mb-6">
+                  <div className="flex items-center gap-2 text-blue-600 mb-4">
                     <Sparkles className="w-4 h-4" />
                     <span className="text-sm font-medium">{t('home.feature1Title')}</span>
                   </div>
+
+                  {readingWrongCount > 0 && (
+                    <div className="flex items-center gap-2 mb-4 px-3 py-2 bg-red-50 rounded-lg border border-red-200">
+                      <AlertCircle className="w-4 h-4 text-red-500" />
+                      <span className="text-sm font-medium text-red-600">
+                        {lang === 'id' ? `${readingWrongCount} soal salah perlu diulangi` : `${readingWrongCount} 道錯題待複習`}
+                      </span>
+                    </div>
+                  )}
 
                   <motion.button
                     className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold py-3 rounded-xl hover:shadow-lg transition-shadow"
@@ -222,10 +242,19 @@ export default function HomePage() {
                     {t('home.listeningDesc')}
                   </p>
 
-                  <div className="flex items-center gap-2 text-purple-600 mb-6">
+                  <div className="flex items-center gap-2 text-purple-600 mb-4">
                     <Sparkles className="w-4 h-4" />
                     <span className="text-sm font-medium">{t('home.feature3Title')}</span>
                   </div>
+
+                  {listeningWrongCount > 0 && (
+                    <div className="flex items-center gap-2 mb-4 px-3 py-2 bg-red-50 rounded-lg border border-red-200">
+                      <AlertCircle className="w-4 h-4 text-red-500" />
+                      <span className="text-sm font-medium text-red-600">
+                        {lang === 'id' ? `${listeningWrongCount} soal salah perlu diulangi` : `${listeningWrongCount} 道錯題待複習`}
+                      </span>
+                    </div>
+                  )}
 
                   <motion.button
                     className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white font-semibold py-3 rounded-xl hover:shadow-lg transition-shadow"
@@ -506,7 +535,7 @@ export default function HomePage() {
             TOCFL Hero - {t('home.subtitle')}
           </p>
           <p className="text-sm">
-            © 2024 TOCFL Hero. All rights reserved.
+            © 2024-2026 TOCFL Hero. All rights reserved.
           </p>
         </div>
       </motion.footer>
