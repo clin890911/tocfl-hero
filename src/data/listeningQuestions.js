@@ -23,7 +23,8 @@ export const listeningQuestions = {
       question: '女生想喝什麼？',
       options: ['啤酒', '茶', '咖啡'],
       answer: 0,
-      explanation: '女生明確說「我想喝啤酒」。'
+      explanation: '女生明確說「我想喝啤酒」。',
+      explanationId: 'Wanita itu mengatakan dengan jelas "Saya ingin minum bir".',
     },
     {
       id: 'bandA-l-002',
@@ -34,7 +35,8 @@ export const listeningQuestions = {
       question: '這個東西多少錢？',
       options: ['五十塊', '三十塊', '七十塊'],
       answer: 0,
-      explanation: '男生說「這個五十塊」。'
+      explanation: '男生說「這個五十塊」。',
+      explanationId: 'Pria itu mengatakan "Ini lima puluh yuan".',
     },
     {
       id: 'bandA-l-003',
@@ -45,7 +47,8 @@ export const listeningQuestions = {
       question: '女生什麼時候睡覺？',
       options: ['十點', '十一點', '十二點'],
       answer: 1,
-      explanation: '女生說「我通常十一點睡覺」。'
+      explanation: '女生說「我通常十一點睡覺」。',
+      explanationId: 'Wanita itu mengatakan "Biasanya saya tidur pukul sebelas".',
     },
     {
       id: 'bandA-l-004',
@@ -56,7 +59,8 @@ export const listeningQuestions = {
       question: '男生最喜歡什麼顏色？',
       options: ['藍色', '綠色', '紅色'],
       answer: 0,
-      explanation: '男生說「我最喜歡藍色」。'
+      explanation: '男生說「我最喜歡藍色」。',
+      explanationId: 'Pria itu mengatakan "Saya paling suka biru".',
     },
     {
       id: 'bandA-l-005',
@@ -67,7 +71,8 @@ export const listeningQuestions = {
       question: '女生住在哪裡？',
       options: ['台中', '台北', '高雄'],
       answer: 1,
-      explanation: '女生說「我住在台北」。'
+      explanation: '女生說「我住在台北」。',
+      explanationId: 'Wanita itu mengatakan "Saya tinggal di Taipei".',
     },
     {
       id: 'bandA-l-006',
@@ -78,7 +83,8 @@ export const listeningQuestions = {
       question: '男生有幾個兄弟姊妹？',
       options: ['一個', '兩個', '三個'],
       answer: 1,
-      explanation: '男生說「我有一個哥哥和一個妹妹」，共兩個。'
+      explanation: '男生說「我有一個哥哥和一個妹妹」，共兩個。',
+      explanationId: 'Pria itu mengatakan "Saya memiliki seorang kakak dan adik", total dua.',
     },
     {
       id: 'bandA-l-007',
@@ -89,7 +95,8 @@ export const listeningQuestions = {
       question: '女生覺得工作怎麼樣？',
       options: ['還不錯但有點累', '很累', '不好'],
       answer: 0,
-      explanation: '女生說「還不錯，但是有點累」。'
+      explanation: '女生說「還不錯，但是有點累」。',
+      explanationId: 'Wanita itu mengatakan "Cukup baik, tetapi sedikit lelah".',
     },
     {
       id: 'bandA-l-008',
@@ -113,7 +120,8 @@ export const listeningQuestions = {
       question: '他們應該在什麼地方？',
       options: ['餐廳', '超市', '家裡', '公園'],
       answer: 0,
-      explanation: '他們在討論吃什麼菜色，應該在餐廳。'
+      explanation: '他們在討論吃什麼菜色，應該在餐廳。',
+      explanationId: 'Mereka sedang membahas apa yang akan dimakan, seharusnya di restoran.',
     },
     {
       id: 'bandA-l-010',
@@ -201,7 +209,8 @@ export const listeningQuestions = {
       question: '會議什麼時候開始？',
       options: ['八點', '十點', '八點半', '十一點'],
       answer: 1,
-      explanation: '女生說「十點開始」。'
+      explanation: '女生說「十點開始」。',
+      explanationId: 'Wanita itu mengatakan "Dimulai pada pukul 10".',
     },
     {
       id: 'bandA-l-018',
@@ -223,7 +232,8 @@ export const listeningQuestions = {
       question: '女生的手機用了多久？',
       options: ['一年多', '一年', '半年', '兩年'],
       answer: 0,
-      explanation: '女生說「去年買的，已經用了一年多」。'
+      explanation: '女生說「去年買的，已經用了一年多」。',
+      explanationId: 'Wanita itu mengatakan "Dibeli tahun lalu, sudah digunakan selama lebih dari setahun".',
     },
     {
       id: 'bandA-l-020',
@@ -335,7 +345,8 @@ export const listeningQuestions = {
       question: '女生想做什麼來涼快？',
       options: ['喝冰水', '洗澡', '吹風扇', '去海邊涼一涼'],
       answer: 3,
-      explanation: '女生說「我想去海邊涼一涼」。'
+      explanation: '女生說「我想去海邊涼一涼」。',
+      explanationId: 'Wanita itu mengatakan "Saya ingin pergi ke pantai untuk menyegarkan diri".',
     },
     {
       id: 'bandA-l-030',
@@ -361,7 +372,8 @@ export const listeningQuestions = {
       question: '早上九點的火車什麼時候到高雄？',
       options: ['下午三點左右', '下午二點左右', '下午一點左右', '下午四點左右'],
       answer: 0,
-      explanation: '女生說「到高雄大概要五個小時」，早上九點出發，五小時後約下午二點到。實際上應為下午兩點。'
+      explanation: '女生說「到高雄大概要五個小時」，早上九點出發，五小時後約下午二點到。實際上應為下午兩點。',
+      explanationId: 'Wanita itu mengatakan "Ke Kaohsiung kira-kira membutuhkan lima jam", berangkat pukul 09:00 pagi, lima jam kemudian sekitar pukul 2 sore tiba. Sebenarnya seharusnya pukul 2 sore.',
     },
     {
       id: 'bandB-l-002',
@@ -383,7 +395,8 @@ export const listeningQuestions = {
       question: '女生建議什麼時候開始這個計畫？',
       options: ['延後兩個月', '提前兩個月', '馬上開始', '再等四個月'],
       answer: 0,
-      explanation: '女生說「我建議延後兩個月開始」。'
+      explanation: '女生說「我建議延後兩個月開始」。',
+      explanationId: 'Wanita itu mengatakan "Saya menyarankan untuk menunda mulai dua bulan".',
     },
     {
       id: 'bandB-l-004',
@@ -405,7 +418,8 @@ export const listeningQuestions = {
       question: '女生為什麼擔心出國工作？',
       options: ['害怕坐飛機', '擔心語言問題', '家人反對', '錢不夠'],
       answer: 1,
-      explanation: '女生明確說「我擔心語言的問題」。'
+      explanation: '女生明確說「我擔心語言的問題」。',
+      explanationId: 'Wanita itu mengatakan dengan jelas "Saya khawatir masalah bahasa".',
     },
     {
       id: 'bandB-l-006',
@@ -471,7 +485,8 @@ export const listeningQuestions = {
       question: '女生準備創業多久了？',
       options: ['一年', '三年', '兩年', '四年'],
       answer: 2,
-      explanation: '女生說「我已經準備兩年了」。'
+      explanation: '女生說「我已經準備兩年了」。',
+      explanationId: 'Wanita itu mengatakan "Saya sudah mempersiapkan selama dua tahun".',
     },
     {
       id: 'bandB-l-012',
@@ -497,7 +512,8 @@ export const listeningQuestions = {
           question: '這位女生想乘坐什麼時間的火車？',
           options: ['下午一點', '下午二點', '下午四點', '下午三點'],
           answer: 3,
-          explanation: '女生說「我想坐下午三點從台北到台中的火車」。'
+          explanation: '女生說「我想坐下午三點從台北到台中的火車」。',
+      explanationId: 'Wanita itu mengatakan "Saya ingin naik kereta jam 3 sore dari Taipei ke Taichung".',
         },
         {
           question: '女生要買什麼樣的火車票？',
@@ -560,13 +576,15 @@ export const listeningQuestions = {
           question: '女生對辦公環境最滿意的地方是什麼？',
           options: ['地點好', '人員親切', '設施新', '光線充足'],
           answer: 3,
-          explanation: '女生說「光線很充足」是她滿意的地方。'
+          explanation: '女生說「光線很充足」是她滿意的地方。',
+      explanationId: 'Wanita itu mengatakan "Cahaya sangat cukup" adalah tempat yang dia puas.',
         },
         {
           question: '女生希望做什麼調整？',
           options: ['有一天在家工作', '減少工作時間', '增加薪水', '更換部門'],
           answer: 0,
-          explanation: '女生說「我希望能有一天在家工作」。'
+          explanation: '女生說「我希望能有一天在家工作」。',
+      explanationId: 'Wanita itu mengatakan "Saya berharap dapat bekerja dari rumah suatu hari".',
         }
       ]
     },
@@ -581,7 +599,8 @@ export const listeningQuestions = {
           question: '女生應該報名哪個級別的課程？',
           options: ['中級', '初級', '高級', '專業級'],
           answer: 0,
-          explanation: '女生說「我學了兩年英語，應該是中級」。'
+          explanation: '女生說「我學了兩年英語，應該是中級」。',
+      explanationId: 'Wanita itu mengatakan "Saya telah belajar bahasa Inggris selama dua tahun, seharusnya tingkat menengah".',
         },
         {
           question: '課程一個月多少錢？',
@@ -644,7 +663,8 @@ export const listeningQuestions = {
           question: '女生星期六下午要做什麼？',
           options: ['去健身房', '看電影', '見朋友', '在家休息'],
           answer: 2,
-          explanation: '女生說「下午要去見朋友」。'
+          explanation: '女生說「下午要去見朋友」。',
+      explanationId: 'Wanita itu mengatakan "Sore akan pergi bertemu teman".',
         },
         {
           question: '女生星期日為什麼不出去玩？',
@@ -688,13 +708,15 @@ export const listeningQuestions = {
           question: '李大華覺得什麼事情對他來說很困難？',
           options: ['運動', '收藏石頭', '電腦遊戲', '數學'],
           answer: 3,
-          explanation: '他說「數學就讓我很頭痛了」。'
+          explanation: '他說「數學就讓我很頭痛了」。',
+      explanationId: 'Dia mengatakan "Matematika saja sudah memberiku sakit kepala".',
         },
         {
           question: '下面哪一句話是對的？',
           options: ['他現在住在臺中', '他現在住在臺北', '他一直住在臺南', '他現在住在高雄'],
           answer: 0,
-          explanation: '他說「之後才從臺北搬到臺中來上課」，所以現在住在臺中。'
+          explanation: '他說「之後才從臺北搬到臺中來上課」，所以現在住在臺中。',
+      explanationId: 'Dia mengatakan "Setelah itu baru pindah dari Taipei ke Taichung untuk bersekolah", jadi sekarang tinggal di Taichung.',
         }
       ]
     },
@@ -709,13 +731,15 @@ export const listeningQuestions = {
           question: '台灣今年的失業率是多少？',
           options: ['百分之二點五', '百分之四點五', '百分之三點五', '百分之五點五'],
           answer: 2,
-          explanation: '報導說「失業率下降到百分之三點五」。'
+          explanation: '報導說「失業率下降到百分之三點五」。',
+      explanationId: 'Laporan mengatakan "Tingkat pengangguran turun menjadi 3,5 persen".',
         },
         {
           question: '為什麼許多年輕人仍然面臨就業困難？',
           options: ['沒有教育', '沒有技能', '不願意工作', '經驗不足'],
           answer: 3,
-          explanation: '報導說「許多年輕人仍然面臨就業困難，因為他們缺乏工作經驗」。'
+          explanation: '報導說「許多年輕人仍然面臨就業困難，因為他們缺乏工作經驗」。',
+      explanationId: 'Laporan mengatakan "Banyak orang muda masih menghadapi kesulitan pekerjaan karena mereka kekurangan pengalaman kerja".',
         }
       ]
     },
@@ -757,7 +781,8 @@ export const listeningQuestions = {
           question: '為什麼環保產品的價格比較高？',
           options: ['生產成本高', '消費者願意付更多錢', '公司要獲利更多', '進口關稅高'],
           answer: 0,
-          explanation: '報告說「生產環保產品的成本很高，這導致產品價格上升」。'
+          explanation: '報告說「生產環保產品的成本很高，這導致產品價格上升」。',
+      explanationId: 'Laporan mengatakan "Biaya produksi produk ramah lingkungan sangat tinggi, ini menyebabkan harga produk naik".',
         }
       ]
     },

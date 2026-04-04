@@ -13,7 +13,8 @@ export const readingQuestions = {
       question: '「我每天早上都＿＿＿去學校。」',
       options: ['走開', '睡覺', '走路', '走動'],
       answer: 2,
-      explanation: '「走路」表示步行前往，是日常交通方式的常用說法。'
+      explanation: '「走路」表示步行前往，是日常交通方式的常用說法。',
+      explanationId: '"Berjalan" menunjukkan perjalanan dengan berjalan kaki, cara transportasi sehari-hari yang umum.',
     },
     {
       id: 'bandA-r-002',
@@ -23,7 +24,8 @@ export const readingQuestions = {
       question: '「他是我的好＿＿＿，我們常常一起吃飯。」',
       options: ['朋友', '老師', '醫生', '司機'],
       answer: 0,
-      explanation: '「好朋友」是親密關係的表達，「常常一起吃飯」暗示親密的社交關係。'
+      explanation: '「好朋友」是親密關係的表達，「常常一起吃飯」暗示親密的社交關係。',
+      explanationId: '"Teman baik" adalah ekspresi dari hubungan intim, "sering makan bersama" menyiratkan hubungan sosial yang dekat.',
     },
     {
       id: 'bandA-r-003',
@@ -33,7 +35,8 @@ export const readingQuestions = {
       question: '「天氣很熱，我要打開＿＿＿。」',
       options: ['電視', '暖氣', '冷氣', '電話'],
       answer: 2,
-      explanation: '天氣熱要降溫，所以打開冷氣是合理的選擇。'
+      explanation: '天氣熱要降溫，所以打開冷氣是合理的選擇。',
+      explanationId: 'Ketika cuaca panas memerlukan pendinginan, membuka pendingin udara adalah pilihan yang masuk akal.',
     },
     {
       id: 'bandA-r-004',
@@ -43,7 +46,8 @@ export const readingQuestions = {
       question: '「我想喝一＿＿＿水。」',
       options: ['本', '件', '杯', '條'],
       answer: 2,
-      explanation: '量詞「杯」用於液體飲料，如一杯水、一杯咖啡。'
+      explanation: '量詞「杯」用於液體飲料，如一杯水、一杯咖啡。',
+      explanationId: 'Pengukur "gelas" digunakan untuk minuman cair, seperti secangkir air, secangkir kopi.',
     },
     {
       id: 'bandA-r-005',
@@ -53,7 +57,8 @@ export const readingQuestions = {
       question: '「星期天我喜歡＿＿＿音樂。」',
       options: ['聽', '寫', '看', '吃'],
       answer: 0,
-      explanation: '音樂用耳朵感受，所以搭配「聽」。'
+      explanation: '音樂用耳朵感受，所以搭配「聽」。',
+      explanationId: 'Musik dirasakan dengan telinga, jadi cocok dengan "mendengarkan".',
     },
     {
       id: 'bandA-r-006',
@@ -63,7 +68,8 @@ export const readingQuestions = {
       question: '「這個蘋果很＿＿＿，我很喜歡吃。」',
       options: ['鹹', '辣', '甜', '苦'],
       answer: 2,
-      explanation: '蘋果的味道通常是甜的，「喜歡吃」表示正面的味覺體驗。'
+      explanation: '蘋果的味道通常是甜的，「喜歡吃」表示正面的味覺體驗。',
+      explanationId: 'Rasa apel biasanya manis, "suka makan" menunjukkan pengalaman rasa yang positif.',
     },
     {
       id: 'bandA-r-007',
@@ -73,7 +79,8 @@ export const readingQuestions = {
       question: '「我＿＿＿在房間裡看書。」',
       options: ['已', '才', '就', '正在'],
       answer: 3,
-      explanation: '「正在」表示動作正在進行中。'
+      explanation: '「正在」表示動作正在進行中。',
+      explanationId: '"Sedang" menunjukkan tindakan sedang berlangsung.',
     },
     {
       id: 'bandA-r-008',
@@ -83,7 +90,8 @@ export const readingQuestions = {
       question: '「這本書比那本書＿＿＿。」',
       options: ['很貴', '最貴', '貴', '貴了'],
       answer: 2,
-      explanation: '比較句型「A比B + 形容詞」，形容詞前不加「很」。'
+      explanation: '比較句型「A比B + 形容詞」，形容詞前不加「很」。',
+      explanationId: 'Pola perbandingan "A dibanding B + sifat", tidak menambah "sangat" sebelum sifat.',
     },
     {
       id: 'bandA-r-009',
@@ -93,7 +101,8 @@ export const readingQuestions = {
       question: '「在台灣我已經住＿＿＿三年了。」',
       options: ['在', '著', '過', '了'],
       answer: 2,
-      explanation: '「已經...了」搭配「住過」表示持續的經歷狀態。'
+      explanation: '「已經...了」搭配「住過」表示持續的經歷狀態。',
+      explanationId: '"Sudah...le" dipasangkan dengan "pernah tinggal" menunjukkan keadaan pengalaman berkelanjutan.',
     },
     {
       id: 'bandA-r-010',
@@ -103,7 +112,8 @@ export const readingQuestions = {
       question: '「我的＿＿＿在台北工作。」',
       options: ['桌子', '書包', '鉛筆', '哥哥'],
       answer: 3,
-      explanation: '只有「哥哥」是人，可以在某個地方工作。'
+      explanation: '只有「哥哥」是人，可以在某個地方工作。',
+      explanationId: 'Hanya "kakak" adalah manusia yang bisa bekerja di suatu tempat.',
     },
 
     // === 選詞填空/完成段落 (5 items with multiple blanks) ===
@@ -118,31 +128,36 @@ export const readingQuestions = {
           question: '(1)',
           options: ['很貴', '很舒服', '很漂亮', '什麼東西都有'],
           answer: 3,
-          explanation: '「裡面什麼東西都有」表示百貨公司商品很齐全。'
+          explanation: '「裡面什麼東西都有」表示百貨公司商品很齐全。',
+      explanationId: '"Di dalamnya ada segalanya" menunjukkan bahwa toko serba ada memiliki produk yang lengkap.',
         },
         {
           question: '(2)',
           options: ['樓下有餐廳', '很乾淨', '外面很漂亮', '經常打折'],
           answer: 2,
-          explanation: '根據後文「很漂亮」和前文的邏輯。'
+          explanation: '根據後文「很漂亮」和前文的邏輯。',
+      explanationId: 'Berdasarkan teks berikutnya "sangat cantik" dan logika teks sebelumnya.',
         },
         {
           question: '(3)',
           options: ['一個包包', '一本書', '一支筆', '一雙手套'],
           answer: 3,
-          explanation: '「毛衣」後面搭配「一雙手套」符合冬季購物習慣。'
+          explanation: '「毛衣」後面搭配「一雙手套」符合冬季購物習慣。',
+      explanationId: '"Sweater" diikuti dengan "sepasang sarung tangan" sesuai dengan kebiasaan belanja musim dingin.',
         },
         {
           question: '(4)',
           options: ['買完東西以前', '買完東西以後', '吃完飯以後', '早上的時候'],
           answer: 1,
-          explanation: '邏輯順序：買完東西→吃飯。'
+          explanation: '邏輯順序：買完東西→吃飯。',
+      explanationId: 'Urutan logis: selesai berbelanja → makan.',
         },
         {
           question: '(5)',
           options: ['朋友的家', '家裡', '樓下的餐廳', '公園'],
           answer: 2,
-          explanation: '百貨公司內一般有餐廳可吃飯。'
+          explanation: '百貨公司內一般有餐廳可吃飯。',
+      explanationId: 'Umumnya ada restoran di toko serba ada untuk makan.',
         }
       ]
     },
@@ -157,31 +172,36 @@ export const readingQuestions = {
           question: '(1)',
           options: ['喜歡游泳', '是一個工程師', '在台灣', '每天都很累'],
           answer: 1,
-          explanation: '說明人物身分為後文做準備。'
+          explanation: '說明人物身分為後文做準備。',
+      explanationId: 'Menjelaskan identitas karakter mempersiapkan teks berikutnya.',
         },
         {
           question: '(2)',
           options: ['也', '很', '就', '正'],
           answer: 2,
-          explanation: '「每天就起床」表示日常習慣。'
+          explanation: '「每天就起床」表示日常習慣。',
+      explanationId: '"Bangun setiap hari" menunjukkan kebiasaan sehari-hari.',
         },
         {
           question: '(3)',
           options: ['洗澡', '看新聞', '吃早餐', '運動'],
           answer: 2,
-          explanation: '起床後自然是吃早餐。'
+          explanation: '起床後自然是吃早餐。',
+      explanationId: 'Setelah bangun, secara alami adalah makan sarapan.',
         },
         {
           question: '(4)',
           options: ['騎腳踏車', '坐公車', '開車', '走路'],
           answer: 2,
-          explanation: '工程師上班多用代步工具。'
+          explanation: '工程師上班多用代步工具。',
+      explanationId: 'Insinyur saat pergi kerja sering menggunakan alat transportasi.',
         },
         {
           question: '(5)',
           options: ['工作因為', '工作雖然', '的工作', '工作'],
           answer: 2,
-          explanation: '「他的工作很忙」是恰當的搭配。'
+          explanation: '「他的工作很忙」是恰當的搭配。',
+      explanationId: '"Pekerjaannya sangat sibuk" adalah pasangan yang tepat.',
         }
       ]
     },
@@ -196,31 +216,36 @@ export const readingQuestions = {
           question: '(1)',
           options: ['曾經', '正在', '已經', '將要'],
           answer: 2,
-          explanation: '表示她目前在這個職位，已經在這家醫院工作。'
+          explanation: '表示她目前在這個職位，已經在這家醫院工作。',
+      explanationId: 'Menunjukkan bahwa dia saat ini di posisi ini, sudah bekerja di rumah sakit ini.',
         },
         {
           question: '(2)',
           options: ['討厭', '喜歡', '怕', '忘記'],
           answer: 1,
-          explanation: '後面說「因為她喜歡幫助病人」。'
+          explanation: '後面說「因為她喜歡幫助病人」。',
+      explanationId: 'Teks berikutnya mengatakan "karena dia suka membantu pasien".',
         },
         {
           question: '(3)',
           options: ['討厭', '想', '忘記', '害怕'],
           answer: 1,
-          explanation: '「她想幫助病人」表達她的動機。'
+          explanation: '「她想幫助病人」表達她的動機。',
+      explanationId: '"Dia ingin membantu pasien" mengungkapkan motivasinya.',
         },
         {
           question: '(4)',
           options: ['她', '工作', '醫院', '病人'],
           answer: 1,
-          explanation: '「工作很累」是合適的表達。'
+          explanation: '「工作很累」是合適的表達。',
+      explanationId: '"Pekerjaan sangat melelahkan" adalah ekspresi yang tepat.',
         },
         {
           question: '(5)',
           options: ['不會', '會', '能夠', '沒有'],
           answer: 0,
-          explanation: '「她不會放棄」表示她的決心。'
+          explanation: '「她不會放棄」表示她的決心。',
+      explanationId: '"Dia tidak akan menyerah" menunjukkan tekadnya.',
         }
       ]
     },
@@ -235,31 +260,36 @@ export const readingQuestions = {
           question: '(1)',
           options: ['賣', '給', '送', '要'],
           answer: 2,
-          explanation: '「送禮物」是固定搭配。'
+          explanation: '「送禮物」是固定搭配。',
+      explanationId: '"Memberi hadiah" adalah kolokasi tetap.',
         },
         {
           question: '(2)',
           options: ['因為', '但是', '所以', '或者'],
           answer: 1,
-          explanation: '轉折關係：還不知道→但是可能買...'
+          explanation: '轉折關係：還不知道→但是可能買...',
+      explanationId: 'Hubungan kontras: belum tahu → tetapi mungkin membeli...',
         },
         {
           question: '(3)',
           options: ['討厭', '忘記', '喜歡', '想'],
           answer: 2,
-          explanation: '後面說「所以書是好禮物」，推導出他喜歡看書。'
+          explanation: '後面說「所以書是好禮物」，推導出他喜歡看書。',
+      explanationId: 'Teks berikutnya mengatakan "jadi buku adalah hadiah yang baik", deduksi dia suka membaca buku.',
         },
         {
           question: '(4)',
           options: ['很差', '不好', '很舊', '很好'],
           answer: 3,
-          explanation: '他喜歡看書，所以書是好禮物。'
+          explanation: '他喜歡看書，所以書是好禮物。',
+      explanationId: 'Dia suka membaca buku, jadi buku adalah hadiah yang baik.',
         },
         {
           question: '(5)',
           options: ['很少', '從不', '經常', '討厭'],
           answer: 2,
-          explanation: '「他經常用手機」→「手機套也很實用」。'
+          explanation: '「他經常用手機」→「手機套也很實用」。',
+      explanationId: '"Dia sering menggunakan ponsel" → "casing ponsel juga sangat praktis".',
         }
       ]
     },
@@ -274,7 +304,8 @@ export const readingQuestions = {
           question: '(1)',
           options: ['在', '坐', '位置', '住'],
           answer: 0,
-          explanation: '「在...街道上」表示位置。'
+          explanation: '「在...街道上」表示位置。',
+      explanationId: '"Di jalan..." menunjukkan lokasi.',
         },
         {
           question: '(2)',
@@ -286,19 +317,22 @@ export const readingQuestions = {
           question: '(3)',
           options: ['說', '認為', '做', '買'],
           answer: 1,
-          explanation: '「老闆認為食物很新鮮」。'
+          explanation: '「老闆認為食物很新鮮」。',
+      explanationId: '"Pemilik berpikir makanan sangat segar".',
         },
         {
           question: '(4)',
           options: ['選', '買', '用', '要'],
           answer: 2,
-          explanation: '「用最好的材料」是固定搭配。'
+          explanation: '「用最好的材料」是固定搭配。',
+      explanationId: '"Menggunakan bahan terbaik" adalah kolokasi tetap.',
         },
         {
           question: '(5)',
           options: ['食物', '飯', '材料', '菜'],
           answer: 0,
-          explanation: '「食物很好吃」是恰當的表達。'
+          explanation: '「食物很好吃」是恰當的表達。',
+      explanationId: '"Makanannya sangat lezat" adalah ekspresi yang tepat.',
         }
       ]
     },
@@ -313,7 +347,8 @@ export const readingQuestions = {
       question: '小明怎麼去學校？',
       options: ['走路', '坐公車', '騎腳踏車', '坐計程車'],
       answer: 1,
-      explanation: '文中提到「坐公車去學校」。'
+      explanation: '文中提到「坐公車去學校」。',
+      explanationId: 'Teks menyebutkan "naik bus ke sekolah".',
     },
     {
       id: 'bandA-r-017',
@@ -324,7 +359,8 @@ export const readingQuestions = {
       question: '小麗邀請小美做什麼？',
       options: ['去餐廳吃飯', '去她家吃晚飯', '去看電影', '去公園散步'],
       answer: 1,
-      explanation: '信中說「請你來我家吃晚飯」。'
+      explanation: '信中說「請你來我家吃晚飯」。',
+      explanationId: 'Surat mengatakan "Silakan datang ke rumahku untuk makan malam".',
     },
     {
       id: 'bandA-r-018',
@@ -335,7 +371,8 @@ export const readingQuestions = {
       question: '小華一共要付多少錢？',
       options: ['130元', '170元', '110元', '180元'],
       answer: 0,
-      explanation: '雞肉飯80元 + 珍珠奶茶50元 = 130元。'
+      explanation: '雞肉飯80元 + 珍珠奶茶50元 = 130元。',
+      explanationId: 'Nasi ayam 80 yuan + teh mutiara 50 yuan = 130 yuan.',
     },
     {
       id: 'bandA-r-019',
@@ -346,7 +383,8 @@ export const readingQuestions = {
       question: '從台北到高雄要多久？',
       options: ['三個半小時', '兩個小時', '兩個半小時', '三個小時'],
       answer: 0,
-      explanation: '09:00出發，12:30到達，共3.5小時。'
+      explanation: '09:00出發，12:30到達，共3.5小時。',
+      explanationId: 'Berangkat pukul 09:00, tiba pukul 12:30, total 3,5 jam.',
     },
     {
       id: 'bandA-r-020',
@@ -357,7 +395,8 @@ export const readingQuestions = {
       question: '他們在哪裡散步？',
       options: ['學校', '商店', '公園', '家裡'],
       answer: 2,
-      explanation: '文中明確說「去公園散步」。'
+      explanation: '文中明確說「去公園散步」。',
+      explanationId: 'Teks secara jelas mengatakan "berjalan di taman".',
     },
     {
       id: 'bandA-r-021',
@@ -368,7 +407,8 @@ export const readingQuestions = {
       question: '如果買三瓶牛奶，要付多少錢？',
       options: ['25元', '75元', '100元', '50元'],
       answer: 3,
-      explanation: '買二送一，所以三瓶只要付兩瓶的錢：25 × 2 = 50元。'
+      explanation: '買二送一，所以三瓶只要付兩瓶的錢：25 × 2 = 50元。',
+      explanationId: 'Beli dua gratis satu, jadi tiga botol hanya perlu membayar dua botol: 25 × 2 = 50 yuan.',
     },
     {
       id: 'bandA-r-022',
@@ -379,7 +419,8 @@ export const readingQuestions = {
       question: '咖啡館現在開著嗎？',
       options: ['不開門', '還在營業', '剛開門', '已經關門'],
       answer: 1,
-      explanation: '週末09:00-22:00，下午3點在營業時間內，所以還在營業。'
+      explanation: '週末09:00-22:00，下午3點在營業時間內，所以還在營業。',
+      explanationId: 'Akhir pekan 09:00-22:00, pukul 3 sore dalam jam operasional, jadi masih buka.',
     },
 
     // === 閱讀理解 不同格式 (7 items: 通知、菜單、信件、告示等) ===
@@ -392,7 +433,8 @@ export const readingQuestions = {
       question: '圖書館整修期間，學生要到哪裡借書？',
       options: ['圖書館', '教室大樓一樓', '臨時借書處', '學生宿舍'],
       answer: 1,
-      explanation: '通知說「請到臨時借書處（教室大樓一樓）」。'
+      explanation: '通知說「請到臨時借書處（教室大樓一樓）」。',
+      explanationId: 'Pemberitahuan mengatakan "Silakan pergi ke layanan peminjaman sementara (lantai 1 gedung ruang kelas)".',
     },
     {
       id: 'bandA-r-024',
@@ -403,7 +445,8 @@ export const readingQuestions = {
       question: '保養期間住戶應該怎麼做？',
       options: ['改走樓梯上下樓', '等到下午五點再出門', '搬到別棟大樓住', '不要回家'],
       answer: 0,
-      explanation: '公告中說「請住戶改走樓梯」。'
+      explanation: '公告中說「請住戶改走樓梯」。',
+      explanationId: 'Pengumuman mengatakan "Silakan penduduk menggunakan tangga".',
     },
     {
       id: 'bandA-r-025',
@@ -414,7 +457,8 @@ export const readingQuestions = {
       question: '如果想下午看診，最晚什麼時間要掛號？',
       options: ['13:30', '11:00', '16:30', '20:00'],
       answer: 1,
-      explanation: '下午掛號時間是08:00-11:00，最晚11:00。'
+      explanation: '下午掛號時間是08:00-11:00，最晚11:00。',
+      explanationId: 'Waktu pendaftaran sore hari adalah 08:00-11:00, paling lambat 11:00.',
     },
     {
       id: 'bandA-r-026',
@@ -425,7 +469,8 @@ export const readingQuestions = {
       question: '租房間內有什麼家具？',
       options: ['只有床', '床、書桌、椅子、衣櫃', '床、椅子', '冰箱和電視'],
       answer: 1,
-      explanation: '通知列出「雙人床、書桌、椅子、衣櫃各一件」。'
+      explanation: '通知列出「雙人床、書桌、椅子、衣櫃各一件」。',
+      explanationId: 'Pemberitahuan mencantumkan "tempat tidur double, meja belajar, kursi, lemari pakaian masing-masing satu".',
     },
     {
       id: 'bandA-r-027',
@@ -436,7 +481,8 @@ export const readingQuestions = {
       question: '小王上午做什麼？',
       options: ['開會', '吃飯', '坐公車', '煮飯'],
       answer: 0,
-      explanation: '文中說「上午和同事開了一個會」。'
+      explanation: '文中說「上午和同事開了一個會」。',
+      explanationId: 'Teks mengatakan "di pagi hari dan rekan kerja mengadakan rapat".',
     },
     {
       id: 'bandA-r-028',
@@ -447,7 +493,8 @@ export const readingQuestions = {
       question: '根據預報，什麼時候天氣最冷？',
       options: ['明天', '今天', '後天', '無法判斷'],
       answer: 0,
-      explanation: '明天氣溫20-25度，是三天中最低的。'
+      explanation: '明天氣溫20-25度，是三天中最低的。',
+      explanationId: 'Suhu besok 20-25 derajat, terendah dalam tiga hari.',
     },
     {
       id: 'bandA-r-029',
@@ -458,7 +505,8 @@ export const readingQuestions = {
       question: '大華為什麼改變了？',
       options: ['他現在有很多錢', '他為了小孩的健康', '他搬到新房子', '他參加了打掃課程'],
       answer: 1,
-      explanation: '文中說「他的兒子身體不好...所以現在大華...」'
+      explanation: '文中說「他的兒子身體不好...所以現在大華...」',
+      explanationId: 'Teks mengatakan "putranya kurang sehat... jadi sekarang Dahua..."',
     },
     {
       id: 'bandA-r-030',
@@ -486,31 +534,36 @@ export const readingQuestions = {
           question: '(1)',
           options: ['消極', '妥善', '顯著', '意外'],
           answer: 1,
-          explanation: '「妥善安排時間」是恰當的搭配，表示合理安排。'
+          explanation: '「妥善安排時間」是恰當的搭配，表示合理安排。',
+      explanationId: '"Mengatur waktu dengan tepat" adalah pasangan yang tepat, menunjukkan pengaturan yang masuk akal.',
         },
         {
           question: '(2)',
           options: ['屬於', '等於', '反對', '不顧'],
           answer: 0,
-          explanation: '「暑假屬於學生」表示暑假是學生的。'
+          explanation: '「暑假屬於學生」表示暑假是學生的。',
+      explanationId: '"Liburan musim panas milik siswa" menunjukkan liburan musim panas adalah milik siswa.',
         },
         {
           question: '(3)',
           options: ['有爭議', '很重要', '簡單', '太難'],
           answer: 0,
-          explanation: '「這個話題有爭議」→「各國政策也不同」。'
+          explanation: '「這個話題有爭議」→「各國政策也不同」。',
+      explanationId: '"Topik ini kontroversial" → "kebijakan negara juga berbeda".',
         },
         {
           question: '(4)',
           options: ['相同', '簡單', '不同', '複雜'],
           answer: 2,
-          explanation: '各國政策因此「不同」。'
+          explanation: '各國政策因此「不同」。',
+      explanationId: 'Kebijakan negara karena itu "berbeda".',
         },
         {
           question: '(5)',
           options: ['贊成', '反對', '不同意', '忘記'],
           answer: 0,
-          explanation: '「有些國家贊成讓學生放鬆」。'
+          explanation: '「有些國家贊成讓學生放鬆」。',
+      explanationId: '"Beberapa negara mendukung membiarkan siswa rileks".',
         },
         {
           question: '(6)',
@@ -531,31 +584,36 @@ export const readingQuestions = {
           question: '(1)',
           options: ['可能', '很少', '從不', '都'],
           answer: 3,
-          explanation: '「不論...都...」句型，空白處填「都」。'
+          explanation: '「不論...都...」句型，空白處填「都」。',
+      explanationId: 'Pola "terlepas dari... semua..." menempatkan "semua" di tempat kosong.',
         },
         {
           question: '(2)',
           options: ['雖然', '即使', '除非', '如果'],
           answer: 1,
-          explanation: '「即使下雨也會堅持」表示條件讓步。'
+          explanation: '「即使下雨也會堅持」表示條件讓步。',
+      explanationId: '"Bahkan jika hujan, akan tetap gigih" menunjukkan kondisi konsesif.',
         },
         {
           question: '(3)',
           options: ['從不', '沒有', '會', '不能'],
           answer: 2,
-          explanation: '「即使下雨也會堅持」。'
+          explanation: '「即使下雨也會堅持」。',
+      explanationId: '"Bahkan jika hujan, akan tetap gigih".',
         },
         {
           question: '(4)',
           options: ['更差', '更強', '更好', '相同'],
           answer: 1,
-          explanation: '經過運動，體能「變得更強」。'
+          explanation: '經過運動，體能「變得更強」。',
+      explanationId: 'Setelah berolahraga, kebugaran jasmani "menjadi lebih kuat".',
         },
         {
           question: '(5)',
           options: ['變好', '變壞', '變胖', '不變'],
           answer: 0,
-          explanation: '健康身體「也變好了」。'
+          explanation: '健康身體「也變好了」。',
+      explanationId: 'Kesehatan tubuh "juga menjadi lebih baik".',
         },
         {
           question: '(6)',
@@ -576,37 +634,43 @@ export const readingQuestions = {
           question: '(1)',
           options: ['已經', '可以', '不能', '從不'],
           answer: 2,
-          explanation: '五年前技術有限，「不能」進行許多事務。'
+          explanation: '五年前技術有限，「不能」進行許多事務。',
+      explanationId: 'Lima tahun yang lalu teknologi terbatas, "tidak bisa" melakukan banyak hal.',
         },
         {
           question: '(2)',
           options: ['但是', '例如', '因為', '而是'],
           answer: 1,
-          explanation: '「例如線上支付」舉例說明。'
+          explanation: '「例如線上支付」舉例說明。',
+      explanationId: '"Misalnya pembayaran online" memberikan contoh penjelasan.',
         },
         {
           question: '(3)',
           options: ['消失', '變成', '停留', '成為'],
           answer: 3,
-          explanation: '「已經成為日常生活的一部分」。'
+          explanation: '「已經成為日常生活的一部分」。',
+      explanationId: '"Sudah menjadi bagian dari kehidupan sehari-hari".',
         },
         {
           question: '(4)',
           options: ['想要', '必須', '願意', '能夠'],
           answer: 3,
-          explanation: '「都能夠適應」表示能力。'
+          explanation: '「都能夠適應」表示能力。',
+      explanationId: '"Semua bisa beradaptasi" menunjukkan kemampuan.',
         },
         {
           question: '(5)',
           options: ['參加課程', '學習時間', '工作', '練習'],
           answer: 3,
-          explanation: '「需要更多時間練習」。'
+          explanation: '「需要更多時間練習」。',
+      explanationId: '"Memerlukan lebih banyak waktu untuk berlatih".',
         },
         {
           question: '(6)',
           options: ['開始', '真正', '漸漸', '完全'],
           answer: 3,
-          explanation: '「完全掌握新技術」。'
+          explanation: '「完全掌握新技術」。',
+      explanationId: '"Sepenuhnya menguasai teknologi baru".',
         }
       ]
     },
@@ -621,37 +685,43 @@ export const readingQuestions = {
           question: '(1)',
           options: ['儘管', '除非', '因為', '倒是'],
           answer: 2,
-          explanation: '「之所以...是因為...」因果句型。'
+          explanation: '「之所以...是因為...」因果句型。',
+      explanationId: '"Alasan... adalah karena..." pola sebab akibat.',
         },
         {
           question: '(2)',
           options: ['在', '向', '跟', '對'],
           answer: 0,
-          explanation: '「在職業上取得成功」。'
+          explanation: '「在職業上取得成功」。',
+      explanationId: '"Mencapai kesuksesan di karir".',
         },
         {
           question: '(3)',
           options: ['為此', '因此', '所以', '那麼'],
           answer: 1,
-          explanation: '「因此就必須...」表示結果。'
+          explanation: '「因此就必須...」表示結果。',
+      explanationId: '"Oleh karena itu harus..." menunjukkan hasil.',
         },
         {
           question: '(4)',
           options: ['儘管', '只有', '唯有', '不過'],
           answer: 0,
-          explanation: '「儘管努力也未必能成功」，讓步句。'
+          explanation: '「儘管努力也未必能成功」，讓步句。',
+      explanationId: '"Meskipun berusaha keras, belum tentu bisa sukses", klausa konsesif.',
         },
         {
           question: '(5)',
           options: ['忽視', '損害', '忽略', '傷害'],
           answer: 1,
-          explanation: '「損害自己的身心健康」。'
+          explanation: '「損害自己的身心健康」。',
+      explanationId: '"Merusak kesehatan fisik dan mental sendiri".',
         },
         {
           question: '(6)',
           options: ['保持', '維持', '尋求', '追求'],
           answer: 0,
-          explanation: '「保持工作和生活的平衡」。'
+          explanation: '「保持工作和生活的平衡」。',
+      explanationId: '"Mempertahankan keseimbangan antara pekerjaan dan kehidupan".',
         }
       ]
     },
@@ -666,37 +736,43 @@ export const readingQuestions = {
           question: '(1)',
           options: ['急迫', '緊迫', '迫切', '重要'],
           answer: 1,
-          explanation: '「成為緊迫的課題」表示問題急切。'
+          explanation: '「成為緊迫的課題」表示問題急切。',
+      explanationId: '"Menjadi masalah yang mendesak" menunjukkan masalah itu mendesak.',
         },
         {
           question: '(2)',
           options: ['導致', '造成', '引發', '帶來'],
           answer: 0,
-          explanation: '「導致冰川融化」。'
+          explanation: '「導致冰川融化」。',
+      explanationId: '"Menyebabkan gletser mencair".',
         },
         {
           question: '(3)',
           options: ['而且', '並且', '也', '還'],
           answer: 0,
-          explanation: '「不但...而且...」遞進關係。'
+          explanation: '「不但...而且...」遞進關係。',
+      explanationId: '"Tidak hanya... tetapi juga..." hubungan progresif.',
         },
         {
           question: '(4)',
           options: ['各', '全球', '許多', '所有'],
           answer: 0,
-          explanation: '「各個國家」。'
+          explanation: '「各個國家」。',
+      explanationId: '"Berbagai negara".',
         },
         {
           question: '(5)',
           options: ['但是', '不過', '反而', '同時'],
           answer: 0,
-          explanation: '「但是普通民眾也要改變」，轉折關係。'
+          explanation: '「但是普通民眾也要改變」，轉折關係。',
+      explanationId: '"Tetapi masyarakat biasa juga perlu berubah", hubungan kontras.',
         },
         {
           question: '(6)',
           options: ['一起', '才', '共同', '必須'],
           answer: 1,
-          explanation: '「才能有效遏止」表示必要條件。'
+          explanation: '「才能有效遏止」表示必要條件。',
+      explanationId: '"Baru bisa secara efektif menghentikan" menunjukkan kondisi perlu.',
         }
       ]
     },
@@ -711,37 +787,43 @@ export const readingQuestions = {
           question: '(1)',
           options: ['要求', '強調', '堅持', '期望'],
           answer: 0,
-          explanation: '「不再要求員工來辦公室」。'
+          explanation: '「不再要求員工來辦公室」。',
+      explanationId: '"Tidak lagi memerlukan karyawan untuk datang ke kantor".',
         },
         {
           question: '(2)',
           options: ['在', '於', '從', '的'],
           answer: 0,
-          explanation: '「在家裡工作」。'
+          explanation: '「在家裡工作」。',
+      explanationId: '"Bekerja di rumah".',
         },
         {
           question: '(3)',
           options: ['幫助', '讓', '使', '令'],
           answer: 1,
-          explanation: '「讓員工節省通勤時間」。'
+          explanation: '「讓員工節省通勤時間」。',
+      explanationId: '"Memungkinkan karyawan menghemat waktu perjalanan".',
         },
         {
           question: '(4)',
           options: ['而且', '且', '並', '也'],
           answer: 0,
-          explanation: '「而且也提高了工作效率」，遞進。'
+          explanation: '「而且也提高了工作效率」，遞進。',
+      explanationId: '"Dan juga meningkatkan efisiensi kerja", progresif.',
         },
         {
           question: '(5)',
           options: ['混淆', '模糊', '混亂', '搞混'],
           answer: 1,
-          explanation: '「模糊工作和生活的界線」。'
+          explanation: '「模糊工作和生活的界線」。',
+      explanationId: '"Mengaburkan garis antara pekerjaan dan kehidupan".',
         },
         {
           question: '(6)',
           options: ['溝通', '商量', '合作', '協調'],
           answer: 3,
-          explanation: '「都需要協調，建立合理的邊界」。'
+          explanation: '「都需要協調，建立合理的邊界」。',
+      explanationId: '"Semua perlu dikoordinasikan, membangun batas yang masuk akal".',
         }
       ]
     },
@@ -756,37 +838,43 @@ export const readingQuestions = {
           question: '(1)',
           options: ['同時', '然而', '但是', '但同時'],
           answer: 3,
-          explanation: '「既帶來機遇，但同時也帶來挑戰」。'
+          explanation: '「既帶來機遇，但同時也帶來挑戰」。',
+      explanationId: '"Sambil membawa peluang, tetapi juga membawa tantangan".',
         },
         {
           question: '(2)',
           options: ['不斷', '逐漸', '快速', '突然'],
           answer: 0,
-          explanation: '「不斷改變產業面貌」。'
+          explanation: '「不斷改變產業面貌」。',
+      explanationId: '"Terus mengubah wajah industri".',
         },
         {
           question: '(3)',
           options: ['能', '會', '要', '須'],
           answer: 1,
-          explanation: '「既帶來新的就業機會」。'
+          explanation: '「既帶來新的就業機會」。',
+      explanationId: '"Selain membawa peluang kerja baru".',
         },
         {
           question: '(4)',
           options: ['也', '卻也', '也會', '反而'],
           answer: 2,
-          explanation: '「但也會導致傳統工作面臨淘汰」。'
+          explanation: '「但也會導致傳統工作面臨淘汰」。',
+      explanationId: '"Tetapi juga akan menyebabkan pekerjaan tradisional menghadapi eliminasi".',
         },
         {
           question: '(5)',
           options: ['適應', '迎接', '面對', '應對'],
           answer: 3,
-          explanation: '「為了應對這種轉變」。'
+          explanation: '「為了應對這種轉變」。',
+      explanationId: '"Untuk mengatasi perubahan ini".',
         },
         {
           question: '(6)',
           options: ['使得', '令', '使', '讓'],
           answer: 3,
-          explanation: '「讓人們能夠適應」。'
+          explanation: '「讓人們能夠適應」。',
+      explanationId: '"Membiarkan orang dapat beradaptasi".',
         }
       ]
     },
@@ -801,37 +889,43 @@ export const readingQuestions = {
           question: '(1)',
           options: ['除非', '雖', '儘管', '雖然'],
           answer: 3,
-          explanation: '「雖然它帶來了便利，也帶來了問題」。'
+          explanation: '「雖然它帶來了便利，也帶來了問題」。',
+      explanationId: '"Meskipun membawa kenyamanan, juga membawa masalah".',
         },
         {
           question: '(2)',
           options: ['樂於', '喜歡', '願意', '傾向'],
           answer: 0,
-          explanation: '「樂於在社群媒體上分享」。'
+          explanation: '「樂於在社群媒體上分享」。',
+      explanationId: '"Senang berbagi di media sosial".',
         },
         {
           question: '(3)',
           options: ['影響', '損傷', '傷害', '傷及'],
           answer: 0,
-          explanation: '「影響心理健康」。'
+          explanation: '「影響心理健康」。',
+      explanationId: '"Mempengaruhi kesehatan mental".',
         },
         {
           question: '(4)',
           options: ['只有', '唯有', '必須', '需要'],
           answer: 1,
-          explanation: '「唯有從小培養...才能」必要條件句。'
+          explanation: '「唯有從小培養...才能」必要條件句。',
+      explanationId: '"Hanya dengan menumbuhkan dari kecil... baru bisa" klausa kondisi perlu.',
         },
         {
           question: '(5)',
           options: ['幫助', '教導', '引導', '帶領'],
           answer: 2,
-          explanation: '「引導他們正確使用」。'
+          explanation: '「引導他們正確使用」。',
+      explanationId: '"Membimbing mereka menggunakan dengan benar".',
         },
         {
           question: '(6)',
           options: ['承擔', '承認', '背負', '承受'],
           answer: 0,
-          explanation: '「應該承擔責任」。'
+          explanation: '「應該承擔責任」。',
+      explanationId: '"Harus bertanggung jawab".',
         }
       ]
     },
@@ -848,13 +942,15 @@ export const readingQuestions = {
           question: '手機可以用來做什麼？',
           options: ['只能看新聞', '付款、叫車、點餐等多種事務', '只能聊天', '只能玩遊戲'],
           answer: 1,
-          explanation: '文中提到「付款、叫車到點餐，手機幾乎可以做任何事」。'
+          explanation: '文中提到「付款、叫車到點餐，手機幾乎可以做任何事」。',
+      explanationId: 'Teks menyebutkan "pembayaran, memesan taksi hingga memesan makanan, ponsel hampir bisa melakukan apa pun".',
         },
         {
           question: '過度使用手機會帶來什麼問題？',
           options: ['沒有問題', '只會變有錢', '只會變聰明', '視力下降、社交能力減弱等'],
           answer: 3,
-          explanation: '文中明確提到「視力下降、社交能力減弱等」。'
+          explanation: '文中明確提到「視力下降、社交能力減弱等」。',
+      explanationId: 'Teks secara jelas menyebutkan "penglihatan turun, kemampuan sosial melemah, dll.".',
         },
         {
           question: '專家的建議是什麼？',
@@ -875,7 +971,8 @@ export const readingQuestions = {
           question: '夜市裡有什麼美食？',
           options: ['只有茶館', '只有餐廳', '只有水果', '臭豆腐、珍珠奶茶、蚵仔煎等各種美食'],
           answer: 3,
-          explanation: '文中列舉了「臭豆腐、珍珠奶茶、蚵仔煎等」。'
+          explanation: '文中列舉了「臭豆腐、珍珠奶茶、蚵仔煎等」。',
+      explanationId: 'Teks menyebutkan "tofu berbau, teh mutiara, kerang goreng, dll.".',
         },
         {
           question: '夜市的氣氛如何？',
@@ -896,19 +993,22 @@ export const readingQuestions = {
           question: '「斜槓青年」是什麼意思？',
           options: ['經常換工作的人', '退休的人', '失業的年輕人', '同時擁有多種職業身分的年輕人'],
           answer: 3,
-          explanation: '文章定義「同時擁有多種職業身分的年輕人」。'
+          explanation: '文章定義「同時擁有多種職業身分的年輕人」。',
+      explanationId: 'Artikel mendefinisikan "orang muda yang memiliki berbagai identitas profesional secara bersamaan".',
         },
         {
           question: '支持者認為斜槓青年有什麼好處？',
           options: ['賺更多錢', '沒有好處', '變得更懶', '有助於實現自我價值'],
           answer: 3,
-          explanation: '「支持者認為，這種多元發展有助於實現自我價值」。'
+          explanation: '「支持者認為，這種多元發展有助於實現自我價值」。',
+      explanationId: '"Para pendukung berpikir bahwa pengembangan yang beragam ini membantu mewujudkan nilai diri".',
         },
         {
           question: '反對者的擔憂是什麼？',
           options: ['太無聊', '太賺錢', '同時做太多事可能導致什麼都做不好', '沒有擔憂'],
           answer: 2,
-          explanation: '「反對者則擔心，同時做太多事可能導致什麼都做不好」。'
+          explanation: '「反對者則擔心，同時做太多事可能導致什麼都做不好」。',
+      explanationId: '"Para penentang khawatir bahwa melakukan terlalu banyak hal pada saat yang bersamaan dapat menyebabkan apa pun tidak dilakukan dengan baik".',
         }
       ]
     },
@@ -923,13 +1023,15 @@ export const readingQuestions = {
           question: '學習第二語言有什麼好處？',
           options: ['能改善大腦功能，幫助溝通', '沒有好處', '只能變有錢', '只能交朋友'],
           answer: 0,
-          explanation: '「不僅能幫助我們與更多人溝通，還能改善大腦功能」。'
+          explanation: '「不僅能幫助我們與更多人溝通，還能改善大腦功能」。',
+      explanationId: '"Tidak hanya dapat membantu kami berkomunikasi dengan lebih banyak orang, tetapi juga dapat meningkatkan fungsi otak".',
         },
         {
           question: '「三天打魚，兩天曬網」在文中是什麼意思？',
           options: ['喜歡釣魚', '工作很努力', '做事不持續、不認真', '學習很認真'],
           answer: 2,
-          explanation: '這是中文成語，比喻做事沒有恆心。'
+          explanation: '這是中文成語，比喻做事沒有恆心。',
+      explanationId: 'Ini adalah idiom Cina, metafora untuk kurangnya ketekunan dalam melakukan hal-hal.',
         }
       ]
     },
@@ -944,19 +1046,22 @@ export const readingQuestions = {
           question: '全民健保的優點是什麼？',
           options: ['沒有優點', '讓每個人都能以合理費用看病，降低醫療負擔', '只對有錢人有好處', '讓醫生更有錢'],
           answer: 1,
-          explanation: '文中說「讓每個人都能以合理的費用看病，大幅降低了民眾的醫療負擔」。'
+          explanation: '文中說「讓每個人都能以合理的費用看病，大幅降低了民眾的醫療負擔」。',
+      explanationId: 'Teks mengatakan "memungkinkan setiap orang untuk melihat dokter dengan biaya yang wajar, sangat mengurangi beban medis masyarakat".',
         },
         {
           question: '健保制度面臨什麼問題？',
           options: ['醫療資源浪費和醫護人才流失', '沒有問題', '太昂貴', '不公平'],
           answer: 0,
-          explanation: '「造成醫療資源浪費」和「人才流失的問題日益嚴重」。'
+          explanation: '「造成醫療資源浪費」和「人才流失的問題日益嚴重」。',
+      explanationId: '"Menyebabkan pemborosan sumber daya medis" dan "masalah kehilangan bakat semakin serius".',
         },
         {
           question: '有人提議解決問題的方法是什麼？',
           options: ['廢除健保', '給醫護人員加薪', '提高掛號費或增加自付額', '關閉醫院'],
           answer: 2,
-          explanation: '「應該提高掛號費或增加自付額，以減少不必要的就醫」。'
+          explanation: '「應該提高掛號費或增加自付額，以減少不必要的就醫」。',
+      explanationId: '"Harus menaikkan biaya pendaftaran atau meningkatkan jumlah pembayaran sendiri untuk mengurangi kunjungan medis yang tidak perlu".',
         }
       ]
     },
@@ -971,19 +1076,22 @@ export const readingQuestions = {
           question: '全球化對美食文化有什麼影響？',
           options: ['沒有影響', '所有美食都一樣', '美食消失了', '傳統料理與現代概念結合，創造新飲食風格'],
           answer: 3,
-          explanation: '「傳統的在地料理漸漸與現代餐飲概念結合」。'
+          explanation: '「傳統的在地料理漸漸與現代餐飲概念結合」。',
+      explanationId: '"Masakan lokal tradisional secara bertahap berpadu dengan konsep makanan modern".',
         },
         {
           question: '有人擔心什麼？',
           options: ['美食太便宜', '美食不好吃', '沒有人擔心', '過度商業化可能喪失美食的原真性'],
           answer: 3,
-          explanation: '「過度商業化可能會喪失美食的原真性」。'
+          explanation: '「過度商業化可能會喪失美食的原真性」。',
+      explanationId: '"Komersisalisasi berlebihan dapat kehilangan keaslian makanan lezat".',
         },
         {
           question: '美食評論家認為重點是什麼？',
           options: ['只保留傳統', '只創新不保留', '廢除所有美食', '在變化中保持文化根源'],
           answer: 3,
-          explanation: '「重點...在於如何在變化中保持文化根源」。'
+          explanation: '「重點...在於如何在變化中保持文化根源」。',
+      explanationId: '"Fokus... adalah bagaimana mempertahankan akar budaya dalam perubahan".',
         }
       ]
     },
@@ -998,13 +1106,15 @@ export const readingQuestions = {
           question: '企業在環保方面做了什麼？',
           options: ['什麼都沒做', '拒絕環保', '增加污染', '開始綠色生產，使用可再生能源和可回收材料'],
           answer: 3,
-          explanation: '「企業也開始轉向綠色生產，使用可再生能源和可回收材料」。'
+          explanation: '「企業也開始轉向綠色生產，使用可再生能源和可回收材料」。',
+      explanationId: '"Perusahaan juga mulai beralih ke produksi hijau, menggunakan energi terbarukan dan bahan daur ulang".',
         },
         {
           question: '為什麼消費者的選擇很重要？',
           options: ['沒有重要', '只有企業重要', '消費者無能為力', '消費者的選擇力量巨大，可以推動環保'],
           answer: 3,
-          explanation: '「消費者的選擇力量巨大」。'
+          explanation: '「消費者的選擇力量巨大」。',
+      explanationId: '"Kekuatan pilihan konsumen sangat besar".',
         }
       ]
     },
@@ -1019,13 +1129,15 @@ export const readingQuestions = {
           question: '現代教育應該強調什麼？',
           options: ['只強調考試成績', '只背書', '批判思維和創新能力', '只做題目'],
           answer: 2,
-          explanation: '「教育改革的核心在於培養學生的批判思維和創新能力」。'
+          explanation: '「教育改革的核心在於培養學生的批判思維和創新能力」。',
+      explanationId: '"Inti dari reformasi pendidikan adalah menumbuhkan pemikiran kritis dan kemampuan inovasi siswa".',
         },
         {
           question: '教師角色應該如何轉變？',
           options: ['不需要轉變', '從知識傳授者變為學習引導者', '變得更嚴格', '減少工作'],
           answer: 1,
-          explanation: '「教師的角色也需要轉變，從知識傳授者變為學習引導者」。'
+          explanation: '「教師的角色也需要轉變，從知識傳授者變為學習引導者」。',
+      explanationId: '"Peran guru juga perlu berubah, dari penyampai pengetahuan menjadi pemandu pembelajaran".',
         }
       ]
     },
@@ -1040,13 +1152,15 @@ export const readingQuestions = {
           question: '為什麼現代人的心理負擔增加了？',
           options: ['沒有原因', '沒有工作', '因為太有錢', '快節奏生活、競爭壓力和資訊過載'],
           answer: 3,
-          explanation: '「快節奏生活、競爭壓力和資訊過載，都增加了人們的心理負擔」。'
+          explanation: '「快節奏生活、競爭壓力和資訊過載，都增加了人們的心理負擔」。',
+      explanationId: '"Kehidupan yang bergerak cepat, tekanan kompetitif, dan beban informasi, semuanya meningkatkan beban psikologis orang-orang".',
         },
         {
           question: '改變對心理健康的觀念需要做什麼？',
           options: ['什麼都不用做', '忽視心理健康', '隱瞞問題', '提高心理健康意識、減少污名化、確保人們獲得援助'],
           answer: 3,
-          explanation: '「包括提高心理健康意識、減少污名化，並確保每個人都能獲得適當的心理援助」。'
+          explanation: '「包括提高心理健康意識、減少污名化，並確保每個人都能獲得適當的心理援助」。',
+      explanationId: '"Termasuk meningkatkan kesadaran kesehatan mental, mengurangi stigma, dan memastikan semua orang mendapat dukungan kesehatan mental yang tepat".',
         }
       ]
     },
@@ -1061,7 +1175,8 @@ export const readingQuestions = {
       question: '根據預報，什麼時候最需要帶雨傘？',
       options: ['週一到週三', '週末', '週四到週五', '整個星期'],
       answer: 2,
-      explanation: '「週四開始受鋒面影響...並有間歇性降雨」。'
+      explanation: '「週四開始受鋒面影響...並有間歇性降雨」。',
+      explanationId: '"Sejak Kamis, terpengaruh oleh sistem depan... dan ada hujan intermiten".',
     },
     {
       id: 'bandB-r-019',
@@ -1072,7 +1187,8 @@ export const readingQuestions = {
       question: '應徵者必須具備什麼條件？',
       options: ['只需要大學學歷', '大學學歷和兩年行銷經驗', '只需要會英文', '不需要任何條件'],
       answer: 1,
-      explanation: '徵才條件列出「大學以上學歷」和「兩年以上行銷經驗」。'
+      explanation: '徵才條件列出「大學以上學歷」和「兩年以上行銷經驗」。',
+      explanationId: 'Persyaratan perekrutan mencantumkan "pendidikan universitas atau lebih" dan "pengalaman pemasaran dua tahun atau lebih".',
     },
     {
       id: 'bandB-r-020',
@@ -1105,7 +1221,8 @@ export const readingQuestions = {
       question: '古蹟面臨什麼威脅？',
       options: ['沒有威脅', '只有自然災害', '自然災害、氣候變化和人為破壞', '只有氣候變化'],
       answer: 2,
-      explanation: '「包括自然災害、氣候變化和人為破壞」。'
+      explanation: '「包括自然災害、氣候變化和人為破壞」。',
+      explanationId: '"Termasuk bencana alam, perubahan iklim, dan kerusakan buatan manusia".',
     },
     {
       id: 'bandB-r-023',
@@ -1116,7 +1233,8 @@ export const readingQuestions = {
       question: '綠化能帶來什麼好處？',
       options: ['美化環境、降低氣溫、減少污染、改善水質、益於身心健康', '只能降低氣溫', '只能美化環境', '沒有好處'],
       answer: 0,
-      explanation: '文中列舉了多項綠化的好處。'
+      explanation: '文中列舉了多項綠化的好處。',
+      explanationId: 'Teks menyebutkan banyak manfaat penghijauan.',
     },
     {
       id: 'bandB-r-024',
@@ -1127,7 +1245,8 @@ export const readingQuestions = {
       question: '民間故事有什麼重要性？',
       options: ['沒有重要性', '只是娛樂', '沒有文化價值', '是文化載體，連接過去與現在'],
       answer: 3,
-      explanation: '「不僅是文化的載體，也是連接過去與現在的橋樑」。'
+      explanation: '「不僅是文化的載體，也是連接過去與現在的橋樑」。',
+      explanationId: '"Bukan hanya pembawa budaya, tetapi juga jembatan yang menghubungkan masa lalu dan sekarang".',
     },
     {
       id: 'bandB-r-025',
@@ -1138,7 +1257,8 @@ export const readingQuestions = {
       question: '社會企業與傳統企業的主要區別是什麼？',
       options: ['社會企業將利潤用於社會公益', '都以利潤最大化為目標', '沒有區別', '社會企業只做慈善'],
       answer: 0,
-      explanation: '「將利潤的大部分用於社會公益事業」。'
+      explanation: '「將利潤的大部分用於社會公益事業」。',
+      explanationId: '"Menggunakan sebagian besar keuntungan untuk kegiatan sosial dan nirlaba".',
     },
     {
       id: 'bandB-r-026',
@@ -1149,7 +1269,8 @@ export const readingQuestions = {
       question: '圖書館在維修期間會怎麼做？',
       options: ['暫停開放三天', '正常開放並延長自習室時間', '只開放上午時段', '搬到其他地方'],
       answer: 1,
-      explanation: '「圖書館仍正常開放」且「自習室將開放延長至晚間十一點」。'
+      explanation: '「圖書館仍正常開放」且「自習室將開放延長至晚間十一點」。',
+      explanationId: '"Perpustakaan masih buka normal" dan "ruang belajar mandiri akan dibuka diperpanjang hingga pukul 11 malam".',
     },
     {
       id: 'bandB-r-027',
@@ -1162,13 +1283,15 @@ export const readingQuestions = {
           question: '台灣寵物數量增加的主要原因是什麼？',
           options: ['政府鼓勵養寵物', '寵物價格大幅下降', '少子化與獨居人口增加', '外國文化影響'],
           answer: 2,
-          explanation: '文章指出與「少子化趨勢、獨居人口增加以及人們對情感陪伴的需求」有關。'
+          explanation: '文章指出與「少子化趨勢、獨居人口增加以及人們對情感陪伴的需求」有關。',
+      explanationId: 'Artikel menunjukkan bahwa terkait dengan "tren rendahnya angka kelahiran, peningkatan populasi yang tinggal sendiri, dan kebutuhan orang akan persahabatan emosional".',
         },
         {
           question: '這篇文章提到了什麼問題？',
           options: ['寵物食品漲價', '棄養問題導致收容所壓力增大', '獸醫人數不足', '寵物店太多'],
           answer: 1,
-          explanation: '「棄養問題也隨之而來，動物收容所的壓力越來越大」。'
+          explanation: '「棄養問題也隨之而來，動物收容所的壓力越來越大」。',
+      explanationId: '"Masalah pengabaian hewan pun menyusul, tekanan pada tempat penampungan hewan semakin meningkat".',
         }
       ]
     },
@@ -1183,25 +1306,29 @@ export const readingQuestions = {
           question: '(1)',
           options: ['而', '卻', '就', '才'],
           answer: 0,
-          explanation: '「不在於...而在於...」是固定句型，表示對比強調。'
+          explanation: '「不在於...而在於...」是固定句型，表示對比強調。',
+      explanationId: '"Bukan pada... tetapi pada..." adalah pola tetap, menunjukkan penekanan kontras.',
         },
         {
           question: '(2)',
           options: ['確保', '避免', '放棄', '忽略'],
           answer: 0,
-          explanation: '按照行程表走是為了「確保」不遺漏景點。'
+          explanation: '按照行程表走是為了「確保」不遺漏景點。',
+      explanationId: 'Mengikuti jadwal adalah untuk "memastikan" tidak melewatkan tempat wisata.',
         },
         {
           question: '(3)',
           options: ['雖然', '不管', '因為', '假如'],
           answer: 1,
-          explanation: '「不管哪種方式」表示無論哪種都可以。'
+          explanation: '「不管哪種方式」表示無論哪種都可以。',
+      explanationId: '"Apa pun caranya" menunjukkan cara apa pun bisa.',
         },
         {
           question: '(4)',
           options: ['失去', '獲得', '浪費', '減少'],
           answer: 1,
-          explanation: '旅行的目的是「獲得」新的體驗。'
+          explanation: '旅行的目的是「獲得」新的體驗。',
+      explanationId: 'Tujuan perjalanan adalah "mendapatkan" pengalaman baru.',
         }
       ]
     },
@@ -1214,7 +1341,8 @@ export const readingQuestions = {
       question: '根據這則廣告，下面哪一個是對的？',
       options: ['這輛車可以寄到外縣市', '賣家願意降價出售', '買家可以多拿到車鎖和車燈', '這輛車已經用了三年'],
       answer: 2,
-      explanation: '廣告提到「附贈車鎖、車燈一組」，且不接受議價、面交限台北市。'
+      explanation: '廣告提到「附贈車鎖、車燈一組」，且不接受議價、面交限台北市。',
+      explanationId: 'Iklan menyebutkan "dilengkapi dengan gembok sepeda dan satu set lampu", dan tidak menerima negosiasi harga, penjualan tatap muka terbatas di Taipei.',
     },
     {
       id: 'bandB-r-030',
@@ -1227,13 +1355,15 @@ export const readingQuestions = {
           question: '實體書店面臨什麼挑戰？',
           options: ['書籍印刷成本過高', '政府限制書店數量', '網路購書和電子書的競爭', '年輕人不識字'],
           answer: 2,
-          explanation: '「網路購書方便快速，電子書也越來越普及」導致顧客減少。'
+          explanation: '「網路購書方便快速，電子書也越來越普及」導致顧客減少。',
+      explanationId: '"Membeli buku online nyaman dan cepat, e-book juga semakin populer" menyebabkan pengurangan pelanggan.',
         },
         {
           question: '文章中提到的書店轉型策略是什麼？',
           options: ['降低書價吸引客人', '只販售電子書', '結合咖啡廳和文化活動成為社區中心', '搬到網路經營'],
           answer: 2,
-          explanation: '書店「結合了咖啡廳、展覽空間和文化講座，成為社區的文化中心」。'
+          explanation: '書店「結合了咖啡廳、展覽空間和文化講座，成為社區的文化中心」。',
+      explanationId: 'Toko buku "menggabungkan kafe, ruang pameran dan lokakarya budaya, menjadi pusat budaya komunitas".',
         }
       ]
     }

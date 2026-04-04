@@ -14,10 +14,12 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useLanguage } from '../contexts/LanguageContext';
 import { getLevelInfo, achievementsList } from '../data/achievements';
 
 const DashboardPage = () => {
   const { user, userStats } = useAuth();
+  const { t } = useLanguage();
   const [animateCounters, setAnimateCounters] = useState(false);
 
   useEffect(() => {
@@ -167,7 +169,7 @@ const DashboardPage = () => {
                   <p className="text-4xl font-bold text-orange-300">
                     {streakDays}
                   </p>
-                  <p className="text-sm text-orange-200">連續天數</p>
+                  <p className="text-sm text-orange-200">{t('dashboard.streak')}</p>
                 </div>
               </motion.div>
             )}
@@ -209,7 +211,7 @@ const DashboardPage = () => {
           >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-blue-200 text-sm font-medium mb-2">總 XP</p>
+                <p className="text-blue-200 text-sm font-medium mb-2">{t('dashboard.totalXP')}</p>
                 <p className="text-4xl font-bold text-white">
                   {animateCounters ? currentXP.toLocaleString() : 0}
                 </p>
@@ -232,7 +234,7 @@ const DashboardPage = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-orange-200 text-sm font-medium mb-2">
-                  連續天數
+                  {t('dashboard.streak')}
                 </p>
                 <p className="text-4xl font-bold text-white">{streakDays}</p>
               </div>
@@ -254,7 +256,7 @@ const DashboardPage = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-green-200 text-sm font-medium mb-2">
-                  測驗完成
+                  {t('dashboard.quizCompleted')}
                 </p>
                 <p className="text-4xl font-bold text-white">
                   {quizzesCompleted}
@@ -278,7 +280,7 @@ const DashboardPage = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-pink-200 text-sm font-medium mb-2">
-                  平均正確率
+                  {t('dashboard.avgAccuracy')}
                 </p>
                 <p className="text-4xl font-bold text-white">
                   {Math.round(averageAccuracy)}%
@@ -308,7 +310,7 @@ const DashboardPage = () => {
           >
             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
               <BookOpen className="w-6 h-6 text-blue-400" />
-              級別進度
+              {t('dashboard.levelProgress')}
             </h3>
 
             {/* Band A */}
@@ -355,7 +357,7 @@ const DashboardPage = () => {
           >
             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
               <Target className="w-6 h-6 text-green-400" />
-              技能準確度
+              {t('dashboard.skillAccuracy')}
             </h3>
 
             {/* Reading Accuracy */}
@@ -363,7 +365,7 @@ const DashboardPage = () => {
               <div className="flex justify-between items-center mb-2">
                 <p className="text-sm font-medium text-gray-300 flex items-center gap-2">
                   <BookOpen className="w-4 h-4 text-blue-300" />
-                  閱讀
+                  {t('dashboard.reading')}
                 </p>
                 <p className="text-sm font-bold text-blue-400">
                   {Math.round(readingAccuracy)}%
@@ -384,7 +386,7 @@ const DashboardPage = () => {
               <div className="flex justify-between items-center mb-2">
                 <p className="text-sm font-medium text-gray-300 flex items-center gap-2">
                   <Headphones className="w-4 h-4 text-green-300" />
-                  聽力
+                  {t('dashboard.listening')}
                 </p>
                 <p className="text-sm font-bold text-green-400">
                   {Math.round(listeningAccuracy)}%
@@ -409,7 +411,7 @@ const DashboardPage = () => {
         >
           <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
             <Star className="w-7 h-7 text-yellow-400" />
-            成就
+            {t('dashboard.achievements')}
           </h3>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
@@ -488,7 +490,7 @@ const DashboardPage = () => {
             <Link to="/reading">
               <button className="w-full bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-4 px-6 rounded-xl transition-all shadow-lg border border-blue-500/50 flex items-center justify-center gap-3">
                 <BookOpen className="w-5 h-5" />
-                繼續閱讀測驗
+                {t('dashboard.reading')} {t('dashboard.practiceNow')}
               </button>
             </Link>
           </motion.div>
@@ -498,7 +500,7 @@ const DashboardPage = () => {
             <Link to="/listening">
               <button className="w-full bg-gradient-to-br from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-bold py-4 px-6 rounded-xl transition-all shadow-lg border border-green-500/50 flex items-center justify-center gap-3">
                 <Headphones className="w-5 h-5" />
-                繼續聽力測驗
+                {t('dashboard.listening')} {t('dashboard.practiceNow')}
               </button>
             </Link>
           </motion.div>
@@ -508,7 +510,7 @@ const DashboardPage = () => {
             <Link to="/leaderboard">
               <button className="w-full bg-gradient-to-br from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 text-white font-bold py-4 px-6 rounded-xl transition-all shadow-lg border border-purple-500/50 flex items-center justify-center gap-3">
                 <Trophy className="w-5 h-5" />
-                查看排行榜
+                {t('leaderboard.title')}
               </button>
             </Link>
           </motion.div>

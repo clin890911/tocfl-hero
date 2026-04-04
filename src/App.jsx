@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { GameProvider } from './contexts/GameContext';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ReadingPage from './pages/ReadingPage';
@@ -15,7 +16,7 @@ function ProtectedRoute({ children }) {
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="text-center">
           <div className="text-6xl animate-bounce mb-4">🏆</div>
-          <p className="text-gray-500 text-lg">載入中...</p>
+          <p className="text-gray-500 text-lg">Memuat...</p>
         </div>
       </div>
     );
@@ -47,13 +48,15 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
-      <AuthProvider>
-        <GameProvider>
-          <AppContent />
-        </GameProvider>
-      </AuthProvider>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <AuthProvider>
+          <GameProvider>
+            <AppContent />
+          </GameProvider>
+        </AuthProvider>
+      </Router>
+    </LanguageProvider>
   );
 }
 

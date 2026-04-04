@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { Home, BookOpen, Headphones, Trophy, User, LogIn, LogOut, Menu, X } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { Home, BookOpen, Headphones, Trophy, User, LogIn, LogOut, Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
   const location = useLocation();
+  const { lang, setLang, t } = useLanguage();
 
   const navLinks = [
-    { path: '/', label: '首頁', icon: Home },
-    { path: '/reading', label: '閱讀測驗', icon: BookOpen },
-    { path: '/listening', label: '聽力測驗', icon: Headphones },
-    { path: '/leaderboard', label: '排行榜', icon: Trophy },
+    { path: '/', label: t('nav.home'), icon: Home },
+    { path: '/reading', label: t('nav.reading'), icon: BookOpen },
+    { path: '/listening', label: t('nav.listening'), icon: Headphones },
+    { path: '/leaderboard', label: t('nav.leaderboard'), icon: Trophy },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -21,6 +23,10 @@ export const Navbar = () => {
   const handleLogout = () => {
     logout();
     setIsOpen(false);
+  };
+
+  const toggleLang = () => {
+    setLang(lang === 'zh' ? 'id' : 'zh');
   };
 
   return (
@@ -56,8 +62,18 @@ export const Navbar = () => {
           })}
         </div>
 
-        {/* Right Side - User Info / Login Button */}
-        <div className="flex items-center gap-4">
+        {/* Right Side - Language Toggle + User Info */}
+        <div className="flex items-center gap-3">
+          {/* Language Toggle */}
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 bg-white/20 hover:bg-white/30 text-white px-3 py-2 rounded-lg font-medium transition-colors duration-200 text-sm"
+            title={t('lang.switch')}
+          >
+            <Globe size={16} />
+            <span>{lang === 'zh' ? '中文' : 'ID'}</span>
+          </button>
+
           {user ? (
             <div className="flex items-center gap-4">
               {/* Avatar & User Info */}
@@ -77,7 +93,7 @@ export const Navbar = () => {
                 className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200"
               >
                 <LogOut size={18} />
-                <span>登出</span>
+                <span>{t('nav.logout')}</span>
               </button>
             </div>
           ) : (
@@ -86,7 +102,7 @@ export const Navbar = () => {
               className="flex items-center gap-2 bg-white text-purple-600 hover:bg-gray-100 px-4 py-2 rounded-lg font-semibold transition-colors duration-200"
             >
               <LogIn size={18} />
-              <span>登入</span>
+              <span>{t('nav.login')}</span>
             </Link>
           )}
         </div>
@@ -99,13 +115,24 @@ export const Navbar = () => {
           🏆 TOCFL Hero
         </Link>
 
-        {/* Hamburger Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-white p-2 rounded-lg hover:bg-white/20 transition-colors"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2">
+          {/* Language Toggle (Mobile) */}
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1 bg-white/20 hover:bg-white/30 text-white px-2.5 py-2 rounded-lg font-medium transition-colors text-sm"
+          >
+            <Globe size={16} />
+            <span>{lang === 'zh' ? '中' : 'ID'}</span>
+          </button>
+
+          {/* Hamburger Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white p-2 rounded-lg hover:bg-white/20 transition-colors"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -160,7 +187,7 @@ export const Navbar = () => {
                     className="w-full flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg font-medium transition-colors duration-200"
                   >
                     <LogOut size={18} />
-                    <span>登出</span>
+                    <span>{t('nav.logout')}</span>
                   </button>
                 </div>
               ) : (
@@ -170,7 +197,7 @@ export const Navbar = () => {
                   className="flex items-center justify-center gap-2 bg-white text-purple-600 hover:bg-gray-100 w-full px-4 py-3 rounded-lg font-semibold transition-colors duration-200"
                 >
                   <LogIn size={18} />
-                  <span>登入</span>
+                  <span>{t('nav.login')}</span>
                 </Link>
               )}
             </div>

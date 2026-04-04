@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Trophy, Medal, Star, Crown, TrendingUp, Users } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import { useLanguage } from '../contexts/LanguageContext';
 import { getLeaderboard } from '../firebase';
 import { getLevelInfo } from '../data/achievements';
 
@@ -71,7 +72,7 @@ const SkeletonLoader = () => (
   </div>
 );
 
-const TopThreePodium = ({ leaderboard, currentUserId }) => {
+const TopThreePodium = ({ leaderboard, currentUserId, t }) => {
   const top3 = leaderboard.slice(0, 3);
 
   // Podium layout: 2nd | 1st | 3rd
@@ -87,7 +88,7 @@ const TopThreePodium = ({ leaderboard, currentUserId }) => {
     <div className="mb-8">
       <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
         <Trophy className="text-yellow-400" />
-        Top 3
+        {t('leaderboard.top3')}
       </h2>
       <div className="flex items-end justify-center gap-4 h-80">
         {podiumOrder.map((player, idx) => {
@@ -141,7 +142,7 @@ const TopThreePodium = ({ leaderboard, currentUserId }) => {
   );
 };
 
-const LeaderboardTable = ({ leaderboard, currentUserId, isLoading }) => {
+const LeaderboardTable = ({ leaderboard, currentUserId, isLoading, t }) => {
   if (isLoading) {
     return <SkeletonLoader />;
   }
@@ -152,7 +153,7 @@ const LeaderboardTable = ({ leaderboard, currentUserId, isLoading }) => {
     <div className="space-y-2">
       <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
         <Users className="text-blue-400" />
-        Rest of the Rankings
+        {t('leaderboard.rest')}
       </h2>
       <div className="space-y-2 max-h-96 overflow-y-auto">
         <AnimatePresence>
@@ -198,7 +199,7 @@ const LeaderboardTable = ({ leaderboard, currentUserId, isLoading }) => {
                     {player.displayName}
                     {isCurrentUser && (
                       <span className="bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full">
-                        You
+                        {t('leaderboard.you')}
                       </span>
                     )}
                   </h3>
@@ -218,7 +219,7 @@ const LeaderboardTable = ({ leaderboard, currentUserId, isLoading }) => {
                       transition={{ duration: 1, repeat: Infinity }}
                     >
                       <TrendingUp className="w-4 h-4" />
-                      {player.streak} day streak
+                      {player.streak} {t('leaderboard.dayStreak')}
                     </motion.div>
                   )}
                 </div>
@@ -231,26 +232,27 @@ const LeaderboardTable = ({ leaderboard, currentUserId, isLoading }) => {
   );
 };
 
-const LoginCTA = () => (
+const LoginCTA = ({ t }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6 text-center mt-8"
   >
     <h3 className="text-white font-bold text-lg mb-2">
-      Sign in to compete on the leaderboard
+      {t('leaderboard.loginToCompete')}
     </h3>
     <p className="text-gray-100 mb-4">
-      Log in to see your ranking and earn XP to climb to the top
+      {t('leaderboard.loginToCompete')}
     </p>
     <button className="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-100 transition-colors">
-      Log In / Sign Up
+      {t('nav.login')}
     </button>
   </motion.div>
 );
 
 export default function LeaderboardPage() {
   const { user } = useAuth();
+  const { t } = useLanguage();
   const [leaderboard, setLeaderboard] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -285,10 +287,10 @@ export default function LeaderboardPage() {
       >
         <div className="max-w-5xl mx-auto px-4">
           <h1 className="text-5xl font-bold text-white mb-2 flex items-center gap-3">
-            🏆 排行榜
+            {t('leaderboard.title')}
           </h1>
           <p className="text-gray-200 text-lg">
-            Compete with other learners and climb to the top
+            {t('leaderboard.loginToCompete')}
           </p>
           {error && (
             <motion.div
@@ -312,6 +314,7 @@ export default function LeaderboardPage() {
             <TopThreePodium
               leaderboard={leaderboard}
               currentUserId={user?.uid}
+              t={t}
             />
 
             {/* Leaderboard Table */}
@@ -319,6 +322,7 @@ export default function LeaderboardPage() {
               leaderboard={leaderboard}
               currentUserId={user?.uid}
               isLoading={isLoading}
+              t={t}
             />
           </>
         ) : (
@@ -328,15 +332,15 @@ export default function LeaderboardPage() {
             className="text-center py-12"
           >
             <Users className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-white text-xl font-bold mb-2">No leaderboard data yet</h3>
+            <h3 className="text-white text-xl font-bold mb-2">{t('leaderboard.noData')}</h3>
             <p className="text-gray-300">
-              Be the first to join and start climbing the rankings!
+              {t('leaderboard.noData')}
             </p>
           </motion.div>
         )}
 
         {/* Login CTA - Only show if user is not logged in */}
-        {!user && <LoginCTA />}
+        {!user && <LoginCTA t={t} />}
       </div>
     </div>
   );
